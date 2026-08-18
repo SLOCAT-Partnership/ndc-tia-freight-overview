@@ -441,10 +441,11 @@
       });
       btn.appendChild(el("span", { cls: "swatch", attrs: { style: "background:" + countryColor(c) + ";" } }));
       btn.appendChild(document.createTextNode(c));
-      if (c === CURRENT_COUNTRY) {
-        btn.style.background = countryColor(c);
-        btn.style.borderColor = countryColor(c);
-        btn.style.color = readableTextColor(countryColor(c));
+            if (c === CURRENT_COUNTRY) {
+        var activeBg = "#068484"; // neutral background for the selected-country button
+        btn.style.background = activeBg;
+        btn.style.borderColor = activeBg;
+        btn.style.color = readableTextColor(activeBg);
       }
       btn.addEventListener("click", function () {
         CURRENT_COUNTRY = c;
