@@ -114,7 +114,7 @@
         var v = s[valueKey][ci];
         var widthPct = Math.max((v / maxVal) * 100, v > 0 ? 2 : 0);
         var barWrap = el("div", { cls: "hbar-series" });
-        var bar = el("div", { cls: "bar", attrs: { style: "width:" + widthPct + "%; background:" + countryColor(s.name) + ";" } });
+        var bar = el("div", { cls: "bar", attrs: { style: "width:" + widthPct + "%; background:" + (s.color || countryColor(s.name)) + ";" } });
         barWrap.appendChild(bar);
         barWrap.appendChild(el("span", { cls: "val", text: formatter(v) }));
         track.appendChild(barWrap);
@@ -126,7 +126,7 @@
     var legend = el("div", { cls: "legend" });
     series.forEach(function (s) {
       var item = el("div", { cls: "legend-item" });
-      item.appendChild(el("span", { cls: "legend-swatch", attrs: { style: "background:" + countryColor(s.name) + ";" } }));
+      item.appendChild(el("span", { cls: "legend-swatch", attrs: { style: "background:" + (s.color || countryColor(s.name)) + ";" } }));
       var label = s.name + (s.labelSuffix ? " (" + s.labelSuffix + ")" : "");
       item.appendChild(el("span", { text: label }));
       legend.appendChild(item);
@@ -142,6 +142,12 @@
   }
 
   // Vertical grouped bar chart per category (used for Total vs Freight counts per country tab)
+  // Bar heights are set as explicit px (not %) because their container is
+  // auto-height (label sits above the bar) — percentage heights inside an
+  // auto-height ancestor resolve to 0 per the CSS spec, so % would silently
+  // collapse every bar to nothing.
+  var VBAR_AREA_PX = 130;
+
   function vbarChart(categories, series, opts) {
     opts = opts || {};
     var maxVal = 0;
@@ -159,10 +165,10 @@
       var stack = el("div", { cls: "vbar-stack" });
       series.forEach(function (s) {
         var v = s.values[ci];
-        var heightPct = Math.max((v / maxVal) * 100, v > 0 ? 3 : 0);
+        var heightPx = Math.max(Math.round((v / maxVal) * VBAR_AREA_PX), v > 0 ? 3 : 0);
         var col = el("div", { cls: "vbar-col" });
         col.appendChild(el("div", { cls: "val", text: String(v) }));
-        col.appendChild(el("div", { cls: "bar", attrs: { style: "height:" + heightPct + "%; background:" + s.color + ";" } }));
+        col.appendChild(el("div", { cls: "bar", attrs: { style: "height:" + heightPx + "px; background:" + s.color + ";" } }));
         stack.appendChild(col);
       });
       group.appendChild(stack);
@@ -180,6 +186,52 @@
     });
     card.appendChild(legend);
     return card;
+  }
+
+  // Single donut with one or more concentric rings (outer ring = rings[0]).
+  // Each ring: {label, value (0-1), color}.
+  function donutRing(title, rings) {
+    var cx = 70, cy = 70, strokeWidth = 14;
+    var radii = [54, 36, 20];
+    var svgParts = [];
+    rings.forEach(function (ring, i) {
+      var r = radii[i] || (radii[radii.length - 1] - 16 * (i - radii.length + 1));
+      var c = 2 * Math.PI * r;
+      var filled = Math.max(ring.value, 0) * c;
+      svgParts.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#E3ECEC" stroke-width="' + strokeWidth + '"/>');
+      svgParts.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="' + ring.color + '" stroke-width="' + strokeWidth +
+        '" stroke-linecap="round" stroke-dasharray="' + filled.toFixed(2) + ' ' + (c - filled).toFixed(2) +
+        '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
+    });
+    var svgHtml = '<svg viewBox="0 0 140 140" width="140" height="140" role="img" aria-label="' + esc(title) + '">' + svgParts.join("") + "</svg>";
+
+    var card = el("div", { cls: "donut-card" });
+    card.appendChild(el("div", { cls: "donut-title", text: title }));
+    card.appendChild(el("div", { cls: "donut-svg", html: svgHtml }));
+    var legend = el("div", { cls: "legend donut-legend" });
+    rings.forEach(function (ring) {
+      var item = el("div", { cls: "legend-item" });
+      item.appendChild(el("span", { cls: "legend-swatch", attrs: { style: "background:" + ring.color + ";" } }));
+      item.appendChild(el("span", { text: ring.label + " — " + pct(ring.value) }));
+      legend.appendChild(item);
+    });
+    card.appendChild(legend);
+    return card;
+  }
+
+  // Renders one donut per metric (e.g. NDC, LTS), each comparing Global (outer ring) vs Asia (inner ring).
+  function donutComparisonChart(chartData) {
+    var wrap = el("div", { cls: "chart-card" });
+    wrap.appendChild(el("div", { cls: "chart-title", text: chartData.title }));
+    var row = el("div", { cls: "donut-row" });
+    chartData.metrics.forEach(function (m) {
+      row.appendChild(donutRing(m.label, [
+        { label: "Global", value: m.global, color: countryColor("Global") },
+        { label: "Asia", value: m.asia, color: countryColor("Asia") }
+      ]));
+    });
+    wrap.appendChild(row);
+    return wrap;
   }
 
   /* ---------------- generic table builder ---------------- */
@@ -217,8 +269,7 @@
     var intro = DATA.intro;
     var wrap = el("div", { cls: "intro-block" });
 
-    var left = el("div");
-    intro.paragraphs.forEach(function (p) { left.appendChild(para(p)); });
+    intro.paragraphs.forEach(function (p) { wrap.appendChild(para(p)); });
 
     var implBlock = el("div", { cls: "implemented-by" });
     implBlock.appendChild(el("div", { cls: "label", text: intro.implementedByLabel }));
@@ -227,15 +278,14 @@
       logos.appendChild(el("img", { attrs: { src: l.src, alt: l.alt } }));
     });
     implBlock.appendChild(logos);
-    left.appendChild(implBlock);
+    wrap.appendChild(implBlock);
 
-    var right = el("div", { cls: "about-card" });
-    right.appendChild(el("h3", { text: intro.about.heading }));
-    intro.about.paragraphs.forEach(function (p) { right.appendChild(el("p", { text: p })); });
-    right.appendChild(el("div", { cls: "data-as-of", text: intro.about.dataAsOf }));
+    var about = el("div", { cls: "about-card" });
+    about.appendChild(el("h3", { text: intro.about.heading }));
+    intro.about.paragraphs.forEach(function (p) { about.appendChild(el("p", { text: p })); });
+    about.appendChild(el("div", { cls: "data-as-of", text: intro.about.dataAsOf }));
+    wrap.appendChild(about);
 
-    wrap.appendChild(left);
-    wrap.appendChild(right);
     container.appendChild(wrap);
   }
 
@@ -273,6 +323,7 @@
       statPair.appendChild(box);
     });
     subContent.push(statPair);
+    if (sub.submissionShareChart) subContent.push(donutComparisonChart(sub.submissionShareChart));
     subContent.push(subheading(sub.tableHeading));
     var subRows = sub.table.rows.map(function (r) {
       var cells = [td(r.country, "country-cell")];
@@ -308,7 +359,7 @@
     });
     tgContent.push(dataTable(tg.freight.table.columns, ftRows));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
-    var exList = el("div", { cls: "example-list" });
+    var exList = el("div", { cls: "example-list example-list-fit" });
     tg.freight.regionalExamples.forEach(function (e) {
       exList.appendChild(exampleCard(e.country, e.content));
     });
@@ -492,10 +543,11 @@
     }
 
     /* Freight transport modes */
+    var docColors = DATA.meta.docTypeColors || {};
     var modeContent = [];
     modeContent.push(hbarChart(d.modes.categories,
-      [{ name: "Across all NDCs", labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values, share: d.modes.ndc.values }].concat(
-        d.modes.lts ? [{ name: "LTS", labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values, share: d.modes.lts.values }] : []
+      [{ name: "Across all NDCs", color: docColors["Across all NDCs"], labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values, share: d.modes.ndc.values }].concat(
+        d.modes.lts ? [{ name: "LTS", color: docColors["LTS"], labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values, share: d.modes.lts.values }] : []
       ),
       { title: "Transport modes named in NDC / LTS actions", valueKey: "share", formatter: function (v) { return String(v); } }
     ));

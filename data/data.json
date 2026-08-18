@@ -5,7 +5,8 @@
     "subtitle": "Assessment of China, India and Viet Nam in comparison to Asia",
     "dataAsOf": "10 August 2026",
     "countries": ["China", "India", "Viet Nam"],
-    "countryColors": { "Asia": "#4285F4", "China": "#EA4335", "India": "#FBBC04", "Viet Nam": "#34A853", "Global": "#EA4335" },
+    "countryColors": { "Asia": "#00918F", "China": "#E08D14", "India": "#2E6DA4", "Viet Nam": "#B23A48", "Global": "#5B4B8A" },
+    "docTypeColors": { "Across all NDCs": "#00918F", "LTS": "#5B4B8A" },
     "brand": {
       "headerDark": "#068484",
       "headerLight": "#3FAEAB",
@@ -55,6 +56,13 @@
         { "group": "Global", "items": [ "126 Third-Generation NDCs (75% of all Parties)", "80 LTS (47% of all Parties)" ] },
         { "group": "Asia", "items": [ "34 Third-Generation NDCs (71% of all Parties in region)", "19 LTS (40% of all Parties in the region)" ] }
       ],
+      "submissionShareChart": {
+        "title": "Share of Parties with a submission, Global vs Asia",
+        "metrics": [
+          { "label": "Third-Generation NDC", "global": 0.75, "asia": 0.71 },
+          { "label": "Long-Term Strategy (LTS)", "global": 0.47, "asia": 0.40 }
+        ]
+      },
       "tableHeading": "Submissions by NDC-TIA countries",
       "table": {
         "columns": ["First-generation NDC", "Second-generation NDC", "Third-generation NDC", "LTS"],
