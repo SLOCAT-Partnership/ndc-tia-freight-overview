@@ -1,0 +1,637 @@
+/* NDC-TIA 2.0 freight dashboard — renders index.html from data/data.json */
+(function () {
+  "use strict";
+
+  var DATA = null;
+  var COLORS = null;
+  var CURRENT_COUNTRY = "China";
+
+  /* ---------------- helpers ---------------- */
+
+  function el(tag, opts) {
+    opts = opts || {};
+    var node = document.createElement(tag);
+    if (opts.cls) node.className = opts.cls;
+    if (opts.html !== undefined) node.innerHTML = opts.html;
+    if (opts.text !== undefined) node.textContent = opts.text;
+    if (opts.attrs) {
+      Object.keys(opts.attrs).forEach(function (k) { node.setAttribute(k, opts.attrs[k]); });
+    }
+    if (opts.children) {
+      opts.children.forEach(function (c) { if (c) node.appendChild(c); });
+    }
+    return node;
+  }
+
+  function esc(str) {
+    if (str === null || str === undefined) return "";
+    return String(str)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;");
+  }
+
+  // Turns "Heading\n- bullet\n- bullet" style strings (or plain text with newlines) into HTML paragraphs/lists.
+  function richText(str) {
+    if (!str) return "";
+    var lines = String(str).split("\n");
+    var html = "";
+    var inList = false;
+    lines.forEach(function (line) {
+      var trimmed = line.trim();
+      if (trimmed.indexOf("- ") === 0 || trimmed.indexOf("-") === 0 && trimmed.length > 1 && trimmed[1] === " ") {
+        if (!inList) { html += "<ul class='bullets'>"; inList = true; }
+        html += "<li>" + esc(trimmed.replace(/^-\s*/, "")) + "</li>";
+      } else {
+        if (inList) { html += "</ul>"; inList = false; }
+        if (trimmed.length) html += "<p>" + esc(trimmed) + "</p>";
+      }
+    });
+    if (inList) html += "</ul>";
+    return html;
+  }
+
+  function pct(x) { return Math.round(x * 1000) / 10 + "%"; }
+
+  function countryColor(name) {
+    return (COLORS && COLORS[name]) || "#999999";
+  }
+
+  // Picks black or white text for legibility against a given hex background (WCAG-ish relative luminance).
+  function readableTextColor(hex) {
+    var m = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+    if (!m) return "#fff";
+    var r = parseInt(m[1], 16) / 255, g = parseInt(m[2], 16) / 255, b = parseInt(m[3], 16) / 255;
+    var lin = [r, g, b].map(function (v) { return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    var lum = 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2];
+    return lum > 0.5 ? "#1D1C1D" : "#fff";
+  }
+
+  function section(headingText, contentNodes, opts) {
+    opts = opts || {};
+    var sec = el("div", { cls: "section" });
+    sec.appendChild(el("div", { cls: "section-band", text: headingText }));
+    (contentNodes || []).forEach(function (n) { if (n) sec.appendChild(n); });
+    return sec;
+  }
+
+  function subheading(text) {
+    return el("div", { cls: "subheading", text: text });
+  }
+
+  function para(text) {
+    return el("p", { text: text });
+  }
+
+  function bulletList(items) {
+    var ul = el("ul", { cls: "bullets" });
+    items.forEach(function (t) { ul.appendChild(el("li", { text: t })); });
+    return ul;
+  }
+
+  /* ---------------- generic chart builders ---------------- */
+
+  // Horizontal grouped bar chart: one row per category, mini-bars per series.
+  // series: [{name, share:[...], count:[...]}] ; valueMode: 'percent' | 'count'
+  function hbarChart(categories, series, opts) {
+    opts = opts || {};
+    var valueKey = opts.valueKey || "share";
+    var formatter = opts.formatter || pct;
+    var maxVal = 0;
+    series.forEach(function (s) {
+      s[valueKey].forEach(function (v) { if (v > maxVal) maxVal = v; });
+    });
+    if (maxVal === 0) maxVal = 1;
+
+    var card = el("div", { cls: "chart-card" });
+    if (opts.title) card.appendChild(el("div", { cls: "chart-title", text: opts.title }));
+
+    categories.forEach(function (cat, ci) {
+      var row = el("div", { cls: "hbar-row" });
+      row.appendChild(el("div", { cls: "hbar-cat", text: cat }));
+      var track = el("div", { cls: "hbar-track" });
+      series.forEach(function (s) {
+        var v = s[valueKey][ci];
+        var widthPct = Math.max((v / maxVal) * 100, v > 0 ? 2 : 0);
+        var barWrap = el("div", { cls: "hbar-series" });
+        var bar = el("div", { cls: "bar", attrs: { style: "width:" + widthPct + "%; background:" + countryColor(s.name) + ";" } });
+        barWrap.appendChild(bar);
+        barWrap.appendChild(el("span", { cls: "val", text: formatter(v) }));
+        track.appendChild(barWrap);
+      });
+      row.appendChild(track);
+      card.appendChild(row);
+    });
+
+    var legend = el("div", { cls: "legend" });
+    series.forEach(function (s) {
+      var item = el("div", { cls: "legend-item" });
+      item.appendChild(el("span", { cls: "legend-swatch", attrs: { style: "background:" + countryColor(s.name) + ";" } }));
+      var label = s.name + (s.labelSuffix ? " (" + s.labelSuffix + ")" : "");
+      item.appendChild(el("span", { text: label }));
+      legend.appendChild(item);
+    });
+    card.appendChild(legend);
+
+    if (opts.footnotes && opts.footnotes.length) {
+      opts.footnotes.forEach(function (f) {
+        card.appendChild(el("p", { cls: "footnote", text: f }));
+      });
+    }
+    return card;
+  }
+
+  // Vertical grouped bar chart per category (used for Total vs Freight counts per country tab)
+  function vbarChart(categories, series, opts) {
+    opts = opts || {};
+    var maxVal = 0;
+    series.forEach(function (s) {
+      s.values.forEach(function (v) { if (v > maxVal) maxVal = v; });
+    });
+    if (maxVal === 0) maxVal = 1;
+
+    var card = el("div", { cls: "chart-card" });
+    if (opts.title) card.appendChild(el("div", { cls: "chart-title", text: opts.title }));
+
+    var chart = el("div", { cls: "vbar-chart" });
+    categories.forEach(function (cat, ci) {
+      var group = el("div", { cls: "vbar-group" });
+      var stack = el("div", { cls: "vbar-stack" });
+      series.forEach(function (s) {
+        var v = s.values[ci];
+        var heightPct = Math.max((v / maxVal) * 100, v > 0 ? 3 : 0);
+        var col = el("div", { cls: "vbar-col" });
+        col.appendChild(el("div", { cls: "val", text: String(v) }));
+        col.appendChild(el("div", { cls: "bar", attrs: { style: "height:" + heightPct + "%; background:" + s.color + ";" } }));
+        stack.appendChild(col);
+      });
+      group.appendChild(stack);
+      group.appendChild(el("div", { cls: "vbar-cat", text: cat }));
+      chart.appendChild(group);
+    });
+    card.appendChild(chart);
+
+    var legend = el("div", { cls: "legend" });
+    series.forEach(function (s) {
+      var item = el("div", { cls: "legend-item" });
+      item.appendChild(el("span", { cls: "legend-swatch", attrs: { style: "background:" + s.color + ";" } }));
+      item.appendChild(el("span", { text: s.name }));
+      legend.appendChild(item);
+    });
+    card.appendChild(legend);
+    return card;
+  }
+
+  /* ---------------- generic table builder ---------------- */
+
+  function dataTable(columns, rows) {
+    var wrap = el("div", { cls: "table-wrap" });
+    var table = el("table", { cls: "data-table" });
+    var thead = el("thead");
+    var htr = el("tr");
+    columns.forEach(function (c) { htr.appendChild(el("th", { text: c })); });
+    thead.appendChild(htr);
+    table.appendChild(thead);
+    var tbody = el("tbody");
+    rows.forEach(function (r) { tbody.appendChild(r); });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    return wrap;
+  }
+
+  function tr(cells) {
+    var row = el("tr");
+    cells.forEach(function (c) { row.appendChild(c); });
+    return row;
+  }
+
+  function td(text, cls) {
+    return el("td", { cls: cls, text: text });
+  }
+
+  /* ================================================================
+     INTRO (shared masthead-adjacent block, rendered at top of Overview)
+     ================================================================ */
+
+  function renderIntro(container) {
+    var intro = DATA.intro;
+    var wrap = el("div", { cls: "intro-block" });
+
+    var left = el("div");
+    intro.paragraphs.forEach(function (p) { left.appendChild(para(p)); });
+
+    var implBlock = el("div", { cls: "implemented-by" });
+    implBlock.appendChild(el("div", { cls: "label", text: intro.implementedByLabel }));
+    var logos = el("div", { cls: "partner-logos" });
+    intro.partnerLogos.forEach(function (l) {
+      logos.appendChild(el("img", { attrs: { src: l.src, alt: l.alt } }));
+    });
+    implBlock.appendChild(logos);
+    left.appendChild(implBlock);
+
+    var right = el("div", { cls: "about-card" });
+    right.appendChild(el("h3", { text: intro.about.heading }));
+    intro.about.paragraphs.forEach(function (p) { right.appendChild(el("p", { text: p })); });
+    right.appendChild(el("div", { cls: "data-as-of", text: intro.about.dataAsOf }));
+
+    wrap.appendChild(left);
+    wrap.appendChild(right);
+    container.appendChild(wrap);
+  }
+
+  /* ================================================================
+     TAB 1 — OVERVIEW
+     ================================================================ */
+
+  function renderOverview() {
+    var root = document.getElementById("panel-overview");
+    root.innerHTML = "";
+    renderIntro(root);
+
+    var ov = DATA.overview;
+
+    /* -- Freight actions mentioned in NDCs -- */
+    var fa = ov.freightActions;
+    var faContent = [para(fa.intro)];
+    var fig = el("figure", { cls: "figure" });
+    fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
+    fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
+    faContent.push(fig);
+    faContent.push(el("div", { cls: "stat-callout", text: fa.stat }));
+    root.appendChild(section(fa.heading, faContent));
+
+    /* -- Overview of UNFCCC submissions -- */
+    var sub = ov.submissions;
+    var subContent = [para(sub.intro)];
+    var statPair = el("div", { cls: "stat-pair" });
+    sub.stats.forEach(function (s) {
+      var box = el("div", { cls: "stat-box" });
+      box.appendChild(el("div", { cls: "stat-group", text: s.group }));
+      var ul = el("ul");
+      s.items.forEach(function (i) { ul.appendChild(el("li", { text: i })); });
+      box.appendChild(ul);
+      statPair.appendChild(box);
+    });
+    subContent.push(statPair);
+    subContent.push(subheading(sub.tableHeading));
+    var subRows = sub.table.rows.map(function (r) {
+      var cells = [td(r.country, "country-cell")];
+      r.values.forEach(function (v) { cells.push(td(v)); });
+      return tr(cells);
+    });
+    subContent.push(dataTable(["Country"].concat(sub.table.columns), subRows));
+    sub.narrative.forEach(function (n) {
+      subContent.push(el("div", { cls: "insight-label", text: n.heading }));
+      subContent.push(para(n.text));
+      if (n.bullets && n.bullets.length) subContent.push(bulletList(n.bullets));
+    });
+    root.appendChild(section(sub.heading, subContent));
+
+    /* -- Targets -- */
+    var tg = ov.targets;
+    var tgContent = [para(tg.intro)];
+    tgContent.push(subheading(tg.economyWide.heading));
+    var ewRows = tg.economyWide.rows.map(function (r) {
+      var cells = [td(r.country, "country-cell")];
+      r.values.forEach(function (v) { cells.push(td(v)); });
+      return tr(cells);
+    });
+    ewRows.push(tr([td("Source", "country-cell")].concat(tg.economyWide.source.map(function (s) { return td(s); }))));
+    tgContent.push(dataTable(["Country"].concat(tg.economyWide.columns), ewRows));
+    tgContent.push(para(tg.economyWide.note));
+
+    tgContent.push(subheading(tg.freight.heading));
+    tgContent.push(para(tg.freight.intro));
+    tgContent.push(para(tg.freight.listIntro));
+    var ftRows = tg.freight.table.rows.map(function (r) {
+      return tr([td(r.country, "country-cell"), td(r.type), td(r.content), td(r.source)]);
+    });
+    tgContent.push(dataTable(tg.freight.table.columns, ftRows));
+    tgContent.push(para(tg.freight.regionalExamplesIntro));
+    var exList = el("div", { cls: "example-list" });
+    tg.freight.regionalExamples.forEach(function (e) {
+      exList.appendChild(exampleCard(e.country, e.content));
+    });
+    tgContent.push(exList);
+    tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
+    root.appendChild(section(tg.heading, tgContent));
+
+    /* -- Mitigation -- */
+    var mi = ov.mitigation;
+    var miContent = [para(mi.intro), el("div", { cls: "insight-label", text: mi.insight }), bulletList(mi.bullets)];
+    miContent.push(hbarChart(mi.chart.categories, mi.chart.series, { title: mi.chartTitle, valueKey: "share", formatter: pct }));
+    miContent.push(subheading(mi.spotlight.heading));
+    var spotList = el("div", { cls: "example-list" });
+    mi.spotlight.examples.forEach(function (e) { spotList.appendChild(exampleCard(e.country, e.content)); });
+    miContent.push(spotList);
+    root.appendChild(section(mi.heading, miContent));
+
+    /* -- Adaptation -- */
+    var ad = ov.adaptation;
+    var adContent = [para(ad.intro), bulletList(ad.vietnamBullets), para(ad.comparisonIntro)];
+    adContent.push(hbarChart(ad.chart.categories, ad.chart.series, { title: ad.chartTitle, valueKey: "share", formatter: pct, footnotes: ad.chart.footnotes }));
+    adContent.push(subheading(ad.examplesHeading));
+    var adList = el("div", { cls: "example-list" });
+    ad.examples.forEach(function (e) { adList.appendChild(exampleCard(e.country, e.content)); });
+    adContent.push(adList);
+    root.appendChild(section(ad.heading, adContent));
+
+    /* -- Global initiatives -- */
+    var gi = ov.initiatives;
+    var giContent = [para(gi.intro)];
+    gi.blocks.forEach(function (b) {
+      var blk = el("div", { cls: "initiative-block" });
+      blk.appendChild(el("h4", { text: b.title }));
+      blk.appendChild(el("p", { text: b.text }));
+      giContent.push(blk);
+    });
+    var matrixCols = ["Country"].concat(gi.matrix.columns.map(function (c) { return c.name; }));
+    var matrixRows = gi.matrix.rows.map(function (r) {
+      var cells = [td(r.country, "country-cell")];
+      r.values.forEach(function (v) { cells.push(el("td", { html: v ? "<span class='dot-yes'>&#10003;</span>" : "<span class='dot-no'>&ndash;</span>" })); });
+      return tr(cells);
+    });
+    giContent.push(dataTable(matrixCols, matrixRows));
+    var linkList = el("ul", { cls: "glossary-links" });
+    gi.matrix.columns.forEach(function (c) {
+      var li = el("li");
+      var a = el("a", { text: c.name, attrs: { href: c.link, target: "_blank", rel: "noopener" } });
+      li.appendChild(a);
+      linkList.appendChild(li);
+    });
+    giContent.push(el("div", { cls: "insight-label", text: "Links for more information" }));
+    giContent.push(linkList);
+    root.appendChild(section(gi.heading, giContent));
+  }
+
+  function exampleCard(country, content) {
+    var card = el("div", { cls: "example-card" });
+    card.appendChild(el("div", { cls: "country", text: country }));
+    card.appendChild(el("div", { cls: "content", text: content }));
+    return card;
+  }
+
+  /* ================================================================
+     TAB 2 — NATIONAL AMBITION
+     ================================================================ */
+
+  function renderNationalShell() {
+    var root = document.getElementById("panel-national");
+    root.innerHTML = "";
+
+    var intro = el("p", { cls: "lead", text: "This tab provides a country deep dive for China, India or Viet Nam. Select a country to explore its NDC, LTS and BTR submissions, targets, freight transport actions and key strategy documents." });
+    root.appendChild(intro);
+
+    var picker = el("div", { cls: "country-picker" });
+    DATA.meta.countries.forEach(function (c) {
+      var btn = el("button", {
+        cls: "country-btn" + (c === CURRENT_COUNTRY ? " active" : ""),
+        attrs: { type: "button", "data-country": c }
+      });
+      btn.appendChild(el("span", { cls: "swatch", attrs: { style: "background:" + countryColor(c) + ";" } }));
+      btn.appendChild(document.createTextNode(c));
+      if (c === CURRENT_COUNTRY) {
+        btn.style.background = countryColor(c);
+        btn.style.borderColor = countryColor(c);
+        btn.style.color = readableTextColor(countryColor(c));
+      }
+      btn.addEventListener("click", function () {
+        CURRENT_COUNTRY = c;
+        renderNationalShell();
+      });
+      picker.appendChild(btn);
+    });
+    root.appendChild(picker);
+
+    var countryRoot = el("div", { attrs: { id: "country-content" } });
+    root.appendChild(countryRoot);
+    renderCountry(CURRENT_COUNTRY, countryRoot);
+  }
+
+  function docCard(label, valueObj) {
+    var card = el("div", { cls: "doc-card" });
+    card.appendChild(el("div", { cls: "doc-label", text: label }));
+    if (valueObj && valueObj.link) {
+      var a = el("a", { cls: "doc-value", text: valueObj.label, attrs: { href: valueObj.link, target: "_blank", rel: "noopener" } });
+      card.appendChild(a);
+    } else {
+      card.appendChild(el("div", { cls: "doc-value missing", text: (valueObj && valueObj.label) || "Not yet submitted" }));
+    }
+    return card;
+  }
+
+  function renderCountry(country, root) {
+    root.innerHTML = "";
+    var d = DATA.nationalAmbition[country];
+    var color = countryColor(country);
+
+    root.appendChild(el("div", { cls: "country-desc", text: d.description }));
+
+    /* Documents */
+    var docSection = [];
+    var strip = el("div", { cls: "doc-strip" });
+    d.documents.columns.forEach(function (label, i) {
+      strip.appendChild(docCard(label, d.documents.values[i]));
+    });
+    docSection.push(strip);
+    root.appendChild(section("Overview of submitted documents to UNFCCC", docSection));
+
+    /* Targets */
+    var tgContent = [];
+    var twoCol = el("div", { cls: "two-col" });
+    var boxCur = el("div", { cls: "target-box" });
+    boxCur.appendChild(el("div", { cls: "target-label", text: "Current economy-wide NDC target" }));
+    boxCur.appendChild(el("div", { cls: "target-value", text: d.targets.economyWideCurrent }));
+    var boxLong = el("div", { cls: "target-box" });
+    boxLong.appendChild(el("div", { cls: "target-label", text: "Current economy-wide long-term target" }));
+    boxLong.appendChild(el("div", { cls: "target-value", text: d.targets.economyWideLongTerm }));
+    twoCol.appendChild(boxCur);
+    twoCol.appendChild(boxLong);
+    tgContent.push(twoCol);
+
+    tgContent.push(subheading("Freight transport targets"));
+    if (d.targets.freightTable.length) {
+      var ftRows = d.targets.freightTable.map(function (r) {
+        return tr([td(r.type), td(r.content), td(r.source)]);
+      });
+      tgContent.push(dataTable(["Target type", "Content", "Source"], ftRows));
+    } else {
+      tgContent.push(el("div", { cls: "empty-state", text: "No freight-specific transport targets identified in the current NDC or LTS." }));
+    }
+    tgContent.push(para(d.targets.description));
+    root.appendChild(section("Targets", tgContent));
+
+    /* Actions to mitigate */
+    var actContent = [];
+    var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
+    var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
+    actContent.push(vbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], { title: "Freight-relevant NDC/LTS actions by category" }));
+    actContent.push(subheading("Example NDC actions"));
+    if (d.actions.examples.length) {
+      var exList = el("div", { cls: "example-list" });
+      d.actions.examples.forEach(function (e) {
+        var card = el("div", { cls: "example-card" });
+        card.appendChild(el("div", { cls: "country", text: e.category }));
+        card.appendChild(el("div", { cls: "content", text: e.text }));
+        exList.appendChild(card);
+      });
+      actContent.push(exList);
+    } else {
+      actContent.push(el("div", { cls: "empty-state", text: "No individually highlighted NDC action examples for " + country + " in the source data." }));
+    }
+    root.appendChild(section("Actions to mitigate freight transport emissions", actContent));
+
+    /* Adaptation note (Viet Nam only) */
+    if (d.actions.adaptationNote) {
+      root.appendChild(section("Actions to adapt freight transport to climate change", [el("div", { html: richText(d.actions.adaptationNote) })]));
+    }
+
+    /* LTS */
+    if (d.lts && d.lts.summary) {
+      root.appendChild(section("What does the LTS say on freight transport?", [para(d.lts.summary)]));
+    }
+
+    /* Freight transport modes */
+    var modeContent = [];
+    modeContent.push(hbarChart(d.modes.categories,
+      [{ name: "Across all NDCs", labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values, share: d.modes.ndc.values }].concat(
+        d.modes.lts ? [{ name: "LTS", labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values, share: d.modes.lts.values }] : []
+      ),
+      { title: "Transport modes named in NDC / LTS actions", valueKey: "share", formatter: function (v) { return String(v); } }
+    ));
+    modeContent.push(para(d.modes.description));
+    root.appendChild(section("Freight transport modes", modeContent));
+
+    /* Progress of climate action (BTR) */
+    var btrContent = [];
+    if (d.btr && (d.btr.summary || (d.btr.actions && d.btr.actions.length))) {
+      if (d.btr.summary) btrContent.push(para(d.btr.summary));
+      if (d.btr.actions && d.btr.actions.length) {
+        btrContent.push(subheading("Selected actions reported in the BTR"));
+        btrContent.push(bulletList(d.btr.actions));
+      }
+    } else {
+      btrContent.push(el("div", { cls: "empty-state", text: country + " has not yet submitted a Biennial Transparency Report." }));
+    }
+    root.appendChild(section("Progress of climate action", btrContent));
+
+    /* Strategy */
+    var stratCard = el("div", { cls: "strategy-card" });
+    stratCard.appendChild(el("h4", { text: d.strategy.name }));
+    stratCard.appendChild(el("div", { cls: "strategy-text", html: richText(d.strategy.content) }));
+    if (d.strategy.link) {
+      stratCard.appendChild(el("a", { cls: "strategy-link", text: "View source document →", attrs: { href: d.strategy.link, target: "_blank", rel: "noopener" } }));
+    }
+    root.appendChild(section("Key freight transport and logistics strategy", [stratCard]));
+  }
+
+  /* ================================================================
+     TAB 3 — GLOSSARY
+     ================================================================ */
+
+  function glossaryDL(items, withLink) {
+    var dl = el("dl", { cls: "glossary-list" });
+    items.forEach(function (i) {
+      dl.appendChild(el("dt", { text: i.term }));
+      var dd = el("dd");
+      dd.appendChild(document.createTextNode(i.definition));
+      if (withLink && i.link) {
+        dd.appendChild(el("a", { text: "Learn more →", attrs: { href: i.link, target: "_blank", rel: "noopener" } }));
+      }
+      dl.appendChild(dd);
+    });
+    return dl;
+  }
+
+  function renderGlossary() {
+    var root = document.getElementById("panel-glossary");
+    root.innerHTML = "";
+    var g = DATA.glossary;
+
+    root.appendChild(el("p", { cls: "lead", text: g.intro }));
+
+    var scope = el("div", { cls: "glossary-section" });
+    scope.appendChild(el("h3", { text: g.scope.heading }));
+    scope.appendChild(para(g.scope.text));
+    root.appendChild(scope);
+
+    var proc = el("div", { cls: "glossary-section" });
+    proc.appendChild(el("h3", { text: g.submissionProcess.heading }));
+    proc.appendChild(glossaryDL(g.submissionProcess.items, true));
+    root.appendChild(proc);
+
+    var gens = el("div", { cls: "glossary-section" });
+    gens.appendChild(el("h3", { text: g.generations.heading }));
+    gens.appendChild(glossaryDL(g.generations.items, false));
+    root.appendChild(gens);
+
+    var targets = el("div", { cls: "glossary-section" });
+    targets.appendChild(el("h3", { text: g.targetTypes.heading }));
+    targets.appendChild(glossaryDL(g.targetTypes.items, false));
+    root.appendChild(targets);
+
+    var mit = el("div", { cls: "glossary-section" });
+    mit.appendChild(el("h3", { text: g.mitigationMeasures.heading }));
+    mit.appendChild(glossaryDL(g.mitigationMeasures.items, false));
+    root.appendChild(mit);
+
+    var adapt = el("div", { cls: "glossary-section" });
+    adapt.appendChild(el("h3", { text: g.adaptationMeasures.heading }));
+    adapt.appendChild(glossaryDL(g.adaptationMeasures.items, false));
+    root.appendChild(adapt);
+
+    var more = el("div", { cls: "glossary-section" });
+    more.appendChild(el("h3", { text: g.furtherInfo.heading }));
+    var ul = el("ul", { cls: "glossary-links" });
+    g.furtherInfo.links.forEach(function (l) {
+      var li = el("li");
+      li.appendChild(el("a", { text: l.term, attrs: { href: l.link, target: "_blank", rel: "noopener" } }));
+      ul.appendChild(li);
+    });
+    more.appendChild(ul);
+    root.appendChild(more);
+
+    root.appendChild(el("p", { cls: "footnote", text: g.footer }));
+  }
+
+  /* ================================================================
+     TABS + BOOT
+     ================================================================ */
+
+  function initTabs() {
+    var buttons = document.querySelectorAll(".tab-btn");
+    buttons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        buttons.forEach(function (b) { b.classList.remove("active"); });
+        btn.classList.add("active");
+        document.querySelectorAll(".tab-panel").forEach(function (p) { p.classList.remove("active"); });
+        document.getElementById("panel-" + btn.getAttribute("data-tab")).classList.add("active");
+      });
+    });
+  }
+
+  function applyHeader() {
+    document.getElementById("hdr-eyebrow").textContent = DATA.meta.eyebrow;
+    document.getElementById("hdr-title").textContent = DATA.meta.title;
+    document.getElementById("hdr-subtitle").textContent = DATA.meta.subtitle;
+  }
+
+  function boot(data) {
+    DATA = data;
+    COLORS = data.meta.countryColors;
+    applyHeader();
+    initTabs();
+    renderOverview();
+    renderNationalShell();
+    renderGlossary();
+  }
+
+  fetch("data/data.json")
+    .then(function (res) { return res.json(); })
+    .then(boot)
+    .catch(function (err) {
+      document.getElementById("panel-overview").innerHTML =
+        "<p style='color:#c0392b'>Could not load dashboard data (data/data.json). If you're opening this file directly from disk, please serve it via a local web server instead. Details: " + esc(err.message) + "</p>";
+      console.error(err);
+    });
+})();
