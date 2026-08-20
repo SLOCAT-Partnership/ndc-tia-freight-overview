@@ -53,6 +53,16 @@
 
   function pct(x) { return Math.round(x * 1000) / 10 + "%"; }
 
+  // Flag icons for country names used in illustrative example cards.
+  // Looked up by exact country name; names not listed here (e.g. category
+  // labels used in the National Ambition tab's example cards) simply get no icon.
+  var COUNTRY_FLAGS = {
+    "Armenia": "🇦🇲", "Cambodia": "🇰🇭", "China": "🇨🇳", "Georgia": "🇬🇪",
+    "India": "🇮🇳", "Indonesia": "🇮🇩", "Iraq": "🇮🇶", "Maldives": "🇲🇻",
+    "Nepal": "🇳🇵", "Republic of Korea": "🇰🇷", "Sri Lanka": "🇱🇰",
+    "Thailand": "🇹🇭", "United Arab Emirates": "🇦🇪", "Viet Nam": "🇻🇳"
+  };
+
   function countryColor(name) {
     return (COLORS && COLORS[name]) || "#999999";
   }
@@ -234,6 +244,63 @@
     return wrap;
   }
 
+  // Sequential single-hue ramp (light tint -> brand teal-dark) for heatmap cells.
+  function heatColor(t) {
+    t = Math.max(0, Math.min(1, t));
+    var light = [227, 236, 236], dark = [6, 132, 132];
+    var rgb = light.map(function (c0, i) { return Math.round(c0 + (dark[i] - c0) * t); });
+    return "#" + rgb.map(function (v) { return ("0" + v.toString(16)).slice(-2); }).join("");
+  }
+
+  // Heatmap: rows = categories, columns = series. Cell shade encodes magnitude
+  // (shared scale across all series so shades are comparable across columns).
+  function heatmapChart(categories, series, opts) {
+    opts = opts || {};
+    var maxVal = 0;
+    series.forEach(function (s) { s.values.forEach(function (v) { if (v > maxVal) maxVal = v; }); });
+    if (maxVal === 0) maxVal = 1;
+
+    var card = el("div", { cls: "chart-card" });
+    if (opts.title) card.appendChild(el("div", { cls: "chart-title", text: opts.title }));
+
+    var wrap = el("div", { cls: "table-wrap" });
+    var table = el("table", { cls: "heatmap-table" });
+    var thead = el("thead");
+    var htr = el("tr");
+    htr.appendChild(el("th", { text: "" }));
+    series.forEach(function (s) {
+      htr.appendChild(el("th", { text: s.name + (s.labelSuffix ? " (" + s.labelSuffix + ")" : "") }));
+    });
+    thead.appendChild(htr);
+    table.appendChild(thead);
+
+    var tbody = el("tbody");
+    categories.forEach(function (cat, ci) {
+      var row = el("tr");
+      row.appendChild(el("th", { cls: "heatmap-rowhead", text: cat }));
+      series.forEach(function (s) {
+        var v = s.values[ci];
+        var bg = heatColor(v / maxVal);
+        row.appendChild(el("td", {
+          cls: "heatmap-cell", text: String(v),
+          attrs: { style: "background:" + bg + "; color:" + readableTextColor(bg) + ";" }
+        }));
+      });
+      tbody.appendChild(row);
+    });
+    table.appendChild(tbody);
+    wrap.appendChild(table);
+    card.appendChild(wrap);
+
+    var scale = el("div", { cls: "heatmap-scale" });
+    scale.appendChild(el("span", { cls: "heatmap-scale-label", text: "Fewer actions" }));
+    scale.appendChild(el("div", { cls: "heatmap-scale-bar" }));
+    scale.appendChild(el("span", { cls: "heatmap-scale-label", text: "More actions" }));
+    card.appendChild(scale);
+
+    return card;
+  }
+
   /* ---------------- generic table builder ---------------- */
 
   function dataTable(columns, rows) {
@@ -259,6 +326,37 @@
 
   function td(text, cls) {
     return el("td", { cls: cls, text: text });
+  }
+
+  // A data table filtered by a country toggle above it. `rows` must each have
+  // a `.country` field; `cellsFn(row)` builds the <tr> for the currently-shown rows.
+  function countryToggleTable(rows, columns, cellsFn) {
+    var countries = [];
+    rows.forEach(function (r) { if (countries.indexOf(r.country) === -1) countries.push(r.country); });
+
+    var wrap = el("div", { cls: "toggle-table" });
+    var toggle = el("div", { cls: "mini-toggle" });
+    var tableSlot = el("div");
+
+    function show(country) {
+      Array.prototype.forEach.call(toggle.children, function (b) {
+        b.classList.toggle("active", b.getAttribute("data-value") === country);
+      });
+      tableSlot.innerHTML = "";
+      var filtered = rows.filter(function (r) { return r.country === country; }).map(cellsFn);
+      tableSlot.appendChild(dataTable(columns, filtered));
+    }
+
+    countries.forEach(function (c) {
+      var btn = el("button", { cls: "mini-toggle-btn", text: c, attrs: { type: "button", "data-value": c } });
+      btn.addEventListener("click", function () { show(c); });
+      toggle.appendChild(btn);
+    });
+
+    wrap.appendChild(toggle);
+    wrap.appendChild(tableSlot);
+    show(countries[0]);
+    return wrap;
   }
 
   /* ================================================================
@@ -303,7 +401,7 @@
     /* -- Freight actions mentioned in NDCs -- */
     var fa = ov.freightActions;
     var faContent = [para(fa.intro)];
-    var fig = el("figure", { cls: "figure" });
+    var fig = el("figure", { cls: "figure figure-narrow" });
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
     faContent.push(fig);
@@ -354,10 +452,9 @@
     tgContent.push(subheading(tg.freight.heading));
     tgContent.push(para(tg.freight.intro));
     tgContent.push(para(tg.freight.listIntro));
-    var ftRows = tg.freight.table.rows.map(function (r) {
-      return tr([td(r.country, "country-cell"), td(r.type), td(r.content), td(r.source)]);
-    });
-    tgContent.push(dataTable(tg.freight.table.columns, ftRows));
+    tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
+      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); }
+    ));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
     var exList = el("div", { cls: "example-list example-list-fit" });
     tg.freight.regionalExamples.forEach(function (e) {
@@ -396,28 +493,26 @@
       blk.appendChild(el("p", { text: b.text }));
       giContent.push(blk);
     });
-    var matrixCols = ["Country"].concat(gi.matrix.columns.map(function (c) { return c.name; }));
-    var matrixRows = gi.matrix.rows.map(function (r) {
-      var cells = [td(r.country, "country-cell")];
-      r.values.forEach(function (v) { cells.push(el("td", { html: v ? "<span class='dot-yes'>&#10003;</span>" : "<span class='dot-no'>&ndash;</span>" })); });
+    // Transposed: initiatives as rows (each linked to its source) x countries as columns —
+    // this keeps the table to 4 columns instead of 8, cutting horizontal scrolling.
+    var matrixCols = ["Initiative"].concat(gi.matrix.rows.map(function (r) { return r.country; }));
+    var matrixRows = gi.matrix.columns.map(function (initiative, i) {
+      var nameCell = el("td", { cls: "country-cell" });
+      nameCell.appendChild(el("a", { text: initiative.name, attrs: { href: initiative.link, target: "_blank", rel: "noopener" } }));
+      var cells = [nameCell];
+      gi.matrix.rows.forEach(function (r) {
+        cells.push(el("td", { html: r.values[i] ? "<span class='dot-yes'>&#10003;</span>" : "<span class='dot-no'>&ndash;</span>" }));
+      });
       return tr(cells);
     });
     giContent.push(dataTable(matrixCols, matrixRows));
-    var linkList = el("ul", { cls: "glossary-links" });
-    gi.matrix.columns.forEach(function (c) {
-      var li = el("li");
-      var a = el("a", { text: c.name, attrs: { href: c.link, target: "_blank", rel: "noopener" } });
-      li.appendChild(a);
-      linkList.appendChild(li);
-    });
-    giContent.push(el("div", { cls: "insight-label", text: "Links for more information" }));
-    giContent.push(linkList);
     root.appendChild(section(gi.heading, giContent));
   }
 
   function exampleCard(country, content) {
     var card = el("div", { cls: "example-card" });
-    card.appendChild(el("div", { cls: "country", text: country }));
+    var flag = COUNTRY_FLAGS[country];
+    card.appendChild(el("div", { cls: "country", text: (flag ? flag + " " : "") + country }));
     card.appendChild(el("div", { cls: "content", text: content }));
     return card;
   }
@@ -439,10 +534,9 @@
         cls: "country-btn" + (c === CURRENT_COUNTRY ? " active" : ""),
         attrs: { type: "button", "data-country": c }
       });
-      btn.appendChild(el("span", { cls: "swatch", attrs: { style: "background:" + countryColor(c) + ";" } }));
       btn.appendChild(document.createTextNode(c));
-            if (c === CURRENT_COUNTRY) {
-        var activeBg = "#068484"; // neutral background for the selected-country button
+      if (c === CURRENT_COUNTRY) {
+        var activeBg = "#068484"; // neutral background for the selected-country button (not the country's chart color)
         btn.style.background = activeBg;
         btn.style.borderColor = activeBg;
         btn.style.color = readableTextColor(activeBg);
@@ -544,13 +638,12 @@
     }
 
     /* Freight transport modes */
-    var docColors = DATA.meta.docTypeColors || {};
     var modeContent = [];
-    modeContent.push(hbarChart(d.modes.categories,
-      [{ name: "Across all NDCs", color: docColors["Across all NDCs"], labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values, share: d.modes.ndc.values }].concat(
-        d.modes.lts ? [{ name: "LTS", color: docColors["LTS"], labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values, share: d.modes.lts.values }] : []
+    modeContent.push(heatmapChart(d.modes.categories,
+      [{ name: "Across all NDCs", labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values }].concat(
+        d.modes.lts ? [{ name: "LTS", labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values }] : []
       ),
-      { title: "Transport modes named in NDC / LTS actions", valueKey: "share", formatter: function (v) { return String(v); } }
+      { title: "Transport modes named in NDC / LTS actions" }
     ));
     modeContent.push(para(d.modes.description));
     root.appendChild(section("Freight transport modes", modeContent));
@@ -582,6 +675,13 @@
      TAB 3 — GLOSSARY
      ================================================================ */
 
+  // Escapes text and turns any bare http(s) URL within it into a clickable link.
+  function linkify(text) {
+    return esc(text).replace(/(https?:\/\/[^\s]+)/g, function (url) {
+      return '<a href="' + url + '" target="_blank" rel="noopener">' + url + "</a>";
+    });
+  }
+
   function glossaryDL(items, withLink) {
     var dl = el("dl", { cls: "glossary-list" });
     items.forEach(function (i) {
@@ -601,7 +701,12 @@
     root.innerHTML = "";
     var g = DATA.glossary;
 
-    root.appendChild(el("p", { cls: "lead", text: g.intro }));
+    var introHtml = esc(g.intro);
+    if (g.trackerLink) {
+      introHtml = introHtml.replace("NDC Transport Tracker",
+        '<a href="' + g.trackerLink + '" target="_blank" rel="noopener">NDC Transport Tracker</a>');
+    }
+    root.appendChild(el("p", { cls: "lead", html: introHtml }));
 
     var scope = el("div", { cls: "glossary-section" });
     scope.appendChild(el("h3", { text: g.scope.heading }));
@@ -644,7 +749,7 @@
     more.appendChild(ul);
     root.appendChild(more);
 
-    root.appendChild(el("p", { cls: "footnote", text: g.footer }));
+    root.appendChild(el("p", { html: linkify(g.footer) }));
   }
 
   /* ================================================================

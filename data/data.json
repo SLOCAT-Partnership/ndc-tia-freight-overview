@@ -26,8 +26,12 @@
     ],
     "implementedByLabel": "This project is implemented by:",
     "partnerLogos": [
-      { "src": "assets/img/logos-partners-2.png", "alt": "GIZ and World Resources Institute (WRI) Ross Center" },
-      { "src": "assets/img/logos-partners-1.png", "alt": "ICCT, Agora Verkehrswende, SLOCAT and REN21" }
+      { "src": "assets/img/partners/giz.png", "alt": "GIZ — Deutsche Gesellschaft für Internationale Zusammenarbeit" },
+      { "src": "assets/img/partners/wri.png", "alt": "WRI Ross Center for Sustainable Cities" },
+      { "src": "assets/img/partners/icct.png", "alt": "International Council on Clean Transportation (ICCT)" },
+      { "src": "assets/img/partners/agora.png", "alt": "Agora Verkehrswende" },
+      { "src": "assets/img/partners/slocat.png", "alt": "SLOCAT Partnership" },
+      { "src": "assets/img/partners/ren21.png", "alt": "REN21" }
     ],
     "about": {
       "heading": "About this overview",
@@ -429,6 +433,7 @@
 
   "glossary": {
     "intro": "The dashboard data is based on submissions as of 10 August 2026 and is sourced from the NDC Transport Tracker by GIZ and SLOCAT.",
+    "trackerLink": "https://changing-transport.org/tracker/",
     "scope": {
       "heading": "Thematic scope",
       "text": "Freight transport covers all modes, including vans, medium- and heavy-duty road vehicles, rail, air and water transport (inland waterways and ocean shipping). Related themes, such as logistics and supply chains, are also included. The review focuses on freight-related commitments and measures in the NDCs and LTS of China, India and Viet Nam. Activities may cover cities, regions, national or cross-border transport, depending on the scope specified in the policies."
