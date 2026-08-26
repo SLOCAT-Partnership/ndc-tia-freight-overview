@@ -1,6 +1,6 @@
-# NDC-TIA 2.0 — Freight Transport Dashboard
+# NDC-TIA 2.0 - Dashboard on Freight Transport and Logistics in NDCs and LTS
 
-A static, three-tab HTML dashboard showing how freight transport and logistics are reflected in the NDCs, LTS and BTRs of China, India and Viet Nam, in comparison to the Asia region and global context.
+A static, three-tab dashboard showing how freight transport and logistics are reflected in the NDCs, LTS and BTRs of China, India and Viet Nam, in comparison to the Asia region and global context.
 
 Built for the NDC Transport Initiative for Asia (NDC-TIA), based on data compiled by SLOCAT with technical support from GIZ and WRI.
 
@@ -45,13 +45,7 @@ python -m http.server 8420
 
 Then open `http://localhost:8420`.
 
-## Publishing to GitHub Pages
 
-1. Push this `dashboard/` folder's contents to a GitHub repository (either at the repo root, or in a `/docs` folder).
-2. In the repo settings, enable **GitHub Pages** and point it at the branch/folder you pushed to.
-3. The site will be served at `https://<your-org>.github.io/<repo-name>/`.
-
-No build step is required — it's plain HTML/CSS/JS.
 
 ## Notes on source data
 
