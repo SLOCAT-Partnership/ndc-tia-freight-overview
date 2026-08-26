@@ -352,6 +352,8 @@ td.heatmap-cell {
 @media (max-width: 700px) { .example-list-fit { grid-template-columns: 1fr; } }
 .example-card { border: 1px solid var(--border); border-radius: var(--radius); padding: 12px 14px; }
 .example-card .country { font-weight: 700; color: var(--teal-dark); font-size: 0.85rem; margin-bottom: 4px; }
+.example-card .country { display: flex; align-items: center; gap: 6px; }
+.flag-icon { height: 14px; width: auto; max-width: 22px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.08); flex-shrink: 0; }
 .example-card .content { font-size: 0.86rem; }
 
 /* ---------- Initiative blocks ---------- */

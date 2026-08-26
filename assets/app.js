@@ -66,10 +66,10 @@
   // Looked up by exact country name; names not listed here (e.g. category
   // labels used in the National Ambition tab's example cards) simply get no icon.
   var COUNTRY_FLAGS = {
-    "Armenia": "🇦🇲", "Cambodia": "🇰🇭", "China": "🇨🇳", "Georgia": "🇬🇪",
-    "India": "🇮🇳", "Indonesia": "🇮🇩", "Iraq": "🇮🇶", "Maldives": "🇲🇻",
-    "Nepal": "🇳🇵", "Republic of Korea": "🇰🇷", "Sri Lanka": "🇱🇰",
-    "Thailand": "🇹🇭", "United Arab Emirates": "🇦🇪", "Viet Nam": "🇻🇳"
+    "Armenia": "am", "Cambodia": "kh", "China": "cn", "Georgia": "ge",
+    "India": "in", "Indonesia": "id", "Iraq": "iq", "Maldives": "mv",
+    "Nepal": "np", "Republic of Korea": "kr", "Sri Lanka": "lk",
+    "Thailand": "th", "United Arab Emirates": "ae", "Viet Nam": "vn"
   };
 
   function countryColor(name) {
@@ -518,10 +518,18 @@
     root.appendChild(section(gi.heading, giContent));
   }
 
-  function exampleCard(country, content) {
+    function exampleCard(country, content) {
     var card = el("div", { cls: "example-card" });
-    var flag = COUNTRY_FLAGS[country];
-    card.appendChild(el("div", { cls: "country", text: (flag ? flag + " " : "") + country }));
+    var nameWrap = el("div", { cls: "country" });
+    var code = COUNTRY_FLAGS[country];
+    if (code) {
+      nameWrap.appendChild(el("img", {
+        cls: "flag-icon",
+        attrs: { src: "assets/img/flags/" + code + ".svg", alt: "" }
+      }));
+    }
+    nameWrap.appendChild(document.createTextNode(country));
+    card.appendChild(nameWrap);
     card.appendChild(el("div", { cls: "content", html: formatText(content) }));
     return card;
   }
