@@ -20,8 +20,8 @@
   "intro": {
     "logo": "assets/img/logo-ndc-tia.png",
     "paragraphs": [
-      "The NDC Transport Initiative for Asia (NDC-TIA) aims to support a paradigm shift towards zero-emission transport across Asia.",
-      "The programme supports China, India and Viet Nam in developing comprehensive transport decarbonisation strategies and solutions for their implementation. At the regional and global levels, it extends its impact by engaging additional countries in Southeast Asia, sharing lessons learned, advancing dialogue on transport decarbonisation and promoting effective multi-stakeholder approaches involving government ministries, civil society and the private sector.",
+      "The **[NDC Transport Initiative for Asia (NDC-TIA)](https://www.ndctransportinitiativeforasia.org/)** aims to support a paradigm shift towards zero-emission transport across Asia. The NDC-TIA is currently in its second phase (2026-2028) with a focus on **zero-emission freight transport**.",
+      "The programme supports **China**, **India** and **Viet Nam** in developing comprehensive transport decarbonisation strategies and solutions for their implementation. At the regional and global levels, it extends its impact by engaging additional countries in Southeast Asia, sharing lessons learned, advancing dialogue on transport decarbonisation and promoting effective multi-stakeholder approaches involving government ministries, civil society and the private sector.",
       "The project is part of the International Climate Initiative (IKI), which operates under the leadership of the Federal Ministry for Economic Affairs and Climate Action, in close cooperation with the Federal Ministry for the Environment and the Federal Foreign Office."
     ],
     "implementedByLabel": "This project is implemented by:",
@@ -47,7 +47,7 @@
   "overview": {
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
-      "intro": "Climate action on freight transport in Asia focuses largely on electrification and low-carbon fuels for road vehicles. Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (light blue), with terms also used by China, India and Viet Nam highlighted in bold green.",
+      "intro": "Climate action on freight transport in Asia focuses largely on **electrification** and **low-carbon fuels for road vehicles**. Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (light blue), with terms also used by China, India and Viet Nam highlighted in bold green.",
       "image": "assets/img/wordcloud-freight-terms.png",
       "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by China, India and Viet Nam highlighted in bold",
       "stat": "As of 10 August 2026, 34 third-generation NDCs had been submitted by Parties in Asia. Freight transport- and logistics-related actions were identified in 30 of these NDCs."
@@ -81,8 +81,8 @@
           "heading": "NDC submissions",
           "text": "As of August 2026, China and India have submitted an NDC in each generation. Viet Nam has not yet submitted a third-generation NDC. However, it strengthened its second-generation NDC through an updated submission in 2022, including stronger targets and actions.",
           "bullets": [
-            "China: Every NDC includes actions to mitigate freight transport emissions. Each successive NDC builds on the previous generation, expanding its content and increasing ambition.",
-            "India: India’s first-generation NDC provided a detailed outline of freight transport actions. Subsequent NDCs have contained fewer detailed sectoral actions and instead refer to separate sectoral strategies."
+            "**China**: Every NDC includes actions to mitigate freight transport emissions. Each successive NDC builds on the previous generation, expanding its content and increasing ambition.",
+            "**India**: India’s first-generation NDC provided a detailed outline of freight transport actions. Subsequent NDCs have contained fewer detailed sectoral actions and instead refer to separate sectoral strategies."
           ]
         },
         {
@@ -153,9 +153,9 @@
       "intro": "Freight transport mitigation actions are mapped across five major categories (see glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
       "insight": "The latest NDCs of China, India and Viet Nam show distinct patterns:",
       "bullets": [
-        "China: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
-        "India: The third-generation NDC does not include detailed sectoral strategies, resulting in only three actions related to freight transport.",
-        "Viet Nam: The second-generation NDC does not include references to transport electrification. Instead, it focuses on improving the efficiency of the existing fleet through alternative fuels, vehicle improvements and regulations."
+        "**China**: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
+        "**India**: The third-generation NDC does not include detailed sectoral strategies, resulting in only three actions related to freight transport.",
+        "**Viet Nam**: The second-generation NDC does not include references to transport electrification. Instead, it focuses on improving the efficiency of the existing fleet through alternative fuels, vehicle improvements and regulations."
       ],
       "chartTitle": "Comparison of freight-relevant NDC actions to mitigate emissions",
       "chart": {
@@ -184,7 +184,7 @@
 
     "adaptation": {
       "heading": "Actions to adapt freight transport",
-      "intro": "Neither China's nor India's NDCs or LTS include content on transport adaptation and resilience. Viet Nam is the only one of the three countries to include transport adaptation actions in its NDC. Its second-generation NDC includes:",
+      "intro": "Neither China's nor India's NDCs or LTS include content on transport adaptation and resilience. **Viet Nam is the only one of the three countries to include transport adaptation actions in its NDC**. Its second-generation NDC includes:",
       "vietnamBullets": [
         "Upgrading transport infrastructure in areas at high risk of disasters and vulnerable to climate change",
         "Developing and completing the expressway network and inter-regional transport system",
@@ -217,19 +217,19 @@
       "blocks": [
         {
           "title": "Declaration on accelerating the transition to 100% zero emission cars and vans",
-          "text": "India stands out for its participation in key zero-emission vehicle initiatives. As a signatory to the Declaration on Accelerating the Transition to 100% Zero Emission Cars and Vans, India supports the objective of reaching 100% zero-emission new car and van sales globally by 2040, with leading markets aiming to reach this target by 2035. As an emerging market and developing economy, India has committed to achieving 100% zero-emission sales of new cars and vans by 2040. In addition to the national government, several Indian stakeholders have signed the declaration, including three vehicle manufacturers (Avera EVs, Etrio Automobiles and Gayam), three fleet owners, the Government of Sikkim and eight other signatories. BYD from China and VinFast from Viet Nam are also signatories."
+          "text": "India stands out for its participation in key zero-emission vehicle initiatives. As a signatory to the [Declaration on Accelerating the Transition to 100% Zero Emission Cars and Vans](https://acceleratingtozero.org/the-declaration/), India supports the objective of reaching 100% zero-emission new car and van sales globally by 2040, with leading markets aiming to reach this target by 2035. As an emerging market and developing economy, India has committed to achieving 100% zero-emission sales of new cars and vans by 2040. In addition to the national government, several Indian stakeholders have signed the declaration, including three vehicle manufacturers (Avera EVs, Etrio Automobiles and Gayam), three fleet owners, the Government of Sikkim and eight other signatories. BYD from China and VinFast from Viet Nam are also signatories."
         },
         {
           "title": "Breakthrough Agenda – Road Transport",
-          "text": "India is a co-lead of the Breakthrough Agenda on Road Transport alongside the United Kingdom and the United States. The initiative aims to make zero-emission vehicles the new normal by 2030, ensuring they are accessible, affordable and sustainable across all regions. Other Asian participants include Azerbaijan, Cambodia, Israel, Japan, Korea and Türkiye."
+          "text": "India is a co-lead of the [Breakthrough Agenda on Road Transport](https://breakthroughagenda.org/road-transport/) alongside the United Kingdom and the United States. The initiative aims to make zero-emission vehicles the new normal by 2030, ensuring they are accessible, affordable and sustainable across all regions. Other Asian participants include Azerbaijan, Cambodia, Israel, Japan, Korea and Türkiye."
         },
         {
           "title": "Clean Energy Ministerial",
-          "text": "China and India both participate in the Clean Energy Ministerial. China co-leads its Electric Vehicles Initiative, while India is a participating country. The initiative is a multilateral policy forum that aims to accelerate the introduction and adoption of electric vehicles worldwide. Its EV30@30 Campaign set an ambition for electric vehicles to reach 30% of global vehicle sales by 2030."
+          "text": "China and India both participate in the Clean Energy Ministerial. China co-leads its [Electric Vehicles Initiative](https://www.cleanenergyministerial.org/initiatives-campaigns/electric-vehicles-initiative/), while India is a participating country. The initiative is a multilateral policy forum that aims to accelerate the introduction and adoption of electric vehicles worldwide. Its [EV30@30 Campaign](https://www.cleanenergyministerial.org/initiatives-campaigns/ev3030-campaign/) set an ambition for electric vehicles to reach 30% of global vehicle sales by 2030."
         },
         {
           "title": "Memorandum of Understanding on Zero-Emission Medium- and Heavy-Duty Vehicles",
-          "text": "None of the three countries participates in the freight-specific Memorandum of Understanding on Zero-Emission Medium- and Heavy-Duty Vehicles. The initiative aims for 100% zero-emission new truck and bus sales by 2040, with an interim target of 30% by 2030. Of its 43 signatories, two are Asian countries: Israel and Türkiye. The initiative also provides a policy tracker dashboard covering zero-emission trucks and buses, including targets, vehicle regulations, incentives, infrastructure and other policies in China and India."
+          "text": "None of the three countries participates in the freight-specific [Memorandum of Understanding on Zero-Emission Medium- and Heavy-Duty Vehicles](https://globaldrivetozero.org/). The initiative aims for 100% zero-emission new truck and bus sales by 2040, with an interim target of 30% by 2030. Of its 43 signatories, two are Asian countries: Israel and Türkiye. The initiative also provides a [policy tracker dashboard](https://globaldrivetozero.org/progress-dashboard/) covering zero-emission trucks and buses, including targets, vehicle regulations, incentives, infrastructure and other policies in China and India."
         }
       ],
       "matrix": {
@@ -254,7 +254,7 @@
 
   "nationalAmbition": {
     "China": {
-      "description": "China submitted contributions to every NDC generation (2016, 2021 and 2025) and has a LTS from 2021. China submitted a first BTR within the envisioned timeframe (end of 2024).",
+      "description": "China has submitted a contribution to every NDC generation (2016, 2021, 2025), a Long-Term Strategy (2021), and a first Biennial Transparency Report on schedule at the end of 2024. Freight has an important role in China's actions to mitigate transport emissions. These actions are concentrated in transport system improvements (largely corridor development and shifting freight from road to rail and water) and aviation and maritime measures. On targets, China's LTS commits to 40% of new vehicles sold being new-energy or clean-energy by 2030, alongside a 9.5% cut in commercial vehicle carbon intensity and a 10% reduction in rail energy consumption per unit of turnover, both by 2030. Its third-generation NDC adds region-specific goals: carbon-neutral growth for civil aviation by 2035 and zero-carbon transport in Hong Kong by 2050, with Hong Kong and Macao also committing to end new gasoline and hybrid private vehicle registrations by 2035.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
@@ -322,7 +322,7 @@
     },
 
     "India": {
-      "description": "India submitted its first NDC in 2016, and has submitted an updated document during every NDC generation, with the latest version submitted in April 2026. The country submitted a LTS in 2022 and a BTR in 2026.",
+      "description": "India has submitted an NDC in every generation since 2016, most recently in April 2026, alongside a Long-Term Strategy (2022) and its first Biennial Transparency Report (2026). Freight-specific actions are concentrated in energy efficiency and transport system improvements, reflecting the third-generation NDC's lack of detailed sectoral strategies. Freight ambition instead sits mainly in the LTS, which targets net-zero for Indian Railways by 2030 (an estimated 60 million tonnes CO2 mitigated annually) via dedicated freight corridors shifting cargo off the road network, alongside 20% ethanol blending in petrol by 2025 and a National Logistics Policy goal to bring logistics costs to global benchmarks by 2030.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
@@ -383,7 +383,7 @@
     },
 
     "Viet Nam": {
-      "description": "Viet Nam submitted its first NDC in 2016, followed by a second-generation NDC in 2020, which was later updated in 2022. At the time of this analysis, the country's third-generation NDC submission is still pending and, similarly, there is no LTS or BTR submitted yet.",
+      "description": "Viet Nam submitted its first NDC in 2016 and an updated second-generation NDC in 2022; its third-generation NDC, LTS and BTR remain pending. The current NDC sets no freight-specific targets, though it does include several freight-relevant actions, spread across transport system improvements, energy efficiency, and alternative fuels. Viet Nam's NDC does not link any electrification actions to freight. Viet Nam is the only one of the three countries with transport adaptation actions, including upgrading facilities exposed to disaster risk and building storm-shelter anchorage areas. Outside the NDC process, the newly adopted logistics service development strategy 2025-2035 sets sector-wide goals: 12–15% annual growth in the logistics industry alongside a 12–15% cut in logistics costs relative to GDP by 2035.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [

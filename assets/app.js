@@ -31,6 +31,15 @@
       .replace(/>/g, "&gt;");
   }
 
+  // Escapes text, then applies a light markdown-style syntax on top:
+  // **word** -> bold, [label](url) -> link. Plain text with none of that
+  // syntax passes through unchanged, so it's always safe to call.
+  function formatText(str) {
+    return esc(str)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  }
+
   // Turns "Heading\n- bullet\n- bullet" style strings (or plain text with newlines) into HTML paragraphs/lists.
   function richText(str) {
     if (!str) return "";
@@ -41,10 +50,10 @@
       var trimmed = line.trim();
       if (trimmed.indexOf("- ") === 0 || trimmed.indexOf("-") === 0 && trimmed.length > 1 && trimmed[1] === " ") {
         if (!inList) { html += "<ul class='bullets'>"; inList = true; }
-        html += "<li>" + esc(trimmed.replace(/^-\s*/, "")) + "</li>";
+        html += "<li>" + formatText(trimmed.replace(/^-\s*/, "")) + "</li>";
       } else {
         if (inList) { html += "</ul>"; inList = false; }
-        if (trimmed.length) html += "<p>" + esc(trimmed) + "</p>";
+        if (trimmed.length) html += "<p>" + formatText(trimmed) + "</p>";
       }
     });
     if (inList) html += "</ul>";
@@ -90,12 +99,12 @@
   }
 
   function para(text) {
-    return el("p", { text: text });
+    return el("p", { html: formatText(text) });
   }
 
   function bulletList(items) {
     var ul = el("ul", { cls: "bullets" });
-    items.forEach(function (t) { ul.appendChild(el("li", { text: t })); });
+    items.forEach(function (t) { ul.appendChild(el("li", { html: formatText(t) })); });
     return ul;
   }
 
@@ -405,7 +414,7 @@
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
     faContent.push(fig);
-    faContent.push(el("div", { cls: "stat-callout", text: fa.stat }));
+    faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
     root.appendChild(section(fa.heading, faContent));
 
     /* -- Overview of UNFCCC submissions -- */
@@ -490,7 +499,7 @@
     gi.blocks.forEach(function (b) {
       var blk = el("div", { cls: "initiative-block" });
       blk.appendChild(el("h4", { text: b.title }));
-      blk.appendChild(el("p", { text: b.text }));
+      blk.appendChild(el("p", { html: formatText(b.text) }));
       giContent.push(blk);
     });
     // Transposed: initiatives as rows (each linked to its source) x countries as columns —
@@ -513,7 +522,7 @@
     var card = el("div", { cls: "example-card" });
     var flag = COUNTRY_FLAGS[country];
     card.appendChild(el("div", { cls: "country", text: (flag ? flag + " " : "") + country }));
-    card.appendChild(el("div", { cls: "content", text: content }));
+    card.appendChild(el("div", { cls: "content", html: formatText(content) }));
     return card;
   }
 
@@ -525,7 +534,7 @@
     var root = document.getElementById("panel-national");
     root.innerHTML = "";
 
-    var intro = el("p", { cls: "lead", text: "This tab provides a country deep dive for China, India or Viet Nam. Select a country to explore its NDC, LTS and BTR submissions, targets, freight transport actions and key strategy documents." });
+    var intro = el("p", { cls: "lead", text: "Select a country to explore its NDC, LTS and BTR submissions, targets, freight transport actions and key strategy documents." });
     root.appendChild(intro);
 
     var picker = el("div", { cls: "country-picker" });
@@ -571,7 +580,7 @@
     var d = DATA.nationalAmbition[country];
     var color = countryColor(country);
 
-    root.appendChild(el("div", { cls: "country-desc", text: d.description }));
+    root.appendChild(el("div", { cls: "country-desc", html: formatText(d.description) }));
 
     /* Documents */
     var docSection = [];
@@ -677,17 +686,18 @@
 
   // Escapes text and turns any bare http(s) URL within it into a clickable link.
   function linkify(text) {
-    return esc(text).replace(/(https?:\/\/[^\s]+)/g, function (url) {
-      return '<a href="' + url + '" target="_blank" rel="noopener">' + url + "</a>";
-    });
+    return esc(text)
+      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+      .replace(/(https?:\/\/[^\s)]+)/g, function (url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener">' + url + "</a>";
+      });
   }
 
   function glossaryDL(items, withLink) {
     var dl = el("dl", { cls: "glossary-list" });
     items.forEach(function (i) {
       dl.appendChild(el("dt", { text: i.term }));
-      var dd = el("dd");
-      dd.appendChild(document.createTextNode(i.definition));
+      var dd = el("dd", { html: formatText(i.definition) });
       if (withLink && i.link) {
         dd.appendChild(el("a", { text: "Learn more →", attrs: { href: i.link, target: "_blank", rel: "noopener" } }));
       }
@@ -701,8 +711,10 @@
     root.innerHTML = "";
     var g = DATA.glossary;
 
-    var introHtml = esc(g.intro);
-    if (g.trackerLink) {
+    var introHtml = formatText(g.intro);
+    // Fallback: if the intro text still has the bare phrase (i.e. it wasn't
+    // already turned into a markdown link), auto-link it using trackerLink.
+    if (g.trackerLink && introHtml.indexOf("<a ") === -1) {
       introHtml = introHtml.replace("NDC Transport Tracker",
         '<a href="' + g.trackerLink + '" target="_blank" rel="noopener">NDC Transport Tracker</a>');
     }
