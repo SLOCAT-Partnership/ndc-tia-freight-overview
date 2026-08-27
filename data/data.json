@@ -47,9 +47,9 @@
   "overview": {
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
-      "intro": "Climate action on freight transport in Asia focuses largely on **electrification** and **low-carbon fuels for road vehicles**. Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (light blue), with terms also used by China, India and Viet Nam highlighted in bold green.",
-      "image": "assets/img/wordcloud-freight-terms.png",
-      "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by China, India and Viet Nam highlighted in bold",
+      "intro": "Climate action on freight transport in Asia focuses largely on **electrification** and **low-carbon fuels for road vehicles**. Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green.",
+      "image": "assets/img/wordcloud-freight-terms.png"
+      "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by all Asian countries, China, India and Viet Nam highlighted in bold",
       "stat": "As of 10 August 2026, 34 third-generation NDCs had been submitted by Parties in Asia. Freight transport- and logistics-related actions were identified in 30 of these NDCs."
     },
 
@@ -216,10 +216,6 @@
       "intro": "The NDC-TIA countries participate in several international transport initiatives under the UNFCCC and other multilateral frameworks that aim to raise ambition and promote common approaches.",
       "blocks": [
         {
-          "title": "Declaration on accelerating the transition to 100% zero emission cars and vans",
-          "text": "India stands out for its participation in key zero-emission vehicle initiatives. As a signatory to the [Declaration on Accelerating the Transition to 100% Zero Emission Cars and Vans](https://acceleratingtozero.org/the-declaration/), India supports the objective of reaching 100% zero-emission new car and van sales globally by 2040, with leading markets aiming to reach this target by 2035. As an emerging market and developing economy, India has committed to achieving 100% zero-emission sales of new cars and vans by 2040. In addition to the national government, several Indian stakeholders have signed the declaration, including three vehicle manufacturers (Avera EVs, Etrio Automobiles and Gayam), three fleet owners, the Government of Sikkim and eight other signatories. BYD from China and VinFast from Viet Nam are also signatories."
-        },
-        {
           "title": "Breakthrough Agenda – Road Transport",
           "text": "India is a co-lead of the [Breakthrough Agenda on Road Transport](https://breakthroughagenda.org/road-transport/) alongside the United Kingdom and the United States. The initiative aims to make zero-emission vehicles the new normal by 2030, ensuring they are accessible, affordable and sustainable across all regions. Other Asian participants include Azerbaijan, Cambodia, Israel, Japan, Korea and Türkiye."
         },
@@ -228,8 +224,12 @@
           "text": "China and India both participate in the Clean Energy Ministerial. China co-leads its [Electric Vehicles Initiative](https://www.cleanenergyministerial.org/initiatives-campaigns/electric-vehicles-initiative/), while India is a participating country. The initiative is a multilateral policy forum that aims to accelerate the introduction and adoption of electric vehicles worldwide. Its [EV30@30 Campaign](https://www.cleanenergyministerial.org/initiatives-campaigns/ev3030-campaign/) set an ambition for electric vehicles to reach 30% of global vehicle sales by 2030."
         },
         {
-          "title": "Memorandum of Understanding on Zero-Emission Medium- and Heavy-Duty Vehicles",
-          "text": "None of the three countries participates in the freight-specific [Memorandum of Understanding on Zero-Emission Medium- and Heavy-Duty Vehicles](https://globaldrivetozero.org/). The initiative aims for 100% zero-emission new truck and bus sales by 2040, with an interim target of 30% by 2030. Of its 43 signatories, two are Asian countries: Israel and Türkiye. The initiative also provides a [policy tracker dashboard](https://globaldrivetozero.org/progress-dashboard/) covering zero-emission trucks and buses, including targets, vehicle regulations, incentives, infrastructure and other policies in China and India."
+          "title": "Declaration on accelerating the transition to 100% zero emission cars and vans",
+          "text": "India stands out for its participation in key zero-emission vehicle initiatives. As a signatory to the [Declaration on Accelerating the Transition to 100% Zero Emission Cars and Vans](https://acceleratingtozero.org/the-declaration/), India supports the objective of reaching 100% zero-emission new car and van sales globally by 2040, with leading markets aiming to reach this target by 2035. As an emerging market and developing economy, India has committed to achieving 100% zero-emission sales of new cars and vans by 2040. In addition to the national government, several Indian stakeholders have signed the declaration, including three vehicle manufacturers (Avera EVs, Etrio Automobiles and Gayam), three fleet owners, the Government of Sikkim and eight other signatories. BYD from China and VinFast from Viet Nam are also signatories."
+        },
+        {
+          "title": "ZEV Transition Council",
+          "text": "India is a signatory to the ZEV Transition Council. This initiative consists of governments from some of the world's largest car markets coming together to accelerate the pace of the global transition to zero-emission vehicles. The initiative developed a [Global ZEV Transition Roadmap](https://zevtc.org/global-roadmap/) as well as a [ZEV Rapid Response Facility](https://zevtc.org/global-commitment/zev-rapid-response-facility/) to support this global transition."
         }
       ],
       "matrix": {
