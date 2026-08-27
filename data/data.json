@@ -236,13 +236,12 @@
         "columns": [
           { "name": "Beyond oil and gas alliance", "link": "https://beyondoilandgasalliance.org/" },
           { "name": "Breakthrough agenda - road transport", "link": "https://breakthroughagenda.org/road-transport/" },
-          { "name": "Clean Energy Ministerial", "link": "https://www.cleanenergyministerial.org/" }
+          { "name": "Clean Energy Ministerial", "link": "https://www.cleanenergyministerial.org/" },
           { "name": "COP30 Transport Declaration", "link": "https://changing-transport.org/eleven-countries-champion-new-low-emission-transport-declaration-at-cop30/" },
           { "name": "Declaration on accelerating the transition to 100% zero emission cars and vans", "link": "https://acceleratingtozero.org/the-declaration/" },          
           { "name": "International Zero-Emission Vehicle Alliance", "link": "https://zevalliance.org/" },
           { "name": "Global Memorandum of Understanding on Zero-Emission Medium- and Heavy-duty Vehicles", "link": "https://globaldrivetozero.org/mou-nations/" },
-          { "name": "ZEV Transition Council", "link": "https://zevtc.org/" },
-
+          { "name": "ZEV Transition Council", "link": "https://zevtc.org/" }
         ],
         "rows": [
           { "country": "China", "values": [false, false, true, false, false, false, false, false] },
