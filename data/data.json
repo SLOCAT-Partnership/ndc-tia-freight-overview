@@ -8,8 +8,8 @@
     "countryColors": { "Asia": "#00918F", "China": "#E08D14", "India": "#2E6DA4", "Viet Nam": "#B23A48", "Global": "#5B4B8A" },
     "docTypeColors": { "Across all NDCs": "#00918F", "LTS": "#5B4B8A" },
     "brand": {
-      "headerDark": "#068484",
-      "headerLight": "#3FAEAB",
+      "headerDark": "#3FAEAB",
+      "headerLight": "#068484",
       "rowAlt": "#D9D9D9",
       "rowAlt2": "#EFEFEF",
       "text": "#1D1C1D",
