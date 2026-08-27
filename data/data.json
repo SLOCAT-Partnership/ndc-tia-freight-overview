@@ -121,7 +121,7 @@
       },
       "freight": {
         "heading": "Freight targets of China, India and Viet Nam",
-        "intro": "Countries can also set sectoral targets to complement their economy-wide targets. Globally, 36 third-generation NDCs (29% of all submissions) include a transport GHG mitigation target. In Asia, 7 countries* include such a target, the second-highest share after Africa. China and India include non-GHG targets, which do not specify emission reductions but support improvements in the transport sector.",
+        "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 36 third-generation NDCs (29% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. China and India include **non-GHG targets**, which do not specify emission reductions but support improvements in the transport sector.",
         "listIntro": "The following list shows non-GHG targets relevant to freight transport and logistics in the third-generation NDCs and LTS.",
         "table": {
           "columns": ["Country", "Target type", "Target content relevant for freight", "Source"],
@@ -138,7 +138,7 @@
             { "country": "India", "type": "Vehicle efficiency targets", "content": "By 2030, National Logistic Policy aspires to reduce cost of logistics in India to be comparable to global benchmarks.", "source": "LTS" }
           ]
         },
-        "regionalExamplesIntro": "For comparison, 9 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are shown below:",
+        "regionalExamplesIntro": "For comparison, 9 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are:",
         "regionalExamples": [
           { "country": "Cambodia", "content": "Shift 5% of long distance freight transport to rail by 2035." },
           { "country": "Indonesia", "content": "Increase the biodiesel blend mandate from 20% to 40% (B40) by 2025." },
@@ -168,7 +168,7 @@
         ]
       },
       "spotlight": {
-        "heading": "Spotlight: Freight transport electrification",
+        "heading": "Examples of freight transport electrification ambitions in Asian NDCs",
         "subheading": "Freight transport electrification",
         "examples": [
           { "country": "Armenia", "content": "Between 2017 and 2023, 24,692 electric vehicles were imported. Only 70 were freight vehicles. By 2035, more than 170,000 electric vehicles are projected to on Armenia's roads. Charging infrastructure network is expanding to support this growth." },
@@ -203,7 +203,7 @@
           "Average adaptation actions per NDC — Asia: 2.05, Global: 1.95"
         ]
       },
-      "examplesHeading": "Examples of freight transport adaptation and resilience actions from Asia",
+      "examplesHeading": "Examples of freight transport adaptation and resilience actions from Asian NDCs",
       "examples": [
         { "country": "Iraq", "content": "Improve transport infrastructure to ensure post-harvest transport of goods" },
         { "country": "Maldives", "content": "Enhance resilience and climate-proofing of critical infrastructure (airports, ports etc.) to better withstand extreme weather events and sea level rise" },
@@ -234,18 +234,19 @@
       ],
       "matrix": {
         "columns": [
-          { "name": "COP30 Transport Declaration", "link": "https://changing-transport.org/eleven-countries-champion-new-low-emission-transport-declaration-at-cop30/" },
-          { "name": "Memorandum of understanding on zero-emission medium- and heavy-duty vehicles", "link": "https://globaldrivetozero.org/mou-nations/" },
-          { "name": "Declaration on accelerating the transition to 100% zero emission cars and vans", "link": "https://acceleratingtozero.org/the-declaration/" },
-          { "name": "Breakthrough agenda - road transport", "link": "https://breakthroughagenda.org/road-transport/" },
           { "name": "Beyond oil and gas alliance", "link": "https://beyondoilandgasalliance.org/" },
-          { "name": "International Zero-Emission Vehicle Alliance", "link": "https://zevalliance.org/" },
-          { "name": "ZEV Transition Council", "link": "https://zevtc.org/" },
+          { "name": "Breakthrough agenda - road transport", "link": "https://breakthroughagenda.org/road-transport/" },
           { "name": "Clean Energy Ministerial", "link": "https://www.cleanenergyministerial.org/" }
+          { "name": "COP30 Transport Declaration", "link": "https://changing-transport.org/eleven-countries-champion-new-low-emission-transport-declaration-at-cop30/" },
+          { "name": "Declaration on accelerating the transition to 100% zero emission cars and vans", "link": "https://acceleratingtozero.org/the-declaration/" },          
+          { "name": "International Zero-Emission Vehicle Alliance", "link": "https://zevalliance.org/" },
+          { "name": "Global Memorandum of Understanding on Zero-Emission Medium- and Heavy-duty Vehicles", "link": "https://globaldrivetozero.org/mou-nations/" },
+          { "name": "ZEV Transition Council", "link": "https://zevtc.org/" },
+
         ],
         "rows": [
-          { "country": "China", "values": [false, false, false, false, false, false, false, true] },
-          { "country": "India", "values": [false, false, true, true, false, false, true, true] },
+          { "country": "China", "values": [false, false, true, false, false, false, false, false] },
+          { "country": "India", "values": [false, true, true, false, true, false, false, true] },
           { "country": "Viet Nam", "values": [false, false, false, false, false, false, false, false] }
         ]
       }
