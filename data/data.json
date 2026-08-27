@@ -150,7 +150,7 @@
 
     "mitigation": {
       "heading": "Actions to mitigate freight transport emissions",
-      "intro": "Freight transport mitigation actions are mapped across five major categories (see glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
+      "intro": "Freight transport mitigation actions are mapped across five major categories (*see glossary for definitions*). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
       "insight": "The latest NDCs of China, India and Viet Nam show distinct patterns:",
       "bullets": [
         "**China**: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
@@ -161,10 +161,10 @@
       "chart": {
         "categories": ["Mode shift and demand management", "Transport system improvements", "Energy efficiency", "Electrification", "Alternative fuels", "Aviation and maritime"],
         "series": [
-          { "name": "Asia", "labelSuffix": "34 NDCs", "share": [0.1380952380952381, 0.20476190476190476, 0.1523809523809524, 0.26666666666666666, 0.14761904761904762, 0.09047619047619047], "count": [29, 43, 32, 56, 31, 19] },
-          { "name": "China", "share": [0.12, 0.32, 0, 0.16, 0.16, 0.24], "count": [3, 8, 0, 4, 4, 6] },
-          { "name": "India", "share": [0, 0.3333333333333333, 0.6666666666666666, 0, 0, 0], "count": [0, 1, 2, 0, 0, 0] },
-          { "name": "Viet Nam", "share": [0.14285714285714285, 0.2857142857142857, 0.2857142857142857, 0, 0.2857142857142857, 0], "count": [1, 2, 2, 0, 2, 0] }
+          { "name": "Asia", "labelSuffix": "210 actions across 34 NDCs", "share": [0.1380952380952381, 0.20476190476190476, 0.1523809523809524, 0.26666666666666666, 0.14761904761904762, 0.09047619047619047], "count": [29, 43, 32, 56, 31, 19] },
+          { "name": "China", "labelSuffix": "25 actions in current NDC", "share": [0.12, 0.32, 0, 0.16, 0.16, 0.24], "count": [3, 8, 0, 4, 4, 6] },
+          { "name": "India", "labelSuffix": "3 actions in current NDC", "share": [0, 0.3333333333333333, 0.6666666666666666, 0, 0, 0], "count": [0, 1, 2, 0, 0, 0] },
+          { "name": "Viet Nam", "labelSuffix": "7 actions in current NDC", "share": [0.14285714285714285, 0.2857142857142857, 0.2857142857142857, 0, 0.2857142857142857, 0], "count": [1, 2, 2, 0, 2, 0] }
         ]
       },
       "spotlight": {
