@@ -160,53 +160,6 @@
     return card;
   }
 
-  // Vertical grouped bar chart per category (used for Total vs Freight counts per country tab)
-  // Bar heights are set as explicit px (not %) because their container is
-  // auto-height (label sits above the bar) — percentage heights inside an
-  // auto-height ancestor resolve to 0 per the CSS spec, so % would silently
-  // collapse every bar to nothing.
-  var VBAR_AREA_PX = 130;
-
-  function vbarChart(categories, series, opts) {
-    opts = opts || {};
-    var maxVal = 0;
-    series.forEach(function (s) {
-      s.values.forEach(function (v) { if (v > maxVal) maxVal = v; });
-    });
-    if (maxVal === 0) maxVal = 1;
-
-    var card = el("div", { cls: "chart-card" });
-    if (opts.title) card.appendChild(el("div", { cls: "chart-title", text: opts.title }));
-
-    var chart = el("div", { cls: "vbar-chart" });
-    categories.forEach(function (cat, ci) {
-      var group = el("div", { cls: "vbar-group" });
-      var stack = el("div", { cls: "vbar-stack" });
-      series.forEach(function (s) {
-        var v = s.values[ci];
-        var heightPx = Math.max(Math.round((v / maxVal) * VBAR_AREA_PX), v > 0 ? 3 : 0);
-        var col = el("div", { cls: "vbar-col" });
-        col.appendChild(el("div", { cls: "val", text: String(v) }));
-        col.appendChild(el("div", { cls: "bar", attrs: { style: "height:" + heightPx + "px; background:" + s.color + ";" } }));
-        stack.appendChild(col);
-      });
-      group.appendChild(stack);
-      group.appendChild(el("div", { cls: "vbar-cat", text: cat }));
-      chart.appendChild(group);
-    });
-    card.appendChild(chart);
-
-    var legend = el("div", { cls: "legend" });
-    series.forEach(function (s) {
-      var item = el("div", { cls: "legend-item" });
-      item.appendChild(el("span", { cls: "legend-swatch", attrs: { style: "background:" + s.color + ";" } }));
-      item.appendChild(el("span", { text: s.name }));
-      legend.appendChild(item);
-    });
-    card.appendChild(legend);
-    return card;
-  }
-
   // Single donut with one or more concentric rings (outer ring = rings[0]).
   // Each ring: {label, value (0-1), color}.
   function donutRing(title, rings) {
@@ -628,7 +581,11 @@
     var actContent = [];
     var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
     var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
-    actContent.push(vbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], { title: "Freight-relevant NDC/LTS actions by category" }));
+    actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
+      title: "Freight-relevant NDC/LTS actions by category",
+      valueKey: "values",
+      formatter: function (v) { return String(v); }
+    }));
     actContent.push(subheading("Example NDC actions"));
     if (d.actions.examples.length) {
       var exList = el("div", { cls: "example-list" });

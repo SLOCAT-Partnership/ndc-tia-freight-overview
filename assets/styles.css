@@ -284,7 +284,8 @@ table.data-table td.freight-col { background: var(--row-alt-2); font-weight: 600
 
 .chart-title { color: var(--teal-dark); font-weight: 700; font-size: 1rem; margin: 0 0 14px; }
 
-.hbar-row { display: grid; grid-template-columns: 220px 1fr; align-items: center; gap: 10px; margin-bottom: 10px; }
+.hbar-row { display: grid; grid-template-columns: 220px 1fr; align-items: center; gap: 10px; padding: 14px 0; }
+.hbar-row + .hbar-row { border-top: 1px solid var(--border); }
 .hbar-cat { font-size: 0.82rem; text-align: right; color: var(--text); }
 .hbar-track { display: flex; flex-direction: column; gap: 3px; }
 .hbar-series { display: flex; align-items: center; gap: 8px; }
@@ -294,14 +295,6 @@ table.data-table td.freight-col { background: var(--row-alt-2); font-weight: 600
 .legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px; font-size: 0.8rem; }
 .legend-item { display: flex; align-items: center; gap: 6px; }
 .legend-swatch { width: 12px; height: 12px; border-radius: 3px; display: inline-block; }
-
-.vbar-chart { display: flex; align-items: flex-end; gap: 22px; height: 210px; padding: 10px 6px 0; overflow-x: auto; }
-.vbar-group { display: flex; flex-direction: column; align-items: center; min-width: 92px; height: 100%; justify-content: flex-end; }
-.vbar-stack { display: flex; align-items: flex-end; gap: 5px; height: 170px; }
-.vbar-col { display: flex; flex-direction: column; justify-content: flex-end; align-items: center; width: 26px; }
-.vbar-col .val { font-size: 0.7rem; color: var(--text-soft); margin-bottom: 3px; }
-.vbar-col .bar { width: 100%; border-radius: 3px 3px 0 0; transition: height 0.4s ease; }
-.vbar-cat { font-size: 0.74rem; text-align: center; margin-top: 8px; color: var(--text); max-width: 100px; }
 
 /* ---------- Heatmap ---------- */
 
