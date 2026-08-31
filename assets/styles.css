@@ -18,6 +18,7 @@
   --link: #0A66C2;
   --border: #DCE4E3;
   --bg: #FFFFFF;
+  --action-green: #2E7D32;
 
   --c-asia: #4285F4;
   --c-china: #EA4335;
@@ -37,9 +38,11 @@ html, body {
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Poppins", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 img { max-width: 100%; display: block; }
@@ -182,6 +185,7 @@ a:hover { text-decoration: underline; }
 
 .bullets { margin: 6px 0 14px; padding-left: 20px; }
 .bullets li { margin-bottom: 6px; }
+.action-category { font-weight: 700; color: var(--action-green); }
 
 .subheading {
   background: var(--teal-dark);
@@ -247,6 +251,7 @@ table.data-table td {
 }
 
 table.data-table td.country-cell { font-weight: 700; background: var(--row-alt); white-space: nowrap; }
+table.data-table td.country-cell.initiative-cell { font-weight: 400; }
 table.data-table tbody tr:nth-child(even) td:not(.country-cell) { background: var(--row-alt-2); }
 
 table.data-table td.freight-col { background: var(--row-alt-2); font-weight: 600; }
@@ -300,8 +305,8 @@ table.data-table td.freight-col { background: var(--row-alt-2); font-weight: 600
 
 table.heatmap-table { border-collapse: collapse; width: 100%; font-size: 0.85rem; min-width: 360px; }
 table.heatmap-table th {
-  background: var(--teal-dark);
-  color: #fff;
+  background: var(--row-alt);
+  color: var(--text);
   text-align: center;
   padding: 9px 10px;
   font-weight: 700;

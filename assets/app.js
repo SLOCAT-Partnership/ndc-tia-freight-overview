@@ -459,7 +459,7 @@
     // this keeps the table to 4 columns instead of 8, cutting horizontal scrolling.
     var matrixCols = ["Initiative"].concat(gi.matrix.rows.map(function (r) { return r.country; }));
     var matrixRows = gi.matrix.columns.map(function (initiative, i) {
-      var nameCell = el("td", { cls: "country-cell" });
+      var nameCell = el("td", { cls: "country-cell initiative-cell" });
       nameCell.appendChild(el("a", { text: initiative.name, attrs: { href: initiative.link, target: "_blank", rel: "noopener" } }));
       var cells = [nameCell];
       gi.matrix.rows.forEach(function (r) {
@@ -588,12 +588,12 @@
     }));
     actContent.push(subheading("Example NDC actions"));
     if (d.actions.examples.length) {
-      var exList = el("div", { cls: "example-list" });
+      var exList = el("ul", { cls: "bullets action-list" });
       d.actions.examples.forEach(function (e) {
-        var card = el("div", { cls: "example-card" });
-        card.appendChild(el("div", { cls: "country", text: e.category }));
-        card.appendChild(el("div", { cls: "content", text: e.text }));
-        exList.appendChild(card);
+        var li = el("li");
+        li.appendChild(el("span", { cls: "action-category", text: e.category }));
+        li.appendChild(document.createTextNode(": " + e.text));
+        exList.appendChild(li);
       });
       actContent.push(exList);
     } else {
