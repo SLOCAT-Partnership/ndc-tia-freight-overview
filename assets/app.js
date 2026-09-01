@@ -163,11 +163,11 @@
   // Single donut with one or more concentric rings (outer ring = rings[0]).
   // Each ring: {label, value (0-1), color}.
   function donutRing(title, rings) {
-    var cx = 70, cy = 70, strokeWidth = 14;
-    var radii = [54, 36, 20];
+    var cx = 105, cy = 105, strokeWidth = 21; // 50% larger than the original 70/70/14
+    var radii = [81, 54, 30];
     var svgParts = [];
     rings.forEach(function (ring, i) {
-      var r = radii[i] || (radii[radii.length - 1] - 16 * (i - radii.length + 1));
+      var r = radii[i] || (radii[radii.length - 1] - 24 * (i - radii.length + 1));
       var c = 2 * Math.PI * r;
       var filled = Math.max(ring.value, 0) * c;
       svgParts.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="none" stroke="#E3ECEC" stroke-width="' + strokeWidth + '"/>');
@@ -175,7 +175,7 @@
         '" stroke-linecap="round" stroke-dasharray="' + filled.toFixed(2) + ' ' + (c - filled).toFixed(2) +
         '" transform="rotate(-90 ' + cx + ' ' + cy + ')"/>');
     });
-    var svgHtml = '<svg viewBox="0 0 140 140" width="140" height="140" role="img" aria-label="' + esc(title) + '">' + svgParts.join("") + "</svg>";
+    var svgHtml = '<svg viewBox="0 0 210 210" width="210" height="210" role="img" aria-label="' + esc(title) + '">' + svgParts.join("") + "</svg>";
 
     var card = el("div", { cls: "donut-card" });
     card.appendChild(el("div", { cls: "donut-title", text: title }));
@@ -329,23 +329,32 @@
     var intro = DATA.intro;
     var wrap = el("div", { cls: "intro-block" });
 
-    intro.paragraphs.forEach(function (p) { wrap.appendChild(para(p)); });
+    var left = el("div", { cls: "intro-left" });
+    intro.paragraphs.forEach(function (p) { left.appendChild(para(p)); });
 
     var implBlock = el("div", { cls: "implemented-by" });
     implBlock.appendChild(el("div", { cls: "label", text: intro.implementedByLabel }));
     var logos = el("div", { cls: "partner-logos" });
     intro.partnerLogos.forEach(function (l) {
-      logos.appendChild(el("img", { attrs: { src: l.src, alt: l.alt } }));
+      var img = el("img", { attrs: { src: l.src, alt: l.alt } });
+      if (l.link) {
+        var a = el("a", { attrs: { href: l.link, target: "_blank", rel: "noopener" } });
+        a.appendChild(img);
+        logos.appendChild(a);
+      } else {
+        logos.appendChild(img);
+      }
     });
     implBlock.appendChild(logos);
-    wrap.appendChild(implBlock);
+    left.appendChild(implBlock);
 
     var about = el("div", { cls: "about-card" });
     about.appendChild(el("h3", { text: intro.about.heading }));
     intro.about.paragraphs.forEach(function (p) { about.appendChild(el("p", { text: p })); });
     about.appendChild(el("div", { cls: "data-as-of", text: intro.about.dataAsOf }));
-    wrap.appendChild(about);
 
+    wrap.appendChild(left);
+    wrap.appendChild(about);
     container.appendChild(wrap);
   }
 
@@ -751,11 +760,20 @@
     document.getElementById("hdr-subtitle").textContent = DATA.meta.subtitle;
   }
 
+  function initBackToTop() {
+    var btn = document.getElementById("back-to-top");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   function boot(data) {
     DATA = data;
     COLORS = data.meta.countryColors;
     applyHeader();
     initTabs();
+    initBackToTop();
     renderOverview();
     renderNationalShell();
     renderGlossary();

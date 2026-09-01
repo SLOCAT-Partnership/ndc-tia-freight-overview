@@ -26,12 +26,12 @@
     ],
     "implementedByLabel": "This project is implemented by:",
     "partnerLogos": [
-      { "src": "assets/img/partners/giz.png", "alt": "GIZ — Deutsche Gesellschaft für Internationale Zusammenarbeit" },
-      { "src": "assets/img/partners/wri.png", "alt": "WRI Ross Center for Sustainable Cities" },
-      { "src": "assets/img/partners/icct.png", "alt": "International Council on Clean Transportation (ICCT)" },
-      { "src": "assets/img/partners/agora.png", "alt": "Agora Verkehrswende" },
-      { "src": "assets/img/partners/slocat.png", "alt": "SLOCAT Partnership" },
-      { "src": "assets/img/partners/ren21.png", "alt": "REN21" }
+      { "src": "assets/img/partners/giz.png", "alt": "GIZ — Deutsche Gesellschaft für Internationale Zusammenarbeit", "link": "https://www.giz.de/en/" },
+      { "src": "assets/img/partners/wri.png", "alt": "WRI Ross Center for Sustainable Cities", "link": "https://www.wri.org/cities" },
+      { "src": "assets/img/partners/icct.png", "alt": "International Council on Clean Transportation (ICCT)", "link": "https://theicct.org/" },
+      { "src": "assets/img/partners/agora.png", "alt": "Agora Verkehrswende", "link": "https://www.agora-verkehrswende.de/en/" },
+      { "src": "assets/img/partners/slocat.png", "alt": "SLOCAT Partnership", "link": "https://slocat.net/" },
+      { "src": "assets/img/partners/ren21.png", "alt": "REN21", "link": "https://www.ren21.net/" }
     ],
     "about": {
       "heading": "About this overview",
