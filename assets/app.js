@@ -427,7 +427,7 @@
       function (r) { return tr([td(r.type), td(r.content), td(r.source)]); }
     ));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
-    var exList = el("div", { cls: "example-list example-list-fit" });
+    var exList = el("div", { cls: "example-list example-list-fit example-list-lg" });
     tg.freight.regionalExamples.forEach(function (e) {
       exList.appendChild(exampleCard(e.country, e.content));
     });
@@ -440,9 +440,8 @@
     var miContent = [para(mi.intro), el("div", { cls: "insight-label", text: mi.insight }), bulletList(mi.bullets)];
     miContent.push(hbarChart(mi.chart.categories, mi.chart.series, { title: mi.chartTitle, valueKey: "share", formatter: pct }));
     miContent.push(subheading(mi.spotlight.heading));
-    var spotList = el("div", { cls: "example-list" });
-    mi.spotlight.examples.forEach(function (e) { spotList.appendChild(exampleCard(e.country, e.content)); });
-    miContent.push(spotList);
+    var spotCards = mi.spotlight.examples.map(function (e) { return exampleCard(e.country, e.content); });
+    miContent.push(carousel([spotCards.slice(0, 4), spotCards.slice(4)]));
     root.appendChild(section(mi.heading, miContent));
 
     /* -- Adaptation -- */
@@ -450,7 +449,7 @@
     var adContent = [para(ad.intro), bulletList(ad.vietnamBullets), para(ad.comparisonIntro)];
     adContent.push(hbarChart(ad.chart.categories, ad.chart.series, { title: ad.chartTitle, valueKey: "share", formatter: pct, footnotes: ad.chart.footnotes }));
     adContent.push(subheading(ad.examplesHeading));
-    var adList = el("div", { cls: "example-list" });
+    var adList = el("div", { cls: "example-list example-list-fit example-list-lg" });
     ad.examples.forEach(function (e) { adList.appendChild(exampleCard(e.country, e.content)); });
     adContent.push(adList);
     root.appendChild(section(ad.heading, adContent));
@@ -494,6 +493,49 @@
     card.appendChild(nameWrap);
     card.appendChild(el("div", { cls: "content", html: formatText(content) }));
     return card;
+  }
+
+  // Paged carousel. `slideGroups` is an array of arrays of already-built card
+  // nodes — each inner array is one slide (e.g. [4 cards], [3 cards]).
+  function carousel(slideGroups) {
+    var wrap = el("div", { cls: "carousel example-list-lg" });
+    var track = el("div", { cls: "carousel-track" });
+    slideGroups.forEach(function (cards) {
+      var slide = el("div", { cls: "carousel-slide" });
+      cards.forEach(function (c) { slide.appendChild(c); });
+      track.appendChild(slide);
+    });
+    var viewport = el("div", { cls: "carousel-viewport" });
+    viewport.appendChild(track);
+    wrap.appendChild(viewport);
+
+    var controls = el("div", { cls: "carousel-controls" });
+    var prevBtn = el("button", { cls: "carousel-arrow", text: "‹", attrs: { type: "button", "aria-label": "Previous" } });
+    var dotsWrap = el("div", { cls: "carousel-dots" });
+    var dots = slideGroups.map(function (_, i) {
+      var d = el("button", { cls: "carousel-dot", attrs: { type: "button", "aria-label": "Go to slide " + (i + 1) } });
+      dotsWrap.appendChild(d);
+      return d;
+    });
+    var nextBtn = el("button", { cls: "carousel-arrow", text: "›", attrs: { type: "button", "aria-label": "Next" } });
+    controls.appendChild(prevBtn);
+    controls.appendChild(dotsWrap);
+    controls.appendChild(nextBtn);
+    wrap.appendChild(controls);
+
+    var index = 0;
+    function update() {
+      track.style.transform = "translateX(-" + (index * 100) + "%)";
+      dots.forEach(function (d, i) { d.classList.toggle("active", i === index); });
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === slideGroups.length - 1;
+    }
+    prevBtn.addEventListener("click", function () { if (index > 0) { index--; update(); } });
+    nextBtn.addEventListener("click", function () { if (index < slideGroups.length - 1) { index++; update(); } });
+    dots.forEach(function (d, i) { d.addEventListener("click", function () { index = i; update(); }); });
+    update();
+
+    return wrap;
   }
 
   /* ================================================================

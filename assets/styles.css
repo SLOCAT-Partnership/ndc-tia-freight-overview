@@ -367,6 +367,47 @@ td.heatmap-cell {
 .flag-icon { height: 14px; width: auto; max-width: 22px; border-radius: 2px; box-shadow: 0 0 0 1px rgba(0,0,0,0.08); flex-shrink: 0; }
 .example-card .content { font-size: 0.86rem; }
 
+/* Emphasized example cards — used for illustrative country examples we want to stand out more. */
+.example-list-lg .example-card { padding: 22px 24px; border-left: 4px solid var(--teal-dark); }
+.example-list-lg .example-card .country { font-size: 1rem; }
+.example-list-lg .example-card .content { font-size: 1rem; }
+.example-list-lg .flag-icon { height: 18px; max-width: 28px; }
+
+/* ---------- Carousel ---------- */
+
+.carousel { margin: 12px 0 20px; }
+.carousel-viewport { overflow: hidden; }
+.carousel-track { display: flex; transition: transform 0.35s ease; }
+.carousel-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 12px;
+}
+.carousel-controls { display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 16px; }
+.carousel-arrow {
+  appearance: none;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--teal-dark);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+.carousel-arrow:hover:not(:disabled) { background: var(--teal-dark); color: #fff; }
+.carousel-arrow:disabled { opacity: 0.3; cursor: default; }
+.carousel-dots { display: flex; gap: 8px; }
+.carousel-dot { appearance: none; cursor: pointer; border: none; padding: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--row-alt); }
+.carousel-dot.active { background: var(--teal-dark); }
+
 /* ---------- Initiative blocks ---------- */
 
 .initiative-block { margin-bottom: 14px; }
