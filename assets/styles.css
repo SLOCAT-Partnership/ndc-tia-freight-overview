@@ -453,6 +453,7 @@ td.heatmap-cell {
   margin-bottom: 24px;
   font-size: 0.95rem;
 }
+.country-desc .bullets { margin: 0; padding-left: 20px; }
 
 .doc-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 10px 0 20px; }
 @media (max-width: 900px) { .doc-strip { grid-template-columns: repeat(2, 1fr); } }

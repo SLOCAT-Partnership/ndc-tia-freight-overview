@@ -292,9 +292,13 @@
 
   // A data table filtered by a country toggle above it. `rows` must each have
   // a `.country` field; `cellsFn(row)` builds the <tr> for the currently-shown rows.
-  function countryToggleTable(rows, columns, cellsFn) {
+  // `emptyCountries` lets a country appear as a toggle option even when it has
+  // no rows — e.g. Viet Nam, which has no sectoral targets — so its absence
+  // reads as a documented fact rather than an oversight. Shape: [{ name, message }].
+  function countryToggleTable(rows, columns, cellsFn, emptyCountries) {
     var countries = [];
     rows.forEach(function (r) { if (countries.indexOf(r.country) === -1) countries.push(r.country); });
+    (emptyCountries || []).forEach(function (e) { countries.push(e.name); });
 
     var wrap = el("div", { cls: "toggle-table" });
     var toggle = el("div", { cls: "mini-toggle" });
@@ -305,6 +309,12 @@
         b.classList.toggle("active", b.getAttribute("data-value") === country);
       });
       tableSlot.innerHTML = "";
+      var empty = (emptyCountries || []).filter(function (e) { return e.name === country; })[0];
+      if (empty) {
+        var msgCell = el("td", { cls: "empty-state", text: empty.message, attrs: { colspan: String(columns.length) } });
+        tableSlot.appendChild(dataTable(columns, [tr([msgCell])]));
+        return;
+      }
       var filtered = rows.filter(function (r) { return r.country === country; }).map(cellsFn);
       tableSlot.appendChild(dataTable(columns, filtered));
     }
@@ -424,7 +434,8 @@
     tgContent.push(para(tg.freight.intro));
     tgContent.push(para(tg.freight.listIntro));
     tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
-      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); }
+      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); },
+      [{ name: "Viet Nam", message: tg.freight.vietnamNote }]
     ));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
     var exList = el("div", { cls: "example-list example-list-fit example-list-lg" });
@@ -592,7 +603,18 @@
     var d = DATA.nationalAmbition[country];
     var color = countryColor(country);
 
-    root.appendChild(el("div", { cls: "country-desc", html: formatText(d.description) }));
+    // description can be a single string (rendered as a paragraph) or an array
+    // of strings (rendered as bullets) — trialling bullets per-country before
+    // rolling out everywhere.
+    var descBox = el("div", { cls: "country-desc" });
+    if (Array.isArray(d.description)) {
+      var descList = el("ul", { cls: "bullets" });
+      d.description.forEach(function (line) { descList.appendChild(el("li", { html: formatText(line) })); });
+      descBox.appendChild(descList);
+    } else {
+      descBox.innerHTML = formatText(d.description);
+    }
+    root.appendChild(descBox);
 
     /* Documents */
     var docSection = [];
