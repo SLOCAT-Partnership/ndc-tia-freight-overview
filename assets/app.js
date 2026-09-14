@@ -332,40 +332,45 @@
   }
 
   /* ================================================================
-     INTRO (shared masthead-adjacent block, rendered at top of Overview)
+     TAB 0 — ABOUT THIS DASHBOARD
      ================================================================ */
 
-  function renderIntro(container) {
-    var intro = DATA.intro;
-    var wrap = el("div", { cls: "intro-block" });
+  function renderAbout() {
+    var root = document.getElementById("panel-about");
+    root.innerHTML = "";
+    var a = DATA.about;
+    var bg = a.background;
 
-    var left = el("div", { cls: "intro-left" });
-    intro.paragraphs.forEach(function (p) { left.appendChild(para(p)); });
+    var bgBlock = el("div", { cls: "glossary-section" });
+    bgBlock.appendChild(el("h3", { text: bg.heading }));
+    bg.paragraphs.forEach(function (p) { bgBlock.appendChild(para(p)); });
 
     var implBlock = el("div", { cls: "implemented-by" });
-    implBlock.appendChild(el("div", { cls: "label", text: intro.implementedByLabel }));
+    implBlock.appendChild(el("div", { cls: "label", text: bg.implementedByLabel }));
     var logos = el("div", { cls: "partner-logos" });
-    intro.partnerLogos.forEach(function (l) {
+    bg.partnerLogos.forEach(function (l) {
       var img = el("img", { attrs: { src: l.src, alt: l.alt } });
       if (l.link) {
-        var a = el("a", { attrs: { href: l.link, target: "_blank", rel: "noopener" } });
-        a.appendChild(img);
-        logos.appendChild(a);
+        var link = el("a", { attrs: { href: l.link, target: "_blank", rel: "noopener" } });
+        link.appendChild(img);
+        logos.appendChild(link);
       } else {
         logos.appendChild(img);
       }
     });
     implBlock.appendChild(logos);
-    left.appendChild(implBlock);
+    bgBlock.appendChild(implBlock);
+    root.appendChild(bgBlock);
 
-    var about = el("div", { cls: "about-card" });
-    about.appendChild(el("h3", { text: intro.about.heading }));
-    intro.about.paragraphs.forEach(function (p) { about.appendChild(el("p", { text: p })); });
-    about.appendChild(el("div", { cls: "data-as-of", text: intro.about.dataAsOf }));
-
-    wrap.appendChild(left);
-    wrap.appendChild(about);
-    container.appendChild(wrap);
+    a.sections.forEach(function (s) {
+      if (!s.text || !s.text.trim()) return; // nothing to show yet
+      var blk = el("div", { cls: "glossary-section" });
+      blk.appendChild(el("h3", { text: s.heading }));
+      // Placeholder sections (e.g. Citation, Download) render muted/italic to
+      // signal the content is a stand-in, not final.
+      blk.appendChild(s.placeholder ? el("div", { cls: "empty-state", text: s.text }) : para(s.text));
+      root.appendChild(blk);
+    });
   }
 
   /* ================================================================
@@ -375,19 +380,8 @@
   function renderOverview() {
     var root = document.getElementById("panel-overview");
     root.innerHTML = "";
-    renderIntro(root);
 
     var ov = DATA.overview;
-
-    /* -- Freight actions mentioned in NDCs -- */
-    var fa = ov.freightActions;
-    var faContent = [para(fa.intro)];
-    var fig = el("figure", { cls: "figure figure-narrow" });
-    fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
-    fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
-    faContent.push(fig);
-    faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
-    root.appendChild(section(fa.heading, faContent));
 
     /* -- Overview of UNFCCC submissions -- */
     var sub = ov.submissions;
@@ -445,6 +439,16 @@
     tgContent.push(exList);
     tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
     root.appendChild(section(tg.heading, tgContent));
+
+    /* -- Freight actions mentioned in NDCs -- */
+    var fa = ov.freightActions;
+    var faContent = [para(fa.intro)];
+    var fig = el("figure", { cls: "figure figure-narrow" });
+    fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
+    fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
+    faContent.push(fig);
+    faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
+    root.appendChild(section(fa.heading, faContent));
 
     /* -- Mitigation -- */
     var mi = ov.mitigation;
@@ -838,6 +842,7 @@
     applyHeader();
     initTabs();
     initBackToTop();
+    renderAbout();
     renderOverview();
     renderNationalShell();
     renderGlossary();

@@ -17,31 +17,59 @@
     }
   },
 
-  "intro": {
+  "about": {
     "logo": "assets/img/logo-ndc-tia.png",
-    "paragraphs": [
-      "The **[NDC Transport Initiative for Asia (NDC-TIA)](https://www.ndctransportinitiativeforasia.org/)** aims to support a paradigm shift towards zero-emission transport across Asia. The NDC-TIA is currently in its second phase with a focus on **zero-emission freight transport**.",
-      "The programme supports **China**, **India** and **Viet Nam** in developing comprehensive transport decarbonisation strategies and solutions for their implementation. At the regional and global levels, it extends its impact by engaging additional countries in Southeast Asia, sharing lessons learned, advancing dialogue on transport decarbonisation and promoting effective multi-stakeholder approaches involving government ministries, civil society and the private sector.",
-      "The NDC Transport Initiative for Asia is supported by the International Climate Initiative (IKI) of the Federal Government of Germany. Within the Federal Government, the IKI is anchored in the Federal Ministry for the Environment, Climate Action, Nature Conservation and Nuclear Safety (BMUKN)."
-    ],
-    "implementedByLabel": "This project is implemented by:",
-    "partnerLogos": [
-      { "src": "assets/img/partners/giz.png", "alt": "GIZ — Deutsche Gesellschaft für Internationale Zusammenarbeit", "link": "https://www.giz.de/en/" },
-      { "src": "assets/img/partners/wri.png", "alt": "WRI Ross Center for Sustainable Cities", "link": "https://www.wri.org/cities" },
-      { "src": "assets/img/partners/icct.png", "alt": "International Council on Clean Transportation (ICCT)", "link": "https://theicct.org/" },
-      { "src": "assets/img/partners/agora.png", "alt": "Agora Verkehrswende", "link": "https://www.agora-verkehrswende.de/en/" },
-      { "src": "assets/img/partners/slocat.png", "alt": "SLOCAT Partnership", "link": "https://slocat.net/" },
-      { "src": "assets/img/partners/ren21.png", "alt": "REN21", "link": "https://www.ren21.net/" }
-    ],
-    "about": {
-      "heading": "About this overview",
+    "heading": "About this Dashboard",
+    "background": {
+      "heading": "Background",
       "paragraphs": [
-        "This overview was developed by SLOCAT with technical support from GIZ and WRI. It shows how freight transport and logistics are reflected in the Nationally Determined Contributions (NDCs) and Long-Term Strategies (LTS) of China, India and Viet Nam. The main focus is on third-generation NDCs (also known as NDC 3.0), while highlighting key insights from LTS and BTRs. The overview places the ambition of China, India and Viet Nam in a regional context.",
-        "The first tab provides an overview of the Asia region and the three focus countries. The second tab provides detailed national breakdowns for each country, while the third tab explains the terms and expressions used in the dashboard.",
-        "The assessment is based on data from the NDC Transport Tracker, a joint database on NDCs and LTS maintained by GIZ and SLOCAT."
+        "This overview of freight transport in NDCs and LTSs was developed by SLOCAT with technical support from GIZ and WRI, under the NDC Transport Initiative for Asia (NDC-TIA).",
+        "The **[NDC Transport Initiative for Asia (NDC-TIA)](https://www.ndctransportinitiativeforasia.org/)** aims to support a paradigm shift towards zero-emission transport across Asia. The NDC-TIA is currently in its second phase with a focus on **zero-emission freight transport**.",
+        "The programme supports **China**, **India** and **Viet Nam** in developing comprehensive transport decarbonisation strategies and solutions for their implementation. At the regional and global levels, it extends its impact by engaging additional countries in Southeast Asia, sharing lessons learned, advancing dialogue on transport decarbonisation and promoting effective multi-stakeholder approaches involving government ministries, civil society and the private sector.",
+        "The NDC Transport Initiative for Asia is supported by the International Climate Initiative (IKI) of the Federal Government of Germany. Within the Federal Government, the IKI is anchored in the Federal Ministry for the Environment, Climate Action, Nature Conservation and Nuclear Safety (BMUKN)."
       ],
-      "dataAsOf": "Data as of 10 August 2026."
-    }
+      "implementedByLabel": "This project is implemented by:",
+      "partnerLogos": [
+        { "src": "assets/img/partners/giz.png", "alt": "GIZ — Deutsche Gesellschaft für Internationale Zusammenarbeit", "link": "https://www.giz.de/en/" },
+        { "src": "assets/img/partners/wri.png", "alt": "WRI Ross Center for Sustainable Cities", "link": "https://www.wri.org/cities" },
+        { "src": "assets/img/partners/icct.png", "alt": "International Council on Clean Transportation (ICCT)", "link": "https://theicct.org/" },
+        { "src": "assets/img/partners/agora.png", "alt": "Agora Verkehrswende", "link": "https://www.agora-verkehrswende.de/en/" },
+        { "src": "assets/img/partners/slocat.png", "alt": "SLOCAT Partnership", "link": "https://slocat.net/" },
+        { "src": "assets/img/partners/ren21.png", "alt": "REN21", "link": "https://www.ren21.net/" }
+      ]
+    },
+    "sections": [
+      {
+        "heading": "Purpose of the dashboard",
+        "text": "This overview was developed by SLOCAT with technical support from GIZ and WRI. It shows how freight transport and logistics are reflected in the Nationally Determined Contributions (NDCs) and Long-Term Strategies (LTS) of China, India and Viet Nam. The main focus is on third-generation NDCs (also known as NDC 3.0), while highlighting key insights from LTS and BTRs. The overview places the ambition of China, India and Viet Nam in a regional context."
+      },
+      {
+        "heading": "How to use the dashboard",
+        "text": "The **Overview** tab provides an overview of the Asia region and the three focus countries. The **National Ambition** tab provides detailed national breakdowns for each country, while the **Glossary** tab explains the terms and expressions used in the dashboard."
+      },
+      {
+        "heading": "Methodology",
+        "text": "The assessment is based on data from the NDC Transport Tracker, a joint database on NDCs and LTS maintained by GIZ and SLOCAT. The tracker tracks all transport-related targets, mitigation measures and adaptation measures, as well as benefits, in Nationally Determined Contributions (NDCs) and Long-Term Low Greenhouse Gas Emission Development Strategies (LTS) — the two major reporting mechanisms of the Paris Agreement on Climate Change. Data as of 10 August 2026."
+      },
+      {
+        "heading": "Limitations",
+        "text": "One known limitation of this version is that Viet Nam is assessed on a second-generation NDC and is therefore not directly comparable to the other NDCs analysed (China, India, and Asia)."
+      },
+      {
+        "heading": "Update policy",
+        "text": "This dashboard will be maintained by SLOCAT, and an update will be triggered by the publication of Viet Nam's third-generation NDC."
+      },
+      {
+        "heading": "Citation and license",
+        "text": "Citation and license details will be added here.",
+        "placeholder": true
+      },
+      {
+        "heading": "Download the data",
+        "text": "A link to download the underlying data will be added here.",
+        "placeholder": true
+      }
+    ]
   },
 
   "overview": {
