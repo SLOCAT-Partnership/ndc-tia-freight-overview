@@ -697,25 +697,13 @@
     }
 
     /* Freight transport modes */
-    // Transposed vs. a plain lookup: modes become columns (in a fixed order,
-    // "Not explicitly defined" pinned last since it isn't a real mode), and
-    // NDC/LTS become rows — the heatmapChart() helper is orientation-agnostic,
-    // so this is just a matter of which array is passed as rows vs. columns.
     var modeContent = [];
-    var MODE_EMOJI = { "Road transport": "🚚", "Rail": "🚆", "Water transport": "🚢", "Air transport": "✈️" };
-    var modeOrder = d.modes.categories.filter(function (c) { return c !== "Not explicitly defined"; });
-    if (d.modes.categories.indexOf("Not explicitly defined") !== -1) modeOrder.push("Not explicitly defined");
-    var modeSeries = modeOrder.map(function (modeName) {
-      var idx = d.modes.categories.indexOf(modeName);
-      var label = (MODE_EMOJI[modeName] ? MODE_EMOJI[modeName] + " " : "") + modeName;
-      var values = [d.modes.ndc.values[idx]];
-      if (d.modes.lts) values.push(d.modes.lts.values[idx]);
-      return { name: label, values: values };
-    });
-    var modeRows = ["Across all NDCs (out of " + d.modes.ndc.total + " actions)"].concat(
-      d.modes.lts ? ["LTS (out of " + d.modes.lts.total + " actions)"] : []
-    );
-    modeContent.push(heatmapChart(modeRows, modeSeries, { title: "Transport modes named in NDC / LTS actions" }));
+    modeContent.push(heatmapChart(d.modes.categories,
+      [{ name: "Across all NDCs", labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values }].concat(
+        d.modes.lts ? [{ name: "LTS", labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values }] : []
+      ),
+      { title: "Transport modes named in NDC / LTS actions" }
+    ));
     modeContent.push(para(d.modes.description));
     root.appendChild(section("Freight transport modes", modeContent));
 
