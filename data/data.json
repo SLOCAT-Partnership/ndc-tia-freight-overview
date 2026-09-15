@@ -23,12 +23,12 @@
     "background": {
       "heading": "Background",
       "paragraphs": [
-        "This overview of freight transport in NDCs and LTSs was developed by SLOCAT with technical support from GIZ and WRI, under the NDC Transport Initiative for Asia (NDC-TIA).",
+        "This overview of freight transport in Nationally Determined Contributions (NDCs) and Long-Term Strategies (LTSs) was developed by SLOCAT with technical support from GIZ and WRI, under the NDC Transport Initiative for Asia (NDC-TIA).",
         "The **[NDC Transport Initiative for Asia (NDC-TIA)](https://www.ndctransportinitiativeforasia.org/)** aims to support a paradigm shift towards zero-emission transport across Asia. The NDC-TIA is currently in its second phase with a focus on **zero-emission freight transport**.",
         "The programme supports **China**, **India** and **Viet Nam** in developing comprehensive transport decarbonisation strategies and solutions for their implementation. At the regional and global levels, it extends its impact by engaging additional countries in Southeast Asia, sharing lessons learned, advancing dialogue on transport decarbonisation and promoting effective multi-stakeholder approaches involving government ministries, civil society and the private sector.",
         "The NDC Transport Initiative for Asia is supported by the International Climate Initiative (IKI) of the Federal Government of Germany. Within the Federal Government, the IKI is anchored in the Federal Ministry for the Environment, Climate Action, Nature Conservation and Nuclear Safety (BMUKN)."
       ],
-      "implementedByLabel": "This project is implemented by:",
+      "implementedByLabel": "NDC-TIA is implemented by:",
       "partnerLogos": [
         { "src": "assets/img/partners/giz.png", "alt": "GIZ — Deutsche Gesellschaft für Internationale Zusammenarbeit", "link": "https://www.giz.de/en/" },
         { "src": "assets/img/partners/wri.png", "alt": "WRI Ross Center for Sustainable Cities", "link": "https://www.wri.org/cities" },
@@ -61,8 +61,7 @@
       },
       {
         "heading": "Citation and license",
-        "text": "Citation and license details will be added here.",
-        "placeholder": true
+        "text": "Please cite the following when using this dashboard: SLOCAT (2026), How does climate action tackle freight transport and logistics?, NDC Transport Initiative for Asia, URL."
       },
       {
         "heading": "Download the data",
@@ -107,10 +106,11 @@
       "narrative": [
         {
           "heading": "NDC submissions",
-          "text": "As of August 2026, China and India have submitted an NDC in each generation. Viet Nam has not yet submitted a third-generation NDC. However, it strengthened its second-generation NDC through an updated submission in 2022, including stronger targets and actions.",
+          "text": "As of August 2026, China and India have submitted an NDC in each generation. Viet Nam has not yet submitted a third-generation NDC.",
           "bullets": [
             "**China**: Every NDC includes actions to mitigate freight transport emissions. Each successive NDC builds on the previous generation, expanding its content and increasing ambition.",
-            "**India**: India’s first-generation NDC provided a detailed outline of freight transport actions. Subsequent NDCs have contained fewer detailed sectoral actions and instead refer to separate sectoral strategies."
+            "**India**: India’s first-generation NDC provided a detailed outline of freight transport actions. Subsequent NDCs have contained fewer detailed sectoral actions and instead refer to separate sectoral strategies.",
+            "**Viet Nam**: Viet Nam featured freight transport in every NDC. The updated submission in 2022 strengthened its ambition, including stronger targets and actions."         
           ]
         },
         {
@@ -179,7 +179,7 @@
 
     "mitigation": {
       "heading": "Actions to mitigate freight transport emissions",
-      "intro": "Freight transport mitigation actions are mapped across five major categories (*see glossary for definitions*). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
+      "intro": "Freight transport mitigation actions are mapped across six major categories (see glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
       "insight": "The latest NDCs of China, India and Viet Nam show distinct patterns:",
       "bullets": [
         "**China**: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
@@ -190,7 +190,8 @@
       "chart": {
         "categories": ["Mode shift and demand management", "Transport system improvements", "Energy efficiency", "Electrification", "Alternative fuels", "Aviation and maritime"],
         "series": [
-          { "name": "Asia", "labelSuffix": "210 actions across 34 NDCs", "share": [0.1380952380952381, 0.20476190476190476, 0.1523809523809524, 0.26666666666666666, 0.14761904761904762, 0.09047619047619047], "count": [29, 43, 32, 56, 31, 19] },
+          { "name": "Global", "labelSuffix": "1066 actions across 120 NDCs", "share": [0.258, 0.163, 0.129, 0.251, 0.112, 0.086], "count": [275, 174, 138, 268, 119, 92] },
+          { "name": "Asia", "labelSuffix": "210 actions across 34 NDCs", "share": [0.138, 0.204, 0.152, 0.267, 0.148, 0.0905], "count": [29, 43, 32, 56, 31, 19] },
           { "name": "China", "labelSuffix": "25 actions in current NDC", "share": [0.12, 0.32, 0, 0.16, 0.16, 0.24], "count": [3, 8, 0, 4, 4, 6] },
           { "name": "India", "labelSuffix": "3 actions in current NDC", "share": [0, 0.3333333333333333, 0.6666666666666666, 0, 0, 0], "count": [0, 1, 2, 0, 0, 0] },
           { "name": "Viet Nam", "labelSuffix": "7 actions in current NDC", "share": [0.14285714285714285, 0.2857142857142857, 0.2857142857142857, 0, 0.2857142857142857, 0], "count": [1, 2, 2, 0, 2, 0] }
@@ -224,8 +225,8 @@
       "chart": {
         "categories": ["Structural and Technical", "Institutional and Regulatory", "Informational and Educational", "Other adaptation and resilience measures"],
         "series": [
-          { "name": "Asia", "labelSuffix": "41 actions across 19 NDCs", "share": [0.5121951219512195, 0.36585365853658536, 0.12195121951219512, 0], "count": [21, 15, 5, 0] },
-          { "name": "Global", "labelSuffix": "234 actions across 120 NDCs", "share": [0.6068376068376068, 0.24786324786324787, 0.11538461538461539, 0.029914529914529916], "count": [142, 58, 27, 7] }
+          { "name": "Global", "labelSuffix": "234 actions across 120 NDCs", "share": [0.607, 0.248, 0.1154, 0.02991], "count": [142, 58, 27, 7] },
+          { "name": "Asia", "labelSuffix": "41 actions across 19 NDCs", "share": [0.5122, 0.366, 0.122, 0], "count": [21, 15, 5, 0] }
         ],
         "footnotes": [
           "19 out of 34 third-generation NDCs from the region feature transport adaptation actions.",
