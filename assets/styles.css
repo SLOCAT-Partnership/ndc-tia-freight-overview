@@ -395,9 +395,24 @@ td.heatmap-cell {
 
 .country-picker {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  gap: 30px;
   margin: 6px 0 24px;
+  padding: 12px 0;
   flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.select-country-label {
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--teal-dark);
 }
 
 .country-btn {

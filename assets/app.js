@@ -565,11 +565,19 @@
     root.appendChild(intro);
 
     var picker = el("div", { cls: "country-picker" });
+    picker.appendChild(el("span", { cls: "select-country-label", text: "Select country:" }));
     DATA.meta.countries.forEach(function (c) {
       var btn = el("button", {
         cls: "country-btn" + (c === CURRENT_COUNTRY ? " active" : ""),
         attrs: { type: "button", "data-country": c }
       });
+      var code = COUNTRY_FLAGS[c];
+      if (code) {
+        btn.appendChild(el("img", {
+          cls: "flag-icon",
+          attrs: { src: "assets/img/flags/" + code + ".svg", alt: "" }
+        }));
+      }
       btn.appendChild(document.createTextNode(c));
       if (c === CURRENT_COUNTRY) {
         var activeBg = "#068484"; // neutral background for the selected-country button (not the country's chart color)
