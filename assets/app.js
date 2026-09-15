@@ -762,10 +762,15 @@
     }
     root.appendChild(el("p", { cls: "lead", html: introHtml }));
 
-    var scope = el("div", { cls: "glossary-section" });
-    scope.appendChild(el("h3", { text: g.scope.heading }));
-    scope.appendChild(para(g.scope.text));
-    root.appendChild(scope);
+    var thematicScope = el("div", { cls: "glossary-section" });
+    thematicScope.appendChild(el("h3", { text: g.thematicScope.heading }));
+    thematicScope.appendChild(para(g.thematicScope.text));
+    root.appendChild(thematicScope);
+
+    var regionalScope = el("div", { cls: "glossary-section" });
+    regionalScope.appendChild(el("h3", { text: g.regionalScope.heading }));
+    regionalScope.appendChild(para(g.regionalScope.text));
+    root.appendChild(regionalScope);
 
     var proc = el("div", { cls: "glossary-section" });
     proc.appendChild(el("h3", { text: g.submissionProcess.heading }));
