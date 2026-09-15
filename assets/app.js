@@ -226,12 +226,22 @@
     if (opts.title) card.appendChild(el("div", { cls: "chart-title", text: opts.title }));
 
     var wrap = el("div", { cls: "table-wrap" });
-    var table = el("table", { cls: "heatmap-table" });
+    var table = el("table", { cls: "heatmap-table" + (opts.equalColumns ? " heatmap-table-equal" : "") });
     var thead = el("thead");
     var htr = el("tr");
     htr.appendChild(el("th", { text: "" }));
     series.forEach(function (s) {
-      htr.appendChild(el("th", { text: s.name + (s.labelSuffix ? " (" + s.labelSuffix + ")" : "") }));
+      var label = s.name + (s.labelSuffix ? " (" + s.labelSuffix + ")" : "");
+      if (s.icon) {
+        // Name and icon stack on their own lines rather than sitting inline,
+        // so the icon reads as its own visual element under the label.
+        var th = el("th", {});
+        th.appendChild(el("div", { cls: "heatmap-col-name", text: label }));
+        th.appendChild(el("div", { cls: "heatmap-col-icon", text: s.icon }));
+        htr.appendChild(th);
+      } else {
+        htr.appendChild(el("th", { text: label }));
+      }
     });
     thead.appendChild(htr);
     table.appendChild(thead);
@@ -697,13 +707,24 @@
     }
 
     /* Freight transport modes */
+    // Transposed vs. a plain lookup: modes become columns (in a fixed order,
+    // "Not explicitly defined" pinned last since it isn't a real mode), and
+    // NDC/LTS become rows — the heatmapChart() helper is orientation-agnostic,
+    // so this is just a matter of which array is passed as rows vs. columns.
     var modeContent = [];
-    modeContent.push(heatmapChart(d.modes.categories,
-      [{ name: "Across all NDCs", labelSuffix: "out of " + d.modes.ndc.total + " actions", values: d.modes.ndc.values }].concat(
-        d.modes.lts ? [{ name: "LTS", labelSuffix: "out of " + d.modes.lts.total + " actions", values: d.modes.lts.values }] : []
-      ),
-      { title: "Transport modes named in NDC / LTS actions" }
-    ));
+    var MODE_EMOJI = { "Road transport": "🚚", "Rail": "🚆", "Water transport": "🚢", "Air transport": "✈️" };
+    var modeOrder = d.modes.categories.filter(function (c) { return c !== "Not explicitly defined"; });
+    if (d.modes.categories.indexOf("Not explicitly defined") !== -1) modeOrder.push("Not explicitly defined");
+    var modeSeries = modeOrder.map(function (modeName) {
+      var idx = d.modes.categories.indexOf(modeName);
+      var values = [d.modes.ndc.values[idx]];
+      if (d.modes.lts) values.push(d.modes.lts.values[idx]);
+      return { name: modeName, icon: MODE_EMOJI[modeName], values: values };
+    });
+    var modeRows = ["Across all NDCs (out of " + d.modes.ndc.total + " actions)"].concat(
+      d.modes.lts ? ["LTS (out of " + d.modes.lts.total + " actions)"] : []
+    );
+    modeContent.push(heatmapChart(modeRows, modeSeries, { title: "Transport modes named in NDC / LTS actions", equalColumns: true }));
     modeContent.push(para(d.modes.description));
     root.appendChild(section("Freight transport modes", modeContent));
 

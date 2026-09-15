@@ -310,6 +310,18 @@ th.heatmap-rowhead {
   padding: 9px 12px;
   white-space: nowrap;
 }
+
+/* Equal-width mode columns: fixed layout so all data columns share space
+   evenly, with the row-header column given its own fixed width (and allowed
+   to wrap, since its labels are longer than a single mode name). */
+table.heatmap-table-equal { table-layout: fixed; }
+/* table-layout:fixed sizes columns from the FIRST (header) row's cells, not
+   the body — so the corner cell's width is what actually fixes this column,
+   even though the visible row labels live in .heatmap-rowhead cells below it. */
+table.heatmap-table-equal thead th:first-child { width: 200px; }
+table.heatmap-table-equal th.heatmap-rowhead { white-space: normal; }
+.heatmap-col-name { margin-bottom: 6px; }
+.heatmap-col-icon { font-size: 1.4rem; line-height: 1; }
 td.heatmap-cell {
   text-align: center;
   font-weight: 700;
