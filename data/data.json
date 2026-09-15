@@ -302,7 +302,7 @@
       },
       "targets": {
         "economyWideCurrent": "Reduce net GHG emissions at least by 7%-10% from peak levels by 2035.",
-        "economyWideLongTerm": "Achieve carbon neutrality before 2060 (second-generation NDC)",
+        "economyWideLongTerm": "Carbon neutrality before 2060 (second-generation NDC)",
         "freightIntro": "Current freight transport target(s):",
         "freightTable": [
           { "type": "Zero emission vehicle targets", "content": "By 2030, new energy and clean energy-powered vehicles will reach about 40% of all the vehicles sold", "source": "LTS" },
@@ -374,7 +374,7 @@
       },
       "targets": {
         "economyWideCurrent": "Reduce emissions intensity of GDP by 47% below 2005 levels by 2035.",
-        "economyWideLongTerm": "Achieve net-zero emissions by 2070 (Third-gen NDC)",
+        "economyWideLongTerm": "Net-zero emissions by 2070 (Third-gen NDC)",
         "freightIntro": "Current freight transport target(s):",
         "freightTable": [
           { "type": "Biofuel targets", "content": "By 2025, 20% ethanol blending in petrol (potential savings of approximately INR 30,000 crore/year)", "source": "LTS" },
@@ -440,7 +440,7 @@
       },
       "targets": {
         "economyWideCurrent": "Reduce GHG emissions 15.8% compared to BAU (equivalent to 146.3 Mt CO2eq) and up to 43.5% with international support (equivalent to 403.7 Mt CO2eq) by 2030.",
-        "economyWideLongTerm": "Achieve net-zero emissions by 2050 (Second-gen NDC)",
+        "economyWideLongTerm": "Net-zero emissions by 2050 (Second-gen NDC)",
         "freightIntro": "Current freight transport target(s):",
         "freightTable": [],
         "description": "Whereas Viet Nam has set economy-wide GHG targets in their second-generation NDC (net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030), there are currently no transport sector specific targets in the NDC."
