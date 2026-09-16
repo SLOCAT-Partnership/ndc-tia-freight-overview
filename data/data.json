@@ -74,10 +74,10 @@
   "overview": {
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
-      "intro": "Climate action on freight transport in Asia focuses largely on **electrification** and **low-carbon fuels for road vehicles**. Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green.",
+      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green.",
       "image": "assets/img/wordcloud-freight-terms.png",
       "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by all Asian countries, China, India and Viet Nam highlighted in bold",
-      "stat": "As of 10 August 2026, 34 third-generation NDCs had been submitted by Parties in Asia. Freight transport- and logistics-related actions were identified in 30 of these NDCs."
+      "stat": "Climate action on freight transport in Asia focuses largely on electrification, transport system improvements and low-carbon fuels."
     },
 
     "submissions": {
@@ -119,7 +119,7 @@
           "bullets": []
         }
       ],
-      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
+      "highlight": "As of 10 August 2026, 34 third-generation NDCs had been submitted by Parties in Asia. Freight transport- and logistics-related actions were identified in 30 of these NDCs."
     },
 
     "targets": {
@@ -176,7 +176,7 @@
         ],
         "footnote": "* The 7 Asian countries with transport GHG mitigation targets in their third-generation NDCs are: Bangladesh, Georgia, Kazakhstan, Nepal, Sri Lanka, Thailand and the United Arab Emirates."
       },
-      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
+      "highlight": "With every NDC generation, China, India and Viet Nam have increased their ambition on reducing greenhouse gas emissions."
     },
 
     "mitigation": {
@@ -212,12 +212,12 @@
           { "country": "United Arab Emirates", "content": "Accelerate the uptake of commercial electric vehicles (in the context of the country's Road 2.0 initiative in support of UAE’s Net Zero by 2050 Strategy)." }
         ]
       },
-      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
+      "highlight": "Climate action on freight transport in Asia focuses largely on electrification and low-carbon fuels for road vehicles."
     },
 
     "adaptation": {
       "heading": "Actions to adapt freight transport",
-      "intro": "Neither China's nor India's NDCs or LTS include content on transport adaptation and resilience. **Viet Nam is the only one of the three countries to include transport adaptation actions in its NDC**. Its second-generation NDC includes:",
+      "intro": "Neither China's nor India's NDCs or LTS include content on transport adaptation and resilience. Viet Nam's second-generation NDC includes:",
       "vietnamBullets": [
         "Upgrading transport infrastructure in areas at high risk of disasters and vulnerable to climate change",
         "Developing and completing the expressway network and inter-regional transport system",
@@ -242,7 +242,7 @@
         { "country": "Maldives", "content": "Enhance resilience and climate-proofing of critical infrastructure (airports, ports etc.) to better withstand extreme weather events and sea level rise" },
         { "country": "Republic of Korea", "content": "Diversify supply chains" }
       ],
-      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
+      "highlight": "Viet Nam is the only one of the three countries to include transport adaptation actions in its NDC."
     },
 
     "initiatives": {
@@ -283,7 +283,7 @@
           { "country": "Viet Nam", "values": [false, false, false, false, false, false, false, false] }
         ]
       },
-      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
+      "highlight": "India is the most active country in international initiatives on freight transport, especially with a focus on zero-emission vehicles."
     }
   },
 
