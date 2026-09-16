@@ -383,6 +383,25 @@
     });
   }
 
+  // Single-row partner-logo strip appended to the end of the Overview, National
+  // Ambition and Glossary tabs (the About tab already shows these prominently
+  // near the top, so it isn't repeated there).
+  function sheetFooterLogos(container) {
+    var logos = DATA.about.background.partnerLogos;
+    var row = el("div", { cls: "sheet-footer-logos" });
+    logos.forEach(function (l) {
+      var img = el("img", { attrs: { src: l.src, alt: l.alt } });
+      if (l.link) {
+        var link = el("a", { attrs: { href: l.link, target: "_blank", rel: "noopener" } });
+        link.appendChild(img);
+        row.appendChild(link);
+      } else {
+        row.appendChild(img);
+      }
+    });
+    container.appendChild(row);
+  }
+
   /* ================================================================
      TAB 1 — OVERVIEW
      ================================================================ */
@@ -406,6 +425,9 @@
       statPair.appendChild(box);
     });
     subContent.push(statPair);
+    // Charts and the country table lead here, with the "NDC submissions" /
+    // "LTS submissions" narrative reading as commentary on them afterwards —
+    // an intentional exception to the usual text-before-tables rule elsewhere.
     if (sub.submissionShareChart) subContent.push(donutComparisonChart(sub.submissionShareChart));
     subContent.push(subheading(sub.tableHeading));
     var subRows = sub.table.rows.map(function (r) {
@@ -422,8 +444,11 @@
     root.appendChild(section(sub.heading, subContent));
 
     /* -- Targets -- */
+    // Text precedes each sub-topic's table: the economy-wide commentary and
+    // all freight-target commentary/examples now sit above their tables.
     var tg = ov.targets;
     var tgContent = [para(tg.intro)];
+    tgContent.push(para(tg.economyWide.note));
     tgContent.push(subheading(tg.economyWide.heading));
     var ewRows = tg.economyWide.rows.map(function (r) {
       var cells = [td(r.country, "country-cell")];
@@ -432,15 +457,10 @@
     });
     ewRows.push(tr([td("Source", "country-cell")].concat(tg.economyWide.source.map(function (s) { return td(s); }))));
     tgContent.push(dataTable(["Country"].concat(tg.economyWide.columns), ewRows));
-    tgContent.push(para(tg.economyWide.note));
 
     tgContent.push(subheading(tg.freight.heading));
     tgContent.push(para(tg.freight.intro));
     tgContent.push(para(tg.freight.listIntro));
-    tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
-      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); },
-      [{ name: "Viet Nam", message: tg.freight.vietnamNote }]
-    ));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
     var exList = el("div", { cls: "example-list example-list-fit example-list-lg" });
     tg.freight.regionalExamples.forEach(function (e) {
@@ -448,16 +468,19 @@
     });
     tgContent.push(exList);
     tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
+    tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
+      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); },
+      [{ name: "Viet Nam", message: tg.freight.vietnamNote }]
+    ));
     root.appendChild(section(tg.heading, tgContent));
 
     /* -- Freight actions mentioned in NDCs -- */
     var fa = ov.freightActions;
-    var faContent = [para(fa.intro)];
+    var faContent = [para(fa.intro), el("div", { cls: "stat-callout", html: formatText(fa.stat) })];
     var fig = el("figure", { cls: "figure figure-narrow" });
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
     faContent.push(fig);
-    faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
     root.appendChild(section(fa.heading, faContent));
 
     /* -- Mitigation -- */
@@ -502,6 +525,8 @@
     });
     giContent.push(dataTable(matrixCols, matrixRows));
     root.appendChild(section(gi.heading, giContent));
+
+    sheetFooterLogos(root);
   }
 
     function exampleCard(country, content) {
@@ -606,6 +631,8 @@
     var countryRoot = el("div", { attrs: { id: "country-content" } });
     root.appendChild(countryRoot);
     renderCountry(CURRENT_COUNTRY, countryRoot);
+
+    sheetFooterLogos(root);
   }
 
   function docCard(label, valueObj) {
@@ -660,6 +687,7 @@
     twoCol.appendChild(boxLong);
     tgContent.push(twoCol);
 
+    tgContent.push(para(d.targets.description));
     tgContent.push(subheading("Freight transport targets"));
     if (d.targets.freightTable.length) {
       var ftRows = d.targets.freightTable.map(function (r) {
@@ -669,18 +697,10 @@
     } else {
       tgContent.push(el("div", { cls: "empty-state", text: "No freight-specific transport targets identified in the current NDC or LTS." }));
     }
-    tgContent.push(para(d.targets.description));
     root.appendChild(section("Targets", tgContent));
 
     /* Actions to mitigate */
     var actContent = [];
-    var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
-    var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
-    actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
-      title: "Freight-relevant NDC/LTS actions by category",
-      valueKey: "values",
-      formatter: function (v) { return String(v); }
-    }));
     actContent.push(subheading("Example NDC actions"));
     if (d.actions.examples.length) {
       var exList = el("ul", { cls: "bullets action-list" });
@@ -694,6 +714,13 @@
     } else {
       actContent.push(el("div", { cls: "empty-state", text: "No individually highlighted NDC action examples for " + country + " in the source data." }));
     }
+    var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
+    var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
+    actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
+      title: "Freight-relevant NDC/LTS actions by category",
+      valueKey: "values",
+      formatter: function (v) { return String(v); }
+    }));
     root.appendChild(section("Actions to mitigate freight transport emissions", actContent));
 
     /* Adaptation note (Viet Nam only) */
@@ -711,7 +738,7 @@
     // "Not explicitly defined" pinned last since it isn't a real mode), and
     // NDC/LTS become rows — the heatmapChart() helper is orientation-agnostic,
     // so this is just a matter of which array is passed as rows vs. columns.
-    var modeContent = [];
+    var modeContent = [para(d.modes.description)];
     var MODE_EMOJI = { "Road transport": "🚚", "Rail": "🚆", "Water transport": "🚢", "Air transport": "✈️" };
     var modeOrder = d.modes.categories.filter(function (c) { return c !== "Not explicitly defined"; });
     if (d.modes.categories.indexOf("Not explicitly defined") !== -1) modeOrder.push("Not explicitly defined");
@@ -725,7 +752,6 @@
       d.modes.lts ? ["LTS (out of " + d.modes.lts.total + " actions)"] : []
     );
     modeContent.push(heatmapChart(modeRows, modeSeries, { title: "Transport modes named in NDC / LTS actions", equalColumns: true }));
-    modeContent.push(para(d.modes.description));
     root.appendChild(section("Freight transport modes", modeContent));
 
     /* Progress of climate action (BTR) */
@@ -838,6 +864,8 @@
     root.appendChild(more);
 
     root.appendChild(el("p", { html: linkify(g.footer) }));
+
+    sheetFooterLogos(root);
   }
 
   /* ================================================================

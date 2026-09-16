@@ -160,6 +160,25 @@ a:hover { text-decoration: underline; }
 .partner-logos a { display: inline-flex; }
 .partner-logos a:hover img { opacity: 0.8; }
 
+/* Single-row logo strip at the end of the Overview, National Ambition and
+   Glossary tabs — smaller and more subdued than the About tab's own grid,
+   since it's a footer credit line, not the main partner showcase. */
+.sheet-footer-logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+}
+.sheet-footer-logos img { max-height: 38px; width: auto; opacity: 0.85; }
+.sheet-footer-logos img[src*="icct"] { max-height: 48px; }
+.sheet-footer-logos img[src*="agora"] { max-height: 44px; }
+.sheet-footer-logos a { display: inline-flex; }
+.sheet-footer-logos a:hover img { opacity: 1; }
+
 /* ---------- Section building blocks ---------- */
 
 .section { margin: 0 0 34px; }
