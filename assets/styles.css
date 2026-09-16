@@ -222,6 +222,35 @@ a:hover { text-decoration: underline; }
   margin: 14px 0;
 }
 
+.report-box {
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--teal-dark);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  margin-top: 32px;
+  background: var(--teal-tint);
+}
+.report-box-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--teal-dark);
+  margin-bottom: 8px;
+}
+.report-box-title {
+  margin: 0 0 12px;
+  font-size: 1.05rem;
+  color: var(--teal-dark);
+}
+.report-box p { margin: 0 0 12px; }
+.report-box .bullets { margin: 0 0 12px; padding-left: 20px; }
+.report-box-link {
+  display: inline-block;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 .footnote { font-size: 0.8rem; color: var(--text-soft); margin-top: 10px; }
 
 /* ---------- Stat pairs ---------- */

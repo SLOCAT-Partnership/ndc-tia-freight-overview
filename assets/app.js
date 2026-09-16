@@ -402,6 +402,18 @@
     container.appendChild(row);
   }
 
+  // Featured-report callout box (WRI's "Visioning to Implementation", 2023),
+  // appended at the end of the Overview and National Ambition sections.
+  function reportBox(contentNodes) {
+    var ref = DATA.wriReport;
+    var box = el("div", { cls: "report-box" });
+    box.appendChild(el("div", { cls: "report-box-label", text: "Featured report" }));
+    box.appendChild(el("h4", { cls: "report-box-title", text: ref.title }));
+    contentNodes.forEach(function (n) { if (n) box.appendChild(n); });
+    box.appendChild(el("a", { cls: "report-box-link", text: "Read the report here →", attrs: { href: ref.link, target: "_blank", rel: "noopener" } }));
+    return box;
+  }
+
   /* ================================================================
      TAB 1 — OVERVIEW
      ================================================================ */
@@ -537,6 +549,10 @@
     });
     giContent.push(dataTable(matrixCols, matrixRows));
     root.appendChild(section(gi.heading, giContent));
+
+    /* -- Featured report -- */
+    var rh = ov.reportHighlight;
+    root.appendChild(reportBox(rh.paragraphs.map(function (p) { return para(p); })));
 
     sheetFooterLogos(root);
   }
@@ -806,6 +822,10 @@
     }
     stratContent.push(stratCard);
     root.appendChild(section("Key freight transport and logistics strategy", stratContent));
+
+    /* Featured report */
+    var rh = d.reportHighlight;
+    root.appendChild(reportBox([para(rh.intro), bulletList(rh.bullets)]));
   }
 
   /* ================================================================

@@ -17,6 +17,11 @@
     }
   },
 
+  "wriReport": {
+    "title": "Visioning to Implementation: National Transport Decarbonization Policies That Match Climate Targets in China, India, and Vietnam",
+    "link": "https://www.wri.org/research/visioning-implementation-national-transport-decarbonization-policies-match-climate-targets"
+  },
+
   "about": {
     "logo": "assets/img/logo-ndc-tia.png",
     "heading": "About this Dashboard",
@@ -284,6 +289,13 @@
         ]
       },
       "highlight": "India is the most active country in international initiatives on freight transport, especially with a focus on zero-emission vehicles."
+    },
+
+    "reportHighlight": {
+      "paragraphs": [
+        "This 2023 report, published under the NDC-TIA Phase 1, assesses how China, India, and Vietnam are translating their climate ambition in the NDCs and LTS into national climate change-related transport strategies and policies. It finds that climate ambitions in the transport sector are somewhat consistent with national strategies and goals but coordination across policy areas and levels of governance could be improved. It recommends key strategies to accelerate transport decarbonisation in the next generation of NDCs.",
+        "On freight, the report shows that this topic has been receiving growing attention but still remains a blindspot. In 2023 e-mobility dominated national transport commitments in China, India, and Vietnam. Freight-specific measures (such as mode shift, demand management, freight-adaptive land use) lagged behind, and it calls on governments to take a more holistic approach that treats passenger and freight transport as equal priorities, backed by adequate infrastructure to move freight and clearer pathways to rail and inland waterways."
+      ]
     }
   },
 
@@ -365,6 +377,14 @@
         "content": "China's 15th Five-Year Plan Outline addresses freight transport across several thematic areas (infrastructure, domestic market unification, decarbonisation and international connectivity).\n- On infrastructure, the Five-Year Plan calls for completing the multi-dimensional transport network covering coastal, border and river corridors. It also calls for stronger international transport corridors and the development of international air freight.\n- Improving the national logistics hub network through corridors and logistics hub cities is expected to lower logistics costs. Standards, facilities and information-sharing will ensure multimodality and an increase in rail-water intermodal transport for containers and bulk cargo.\n- Freight decarbonisation will be realised through shifting freight toward low-carbon modes, accelerating freight electrification, promoting green-fuel vehicles and vessels, and increasing the share of bulk cargo moved by rail and waterway.",
         "link": "https://www.gov.cn/yaowen/liebiao/202603/content_7062633.htm",
         "highlight": "China's 15th Five-Year Plan emphasises a comprehensive approach to freight transport decarbonisation through infrastructure development, multimodal integration, and the promotion of clean technologies."
+      },
+      "reportHighlight": {
+        "intro": "The report 'Visioning to Implementation', released in 2023, featured several insights and recommendations on China:",
+        "bullets": [
+          "unlock rail and waterway's full freight potential by reforming uncompetitive railway pricing;",
+          "strengthen enforcement and technology standardisation across China's fragmented heavy-duty vehicle industry so existing green-freight and overload rules actually change behavior;",
+          "keep scaling zero-emission trucks building on China's position as the world's largest HDV market; and tighten coordination between transport and energy planning, so grid operators like State Grid and China Southern Grid are integrated early into charging and refueling infrastructure planning."
+        ]
       }
     },
 
@@ -437,6 +457,15 @@
         "content": "India's National Logistics Policy from 2022 envisions a technologically enabled, integrated, cost efficient, resilient, sustainable and trusted logistics ecosystem for accelerated and inclusive growth in India. Key objectives of the policy include integration, optimisation, standardisation, modernisation, formalisation, and democratisation. Targets for achieving the vision of the National Logistics Policy are to:\n- Reduce cost of logistics in India to be comparable to global benchmarks by 2030;\n- Improve the Logistics Performance Index ranking to be among top 25 countries by 2030;\n- Create data driven decision support mechanism for an efficient logistics ecosystem.\nSome of the strategies to achieve the targets include adopting a more efficient, economical, and environmentally sustainable modal mix, and multimodal interconnected infrastructure.",
         "link": "https://static.investindia.gov.in/s3fs-public/2024-12/nationallogisticspolicy_2022_29september2022_0.pdf",
         "highlight": "India's National Logistics Policy aims to create a comprehensive and efficient logistics ecosystem to support the country's economic and inclusive growth."
+      },
+      "reportHighlight": {
+        "intro": "The report 'Visioning to Implementation', released in 2023, featured several insights and recommendations on India:",
+        "bullets": [
+          "expand rail network capacity and intermodal loading infrastructure to make the 45% rail-freight-share target achievable;",
+          "provide targeted policy support, production-linked subsidies, and viable financing models to help India's small fleet operators electrify;",
+          "continue building out multimodal logistics parks and digital logistics tools to close India's efficiency gap.",
+          "It also calls out a structural fix: India's rail fare-to-freight pricing currently burdens freight to subsidize passenger rail, which works against the very mode shift the government is targeting."
+        ]
       }
     },
 
@@ -496,6 +525,14 @@
         "content": "Viet Nam's logistics service development strategy for the period 2025-2035, with a vision to 2050 (Decision No. 2229/QĐ-TTg) aims to develop Viet Nam's logistics services to be sustainable, efficient, high-quality, and high value-added, with strong competitiveness, leveraging Viet Nam's advantages in global supply and value chains. Inaugurated in 2025, the policy supersedes the 2022 Decision 876/QĐ-TTg on Green Transportation with a freight transport focused policy.\nSome of the policy’s specific objectives include:\n- Developing logistics services efficiently in the direction of reducing emissions, contributing to bringing the nation's net emissions to zero;\n- 12-15% average annual growth rate of the logistics service industry;\n- 12%-15% decrease in logistics costs relative to the gross domestic product;\n- By 2035, reach 5-7% value added of logistics services in the gross domestic product;\n- By 2050, 70% of workers in the logistics service industry have received technical and professional training, with 30% holding a university degree or higher;\n- Establish at least five modern, internationally-standard logistics service centers, serving as hubs for connecting and developing supply chains in the region and internationally.",
         "link": "https://www.vietnam.vn/en/chien-luoc-phat-trien-dich-vu-logistics-viet-nam-thoi-ky-2025-2035-tam-nhin-den-2050",
         "highlight": "Viet Nam has developed an ambitious national logistics strategy featuring medium- and long-term goals for freight transport."
+      },
+      "reportHighlight": {
+        "intro": "The report 'Visioning to Implementation', released in 2023, featured several insights and recommendations on Viet Nam, highlighting that implementation is a key gap:",
+        "bullets": [
+          "develop a concrete, time-bound implementation road map for shifting freight from road to rail and inland waterway transport, since the Action Programme on Green Energy Transformation and National Railway Master Plan currently set direction without one.",
+          "implement comprehensive policy packages that mobilise investment, given how constrained Viet Nam's domestic transport financing is (around 2% of GDP), pointing to a mix of international climate finance (JETP, GCF) and domestic mechanisms.",
+          "close the gap between the PDP8 energy plan's targets and transport electrification, so freight fleets have the power infrastructure and renewable supply to match future demand."
+        ]
       }
     }
   },
