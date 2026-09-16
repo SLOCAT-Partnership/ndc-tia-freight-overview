@@ -651,6 +651,7 @@
 
     /* Documents */
     var docSection = [];
+    if (d.documents.highlight) docSection.push(el("div", { cls: "stat-callout", html: formatText(d.documents.highlight) }));
     var strip = el("div", { cls: "doc-strip" });
     d.documents.columns.forEach(function (label, i) {
       strip.appendChild(docCard(label, d.documents.values[i]));
@@ -660,6 +661,7 @@
 
     /* Targets */
     var tgContent = [];
+    if (d.targets.highlight) tgContent.push(el("div", { cls: "stat-callout", html: formatText(d.targets.highlight) }));
     var twoCol = el("div", { cls: "two-col" });
     var boxCur = el("div", { cls: "target-box" });
     boxCur.appendChild(el("div", { cls: "target-label", text: "Current economy-wide NDC target" }));
@@ -685,6 +687,7 @@
 
     /* Actions to mitigate */
     var actContent = [];
+    if (d.actions.highlight) actContent.push(el("div", { cls: "stat-callout", html: formatText(d.actions.highlight) }));
     var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
     var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
     actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
@@ -714,7 +717,10 @@
 
     /* LTS */
     if (d.lts && d.lts.summary) {
-      root.appendChild(section("What does the LTS say on freight transport?", [para(d.lts.summary)]));
+      var ltsContent = [];
+      if (d.lts.highlight) ltsContent.push(el("div", { cls: "stat-callout", html: formatText(d.lts.highlight) }));
+      ltsContent.push(para(d.lts.summary));
+      root.appendChild(section("What does the LTS say on freight transport?", ltsContent));
     }
 
     /* Freight transport modes */
@@ -723,6 +729,7 @@
     // NDC/LTS become rows — the heatmapChart() helper is orientation-agnostic,
     // so this is just a matter of which array is passed as rows vs. columns.
     var modeContent = [];
+    if (d.modes.highlight) modeContent.push(el("div", { cls: "stat-callout", html: formatText(d.modes.highlight) }));
     var MODE_EMOJI = { "Road transport": "🚚", "Rail": "🚆", "Water transport": "🚢", "Air transport": "✈️" };
     var modeOrder = d.modes.categories.filter(function (c) { return c !== "Not explicitly defined"; });
     if (d.modes.categories.indexOf("Not explicitly defined") !== -1) modeOrder.push("Not explicitly defined");
@@ -741,6 +748,7 @@
 
     /* Progress of climate action (BTR) */
     var btrContent = [];
+    if (d.btr && d.btr.highlight) btrContent.push(el("div", { cls: "stat-callout", html: formatText(d.btr.highlight) }));
     if (d.btr && (d.btr.summary || (d.btr.actions && d.btr.actions.length))) {
       if (d.btr.summary) btrContent.push(para(d.btr.summary));
       if (d.btr.actions && d.btr.actions.length) {
@@ -753,13 +761,16 @@
     root.appendChild(section("Progress of climate action", btrContent));
 
     /* Strategy */
+    var stratContent = [];
+    if (d.strategy.highlight) stratContent.push(el("div", { cls: "stat-callout", html: formatText(d.strategy.highlight) }));
     var stratCard = el("div", { cls: "strategy-card" });
     stratCard.appendChild(el("h4", { text: d.strategy.name }));
     stratCard.appendChild(el("div", { cls: "strategy-text", html: richText(d.strategy.content) }));
     if (d.strategy.link) {
       stratCard.appendChild(el("a", { cls: "strategy-link", text: "View source document →", attrs: { href: d.strategy.link, target: "_blank", rel: "noopener" } }));
     }
-    root.appendChild(section("Key freight transport and logistics strategy", [stratCard]));
+    stratContent.push(stratCard);
+    root.appendChild(section("Key freight transport and logistics strategy", stratContent));
   }
 
   /* ================================================================
