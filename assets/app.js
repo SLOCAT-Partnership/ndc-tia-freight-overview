@@ -395,7 +395,9 @@
 
     /* -- Overview of UNFCCC submissions -- */
     var sub = ov.submissions;
-    var subContent = [para(sub.intro)];
+    var subContent = [];
+    if (sub.highlight) subContent.push(el("div", { cls: "stat-callout", html: formatText(sub.highlight) }));
+    subContent.push(para(sub.intro));
     var statPair = el("div", { cls: "stat-pair" });
     sub.stats.forEach(function (s) {
       var box = el("div", { cls: "stat-box" });
@@ -423,7 +425,9 @@
 
     /* -- Targets -- */
     var tg = ov.targets;
-    var tgContent = [para(tg.intro)];
+    var tgContent = [];
+    if (tg.highlight) tgContent.push(el("div", { cls: "stat-callout", html: formatText(tg.highlight) }));
+    tgContent.push(para(tg.intro));
     tgContent.push(subheading(tg.economyWide.heading));
     var ewRows = tg.economyWide.rows.map(function (r) {
       var cells = [td(r.country, "country-cell")];
@@ -452,17 +456,20 @@
 
     /* -- Freight actions mentioned in NDCs -- */
     var fa = ov.freightActions;
-    var faContent = [para(fa.intro)];
+    var faContent = [];
+    if (fa.stat) faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
+    faContent.push(para(fa.intro));
     var fig = el("figure", { cls: "figure figure-narrow" });
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
     faContent.push(fig);
-    faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
     root.appendChild(section(fa.heading, faContent));
 
     /* -- Mitigation -- */
     var mi = ov.mitigation;
-    var miContent = [para(mi.intro), el("div", { cls: "insight-label", text: mi.insight }), bulletList(mi.bullets)];
+    var miContent = [];
+    if (mi.highlight) miContent.push(el("div", { cls: "stat-callout", html: formatText(mi.highlight) }));
+    miContent.push(para(mi.intro), el("div", { cls: "insight-label", text: mi.insight }), bulletList(mi.bullets));
     miContent.push(hbarChart(mi.chart.categories, mi.chart.series, { title: mi.chartTitle, valueKey: "share", formatter: pct }));
     miContent.push(subheading(mi.spotlight.heading));
     var spotCards = mi.spotlight.examples.map(function (e) { return exampleCard(e.country, e.content); });
@@ -471,7 +478,9 @@
 
     /* -- Adaptation -- */
     var ad = ov.adaptation;
-    var adContent = [para(ad.intro), bulletList(ad.vietnamBullets), para(ad.comparisonIntro)];
+    var adContent = [];
+    if (ad.highlight) adContent.push(el("div", { cls: "stat-callout", html: formatText(ad.highlight) }));
+    adContent.push(para(ad.intro), bulletList(ad.vietnamBullets), para(ad.comparisonIntro));
     adContent.push(hbarChart(ad.chart.categories, ad.chart.series, { title: ad.chartTitle, valueKey: "share", formatter: pct, footnotes: ad.chart.footnotes }));
     adContent.push(subheading(ad.examplesHeading));
     var adList = el("div", { cls: "example-list example-list-fit example-list-lg" });
@@ -481,7 +490,9 @@
 
     /* -- Global initiatives -- */
     var gi = ov.initiatives;
-    var giContent = [para(gi.intro)];
+    var giContent = [];
+    if (gi.highlight) giContent.push(el("div", { cls: "stat-callout", html: formatText(gi.highlight) }));
+    giContent.push(para(gi.intro));
     gi.blocks.forEach(function (b) {
       var blk = el("div", { cls: "initiative-block" });
       blk.appendChild(el("h4", { text: b.title }));

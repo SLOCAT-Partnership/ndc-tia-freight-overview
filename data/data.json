@@ -118,7 +118,8 @@
           "text": "Only China and India have submitted an LTS, in 2021 and 2022 respectively. Both include transport decarbonisation strategies covering actions up to 2030. While both set long-term economy-wide targets extending beyond mid-century, their sectoral actions only extend to 2030.",
           "bullets": []
         }
-      ]
+      ],
+      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
     },
 
     "targets": {
@@ -174,7 +175,8 @@
           { "country": "Nepal", "content": "Build 200 km by 2030 and 300 km by 2035 of electric railways to enable freight transport." }
         ],
         "footnote": "* The 7 Asian countries with transport GHG mitigation targets in their third-generation NDCs are: Bangladesh, Georgia, Kazakhstan, Nepal, Sri Lanka, Thailand and the United Arab Emirates."
-      }
+      },
+      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
     },
 
     "mitigation": {
@@ -209,7 +211,8 @@
           { "country": "Thailand", "content": "Intends to have a fleet of 80,000 electric trucks." },
           { "country": "United Arab Emirates", "content": "Accelerate the uptake of commercial electric vehicles (in the context of the country's Road 2.0 initiative in support of UAE’s Net Zero by 2050 Strategy)." }
         ]
-      }
+      },
+      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
     },
 
     "adaptation": {
@@ -238,7 +241,8 @@
         { "country": "Iraq", "content": "Improve transport infrastructure to ensure post-harvest transport of goods" },
         { "country": "Maldives", "content": "Enhance resilience and climate-proofing of critical infrastructure (airports, ports etc.) to better withstand extreme weather events and sea level rise" },
         { "country": "Republic of Korea", "content": "Diversify supply chains" }
-      ]
+      ],
+      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
     },
 
     "initiatives": {
@@ -278,7 +282,8 @@
           { "country": "India", "values": [false, true, true, false, true, false, false, true] },
           { "country": "Viet Nam", "values": [false, false, false, false, false, false, false, false] }
         ]
-      }
+      },
+      "highlight": "PLACEHOLDER: add highlight stat/insight text here."
     }
   },
 
