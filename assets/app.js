@@ -449,10 +449,10 @@
     // Text precedes each sub-topic's table: the economy-wide commentary and
     // all freight-target commentary/examples now sit above their tables.
     var tg = ov.targets;
-var tgContent = [];
-if (tg.highlight) tgContent.push(el("div", { cls: "stat-callout", html: formatText(tg.highlight) }));
-tgContent.push(para(tg.intro));
-tgContent.push(para(tg.economyWide.note));
+    var tgContent = [];
+    if (tg.highlight) tgContent.push(el("div", { cls: "stat-callout", html: formatText(tg.highlight) }));
+    tgContent.push(para(tg.intro));
+    tgContent.push(para(tg.economyWide.note));
     tgContent.push(subheading(tg.economyWide.heading));
     var ewRows = tg.economyWide.rows.map(function (r) {
       var cells = [td(r.country, "country-cell")];
@@ -480,9 +480,9 @@ tgContent.push(para(tg.economyWide.note));
 
     /* -- Freight actions mentioned in NDCs -- */
     var fa = ov.freightActions;
-var faContent = [];
-if (fa.stat) faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
-faContent.push(para(fa.intro));
+    var faContent = [];
+    if (fa.stat) faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
+    faContent.push(para(fa.intro));
     var fig = el("figure", { cls: "figure figure-narrow" });
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
@@ -715,14 +715,14 @@ faContent.push(para(fa.intro));
 
     /* Actions to mitigate */
     var actContent = [];
-if (d.actions.highlight) actContent.push(el("div", { cls: "stat-callout", html: formatText(d.actions.highlight) }));
-var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
-var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
-actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
-  title: "Freight-relevant NDC/LTS actions by category",
-  valueKey: "values",
-  formatter: function (v) { return String(v); }
-}));
+    if (d.actions.highlight) actContent.push(el("div", { cls: "stat-callout", html: formatText(d.actions.highlight) }));
+    var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
+    var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
+    actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
+      title: "Freight-relevant NDC/LTS actions by category",
+      valueKey: "values",
+      formatter: function (v) { return String(v); }
+    }));
     actContent.push(subheading("Example NDC actions"));
     if (d.actions.examples.length) {
       var exList = el("ul", { cls: "bullets action-list" });
@@ -763,9 +763,9 @@ actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreig
     // "Not explicitly defined" pinned last since it isn't a real mode), and
     // NDC/LTS become rows — the heatmapChart() helper is orientation-agnostic,
     // so this is just a matter of which array is passed as rows vs. columns.
-var modeContent = [];
-if (d.modes.highlight) modeContent.push(el("div", { cls: "stat-callout", html: formatText(d.modes.highlight) }));
-modeContent.push(para(d.modes.description));
+    var modeContent = [];
+    if (d.modes.highlight) modeContent.push(el("div", { cls: "stat-callout", html: formatText(d.modes.highlight) }));
+    modeContent.push(para(d.modes.description));
     var MODE_EMOJI = { "Road transport": "🚚", "Rail": "🚆", "Water transport": "🚢", "Air transport": "✈️" };
     var modeOrder = d.modes.categories.filter(function (c) { return c !== "Not explicitly defined"; });
     if (d.modes.categories.indexOf("Not explicitly defined") !== -1) modeOrder.push("Not explicitly defined");
