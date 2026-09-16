@@ -414,7 +414,9 @@
 
     /* -- Overview of UNFCCC submissions -- */
     var sub = ov.submissions;
-    var subContent = [para(sub.intro)];
+    var subContent = [];
+    if (sub.highlight) subContent.push(el("div", { cls: "stat-callout", html: formatText(sub.highlight) }));
+    subContent.push(para(sub.intro));
     var statPair = el("div", { cls: "stat-pair" });
     sub.stats.forEach(function (s) {
       var box = el("div", { cls: "stat-box" });
@@ -447,8 +449,10 @@
     // Text precedes each sub-topic's table: the economy-wide commentary and
     // all freight-target commentary/examples now sit above their tables.
     var tg = ov.targets;
-    var tgContent = [para(tg.intro)];
-    tgContent.push(para(tg.economyWide.note));
+var tgContent = [];
+if (tg.highlight) tgContent.push(el("div", { cls: "stat-callout", html: formatText(tg.highlight) }));
+tgContent.push(para(tg.intro));
+tgContent.push(para(tg.economyWide.note));
     tgContent.push(subheading(tg.economyWide.heading));
     var ewRows = tg.economyWide.rows.map(function (r) {
       var cells = [td(r.country, "country-cell")];
@@ -476,7 +480,9 @@
 
     /* -- Freight actions mentioned in NDCs -- */
     var fa = ov.freightActions;
-    var faContent = [para(fa.intro), el("div", { cls: "stat-callout", html: formatText(fa.stat) })];
+var faContent = [];
+if (fa.stat) faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
+faContent.push(para(fa.intro));
     var fig = el("figure", { cls: "figure figure-narrow" });
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
@@ -485,7 +491,9 @@
 
     /* -- Mitigation -- */
     var mi = ov.mitigation;
-    var miContent = [para(mi.intro), el("div", { cls: "insight-label", text: mi.insight }), bulletList(mi.bullets)];
+    var miContent = [];
+    if (mi.highlight) miContent.push(el("div", { cls: "stat-callout", html: formatText(mi.highlight) }));
+    miContent.push(para(mi.intro), el("div", { cls: "insight-label", text: mi.insight }), bulletList(mi.bullets));
     miContent.push(hbarChart(mi.chart.categories, mi.chart.series, { title: mi.chartTitle, valueKey: "share", formatter: pct }));
     miContent.push(subheading(mi.spotlight.heading));
     var spotCards = mi.spotlight.examples.map(function (e) { return exampleCard(e.country, e.content); });
@@ -494,7 +502,9 @@
 
     /* -- Adaptation -- */
     var ad = ov.adaptation;
-    var adContent = [para(ad.intro), bulletList(ad.vietnamBullets), para(ad.comparisonIntro)];
+    var adContent = [];
+    if (ad.highlight) adContent.push(el("div", { cls: "stat-callout", html: formatText(ad.highlight) }));
+    adContent.push(para(ad.intro), bulletList(ad.vietnamBullets), para(ad.comparisonIntro));
     adContent.push(hbarChart(ad.chart.categories, ad.chart.series, { title: ad.chartTitle, valueKey: "share", formatter: pct, footnotes: ad.chart.footnotes }));
     adContent.push(subheading(ad.examplesHeading));
     var adList = el("div", { cls: "example-list example-list-fit example-list-lg" });
@@ -504,7 +514,9 @@
 
     /* -- Global initiatives -- */
     var gi = ov.initiatives;
-    var giContent = [para(gi.intro)];
+    var giContent = [];
+    if (gi.highlight) giContent.push(el("div", { cls: "stat-callout", html: formatText(gi.highlight) }));
+    giContent.push(para(gi.intro));
     gi.blocks.forEach(function (b) {
       var blk = el("div", { cls: "initiative-block" });
       blk.appendChild(el("h4", { text: b.title }));
@@ -667,6 +679,7 @@
 
     /* Documents */
     var docSection = [];
+    if (d.documents.highlight) docSection.push(el("div", { cls: "stat-callout", html: formatText(d.documents.highlight) }));
     var strip = el("div", { cls: "doc-strip" });
     d.documents.columns.forEach(function (label, i) {
       strip.appendChild(docCard(label, d.documents.values[i]));
@@ -676,6 +689,7 @@
 
     /* Targets */
     var tgContent = [];
+    if (d.targets.highlight) tgContent.push(el("div", { cls: "stat-callout", html: formatText(d.targets.highlight) }));
     var twoCol = el("div", { cls: "two-col" });
     var boxCur = el("div", { cls: "target-box" });
     boxCur.appendChild(el("div", { cls: "target-label", text: "Current economy-wide NDC target" }));
@@ -701,6 +715,14 @@
 
     /* Actions to mitigate */
     var actContent = [];
+if (d.actions.highlight) actContent.push(el("div", { cls: "stat-callout", html: formatText(d.actions.highlight) }));
+var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
+var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
+actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
+  title: "Freight-relevant NDC/LTS actions by category",
+  valueKey: "values",
+  formatter: function (v) { return String(v); }
+}));
     actContent.push(subheading("Example NDC actions"));
     if (d.actions.examples.length) {
       var exList = el("ul", { cls: "bullets action-list" });
@@ -730,7 +752,10 @@
 
     /* LTS */
     if (d.lts && d.lts.summary) {
-      root.appendChild(section("What does the LTS say on freight transport?", [para(d.lts.summary)]));
+      var ltsContent = [];
+      if (d.lts.highlight) ltsContent.push(el("div", { cls: "stat-callout", html: formatText(d.lts.highlight) }));
+      ltsContent.push(para(d.lts.summary));
+      root.appendChild(section("What does the LTS say on freight transport?", ltsContent));
     }
 
     /* Freight transport modes */
@@ -738,7 +763,9 @@
     // "Not explicitly defined" pinned last since it isn't a real mode), and
     // NDC/LTS become rows — the heatmapChart() helper is orientation-agnostic,
     // so this is just a matter of which array is passed as rows vs. columns.
-    var modeContent = [para(d.modes.description)];
+var modeContent = [];
+if (d.modes.highlight) modeContent.push(el("div", { cls: "stat-callout", html: formatText(d.modes.highlight) }));
+modeContent.push(para(d.modes.description));
     var MODE_EMOJI = { "Road transport": "🚚", "Rail": "🚆", "Water transport": "🚢", "Air transport": "✈️" };
     var modeOrder = d.modes.categories.filter(function (c) { return c !== "Not explicitly defined"; });
     if (d.modes.categories.indexOf("Not explicitly defined") !== -1) modeOrder.push("Not explicitly defined");
@@ -756,6 +783,7 @@
 
     /* Progress of climate action (BTR) */
     var btrContent = [];
+    if (d.btr && d.btr.highlight) btrContent.push(el("div", { cls: "stat-callout", html: formatText(d.btr.highlight) }));
     if (d.btr && (d.btr.summary || (d.btr.actions && d.btr.actions.length))) {
       if (d.btr.summary) btrContent.push(para(d.btr.summary));
       if (d.btr.actions && d.btr.actions.length) {
@@ -768,13 +796,16 @@
     root.appendChild(section("Progress of climate action", btrContent));
 
     /* Strategy */
+    var stratContent = [];
+    if (d.strategy.highlight) stratContent.push(el("div", { cls: "stat-callout", html: formatText(d.strategy.highlight) }));
     var stratCard = el("div", { cls: "strategy-card" });
     stratCard.appendChild(el("h4", { text: d.strategy.name }));
     stratCard.appendChild(el("div", { cls: "strategy-text", html: richText(d.strategy.content) }));
     if (d.strategy.link) {
       stratCard.appendChild(el("a", { cls: "strategy-link", text: "View source document →", attrs: { href: d.strategy.link, target: "_blank", rel: "noopener" } }));
     }
-    root.appendChild(section("Key freight transport and logistics strategy", [stratCard]));
+    stratContent.push(stratCard);
+    root.appendChild(section("Key freight transport and logistics strategy", stratContent));
   }
 
   /* ================================================================
