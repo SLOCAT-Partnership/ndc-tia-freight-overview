@@ -77,6 +77,15 @@
   },
 
   "overview": {
+    "keyFindings": {
+      "heading": "Key findings for Asia and the NDC-TIA countries (China, India and Viet Nam)",
+      "bullets": [
+        "30 of 34 NDCs across Asia mention freight transport in targets and actions, mostly in the context of electrification, infrastructure improvements and low-carbon fuels.",
+        "7 of the 34 NDCs in Asia feature a transport greenhouse gas (GHG) mitigation target, further supported through indirect targets",
+        "China, India and Vietnam: \u2026\u2026\u2026\u2026. freight ambition",
+        "China, India and Vietnam: \u2026\u2026\u2026\u2026. electrification"
+      ]
+    },
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
       "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green.",
@@ -155,7 +164,7 @@
       },
       "freight": {
         "heading": "Freight targets of China, India and Viet Nam",
-        "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 36 third-generation NDCs (29% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. China and India include **non-GHG targets**, which do not specify emission reductions but support improvements in the transport sector.",
+        "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 34 third-generation NDCs (29% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. China and India include **non-GHG targets**, which do not specify emission reductions but support improvements in the transport sector.",
         "listIntro": "The following list shows non-GHG targets (see Glossary for explanations) relevant to freight transport and logistics in the third-generation NDCs and LTS.",
         "table": {
           "columns": ["Country", "Target type", "Target content relevant for freight", "Source"],

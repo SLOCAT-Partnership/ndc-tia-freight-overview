@@ -424,6 +424,13 @@
 
     var ov = DATA.overview;
 
+    /* -- Key findings -- */
+    if (ov.keyFindings) {
+      var kfBox = el("div", { cls: "country-desc" });
+      kfBox.appendChild(bulletList(ov.keyFindings.bullets));
+      root.appendChild(section(ov.keyFindings.heading, [kfBox]));
+    }
+
     /* -- Overview of UNFCCC submissions -- */
     var sub = ov.submissions;
     var subContent = [];
