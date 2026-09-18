@@ -414,6 +414,37 @@
     return box;
   }
 
+  // Collapsible list of every freight-related action identified in a country's NDCs and LTS,
+  // grouped by document generation. Collapsed by default given the volume of quotes involved.
+  function freightActionsDisclosure(fa, countryName) {
+    var details = el("details", { cls: "actions-disclosure" });
+    var summary = el("summary", { cls: "actions-disclosure-summary" });
+    summary.appendChild(document.createTextNode("View all " + fa.total + " freight-related actions in " + countryName + "'s NDCs and LTS"));
+    details.appendChild(summary);
+
+    var body = el("div", { cls: "actions-disclosure-body" });
+    fa.groups.forEach(function (g) {
+      var group = el("div", { cls: "actions-group" });
+      var heading = el("h4", { cls: "actions-group-heading" });
+      heading.appendChild(document.createTextNode(g.document + " "));
+      heading.appendChild(el("span", { cls: "actions-group-count", text: "(" + g.items.length + ")" }));
+      group.appendChild(heading);
+
+      var ul = el("ul", { cls: "actions-list" });
+      g.items.forEach(function (it) {
+        var li = el("li", { cls: "actions-item" });
+        if (it.category) li.appendChild(el("span", { cls: "actions-item-tag", text: it.category }));
+        li.appendChild(el("div", { cls: "actions-item-text", html: richText(it.quote) }));
+        if (it.page) li.appendChild(el("span", { cls: "actions-item-page", text: "p. " + it.page }));
+        ul.appendChild(li);
+      });
+      group.appendChild(ul);
+      body.appendChild(group);
+    });
+    details.appendChild(body);
+    return details;
+  }
+
   /* ================================================================
      TAB 1 — OVERVIEW
      ================================================================ */
@@ -826,6 +857,11 @@
     /* Featured report */
     var rh = d.reportHighlight;
     root.appendChild(reportBox([para(rh.intro), bulletList(rh.bullets)]));
+
+    /* Full list of freight actions in NDCs and LTS */
+    if (d.freightActions) {
+      root.appendChild(section("Freight transport actions in NDCs and LTS", [freightActionsDisclosure(d.freightActions, country)]));
+    }
   }
 
   /* ================================================================

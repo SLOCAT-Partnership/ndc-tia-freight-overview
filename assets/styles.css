@@ -539,6 +539,62 @@ td.heatmap-cell {
 .strategy-card .strategy-text { white-space: pre-line; }
 .strategy-card .strategy-link { display: inline-block; margin-top: 10px; font-weight: 600; }
 
+/* ---------- Freight actions disclosure (full NDC/LTS action list) ---------- */
+
+.actions-disclosure {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-top: 10px;
+}
+.actions-disclosure-summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 16px 20px;
+  font-weight: 700;
+  color: var(--teal-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.actions-disclosure-summary::-webkit-details-marker { display: none; }
+.actions-disclosure-summary::before {
+  content: "▸";
+  font-size: 0.8rem;
+  transition: transform 0.15s ease;
+}
+.actions-disclosure[open] .actions-disclosure-summary::before { transform: rotate(90deg); }
+.actions-disclosure-body { padding: 0 20px 20px; }
+
+.actions-group { margin-top: 20px; }
+.actions-group:first-child { margin-top: 0; }
+.actions-group-heading {
+  margin: 0 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  color: var(--teal-dark);
+  font-size: 0.95rem;
+}
+.actions-group-count { color: var(--text-soft); font-weight: 400; }
+
+.actions-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.actions-item { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+.actions-item-tag {
+  display: inline-block;
+  background: var(--teal-tint);
+  color: var(--teal-dark);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 2px 9px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+}
+.actions-item-text { font-size: 0.9rem; line-height: 1.5; }
+.actions-item-text p { margin: 0 0 6px; }
+.actions-item-text p:last-child { margin-bottom: 0; }
+.actions-item-page { display: block; margin-top: 6px; font-size: 0.75rem; color: var(--text-soft); font-style: italic; }
+
 /* ---------- Glossary ---------- */
 
 .glossary-section { margin-bottom: 28px; }

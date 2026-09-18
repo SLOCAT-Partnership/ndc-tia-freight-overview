@@ -385,6 +385,291 @@
           "strengthen enforcement and technology standardisation across China's fragmented heavy-duty vehicle industry so existing green-freight and overload rules actually change behavior;",
           "keep scaling zero-emission trucks building on China's position as the world's largest HDV market; and tighten coordination between transport and energy planning, so grid operators like State Grid and China Southern Grid are integrated early into charging and refueling infrastructure planning."
         ]
+      },
+      "freightActions": {
+        "total": 52,
+        "groups": [
+          {
+            "document": "First-Generation NDC",
+            "items": [
+              {
+                "category": "Energy efficiency",
+                "quote": "Improve the quality of gasoline and new types of alternative fuels",
+                "page": null
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Advocate green travel and accelerate development of smart transport and green freight transport",
+                "page": null
+              }
+            ]
+          },
+          {
+            "document": "Second-Generation NDC",
+            "items": [
+              {
+                "category": "Transport system improvements",
+                "quote": "accelerate the construction of a comprehensive transportation network,",
+                "page": 36
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "channel energy into multi-modal transportation,",
+                "page": 36
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "and increase the share of railways and waterways in the integrated  transportation",
+                "page": 36
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Green logistics will be developed speedily, transport resources will be optimized and the overall utilization efficiency will be advanced.",
+                "page": 36
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Measures will be taken for expediting vehicles and vessels that are powered by new energy and clean energy,",
+                "page": 36
+              },
+              {
+                "category": "Electrification",
+                "quote": "pushing forward the electrification of railways,",
+                "page": 36
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "giving impetus to constructing hydrogen filling stations,",
+                "page": 36
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "and normalizing the utilization of shore-end cable for vessels at ports.",
+                "page": 36
+              },
+              {
+                "category": "Electrification",
+                "quote": "China will move faster to put in place a convenient, efficient and moderately advanced  network system for battery charging and swap.",
+                "page": 36
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Energy efficiency standards for fuel-powered vehicles and vessels will be upgraded,",
+                "page": 36
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "energy efficiency labeling system for transport equipment will be improved,",
+                "page": 36
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "and timeworn vehicles and vessels that are highly energy-consuming and of high emissions will be phased out.",
+                "page": 36
+              }
+            ]
+          },
+          {
+            "document": "Third-Generation NDC",
+            "items": [
+              {
+                "category": "Aviation and maritime",
+                "quote": "shore power,",
+                "page": 14
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "aircraft auxiliary power unit replacement, and airport photovoltaic systems.",
+                "page": 14
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "promote clean energy development in shipping and aviation.",
+                "page": 14
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "The Hong Kong Airport Authority, together with major aviation-related business partners, has committed to achieving net-zero carbon emissions by the end of 2050 and has formulated a carbon management action plan, including the electrification of vehicles in airport restricted areas, the increase of electric vehicle charging stations, and the trial use of hydrogen energy.",
+                "page": 23
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "To promote the development of new energy industries in the aviation sector, the Hong Kong SAR Government will consult with the Mainland Government to lead a major global supplier of sustainable aviation fuel (SAF) to develop in the Greater Bay Area, in line with the 2030 target of achieving 1% to 2% SAF usage for flights departing from Hong Kong International Airport.",
+                "page": 23
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "As the first port in Asia to mandate the switching of ocean-going vessels to low-sulfur fuel, Hong Kong is working with the Mainland to reduce ship pollutant emissions, including jointly implementing a ship emission control area in the Pearl River Delta waters with the Guangdong Provincial Government. The \"Green Marine Fuel Bunkering Action Plan\" was announced in 2024, aiming to develop Hong Kong into a high-quality green marine fuel bunkering center.",
+                "page": 23
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Optimize the transportation structure,",
+                "page": 14
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "vigorously promote the high-quality development of long-distance transportation of bulk goods and containers from road to water and from road to rail,",
+                "page": 14
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "as well as multimodal transport,",
+                "page": 14
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "promote clean transportation in key industries and ports, and create a leading area for clean transportation.",
+                "page": 14
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Promote the transformation of existing transportation infrastructure,",
+                "page": 14
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "improve the greening and intelligentization of newly built, renovated (expanded) stations, airports, and port facilities,",
+                "page": 14
+              },
+              {
+                "category": "Electrification",
+                "quote": "and improve the infrastructure network including charging (swapping) stations,",
+                "page": 14
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "hydrogen refueling stations,",
+                "page": 14
+              },
+              {
+                "category": "Electrification",
+                "quote": "a modern comprehensive transportation system will be basically established, and new energy vehicles will become the mainstream of newly sold vehicles.",
+                "page": 14
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Actively develop green trade. Promote the green transformation of goods trade, launch a green trade public service platform, compile and distribute the \"Handbook on Green and Low-Carbon Development for Foreign Trade Enterprises,\" hold specialized training sessions, and select best practice cases in green trade.",
+                "page": 20
+              },
+              {
+                "category": "Mode shift and demand management",
+                "quote": "Support free trade zones in taking the lead in promoting carbon peaking and carbon neutrality, and support qualified free trade zones and free trade ports in establishing voluntary mechanisms to improve environmental performance.",
+                "page": 20
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Launch a nationwide green and low-carbon campaign, guide the public to choose green travel options,",
+                "page": 21
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "The Hong Kong SAR Government's inter-departmental working group on hydrogen energy is promoting the local application of hydrogen energy through pilot projects. As of October 2025, applications for 28 hydrogen energy pilot projects have been approved in principle, including hydrogen buses, hydrogen street washing vehicles, and the first public hydrogen refueling station. In mid-2024, the Hong Kong Special Administrative Region (HKSAR) Government announced the \"Hong Kong Hydrogen Energy Development Strategy,\" proposing four major strategies: \"improving regulations,\" \"establishing standards,\" \"aligning with the market,\" and \"prudently advancing.\" This aims to create a favorable environment for local hydrogen energy development in a stable and orderly manner, while also expanding cooperation between Hong Kong and the Guangdong-Hong Kong-Macao Greater Bay Area, and even globally, integrating Hong Kong into the overall national development strategy and developing new productive forces.",
+                "page": 23
+              },
+              {
+                "category": "Electrification",
+                "quote": "electrification of vehicles in airport restricted areas,",
+                "page": 23
+              },
+              {
+                "category": "Electrification",
+                "quote": "the increase of electric vehicle charging stations,",
+                "page": 23
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "and the trial use of hydrogen energy",
+                "page": 23
+              },
+              {
+                "category": "Mode shift and demand management",
+                "quote": "Macao: Formulate the \"Macao Electric Vehicle Promotion Plan,\" study the year for ceasing new registrations of various types of fuel vehicles, and launch the \"Subsidy Plan for Eliminating Old Motorcycles and Replacing Them with New Electric Motorcycles.\"",
+                "page": 32
+              }
+            ]
+          },
+          {
+            "document": "Long-Term Strategy (LTS)",
+            "items": [
+              {
+                "category": "Transport system improvements",
+                "quote": "Build a comprehensive three-dimensional transportation network, integrate the concept of green development throughout the entire process of transportation infrastructure planning, design, construction, operation, and maintenance, and actively promote the construction of green railways, green highways, green waterways, green ports, green airports, and green hubs.",
+                "page": 19
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Accelerate the optimization and adjustment of the transportation structure, continue to deepen the construction of special railways and special railway lines, actively develop direct river-sea and river-sea combined transportation, strive to increase the proportion of combined iron and water transportation, accelerate the promotion of the \"revolution to rail\" and \"revolution to water\" of bulk cargo in coastal ports,",
+                "page": 19
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "vigorously develop multi-modal high-efficiency transportation organization modes such as combined transportation, drop-and-pull transportation and joint distribution,",
+                "page": 19
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "improve the efficiency of transportation operations, promote the standardization of freight vehicles, and accelerate the application of recyclable standardized logistics turnover boxes.",
+                "page": 19
+              },
+              {
+                "category": "Mode shift and demand management",
+                "quote": "Promote the development of smart transportation, and actively develop new technologies, new business formats,",
+                "page": 19
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Accelerate the development, promotion and application of key energy-saving and low-carbon technologies and products in the transportation sector.",
+                "page": 19
+              },
+              {
+                "category": "Electrification",
+                "quote": "Continue to increase the retention rate of new energy vehicles.",
+                "page": 20
+              },
+              {
+                "category": "Electrification",
+                "quote": "Promote the realization of electrification, new energy and cleanness of urban public transportation and urban logistics and distribution vehicles and promote the use of new energy for private cars and trucks.",
+                "page": 20
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "Promote the application of low-carbon energy ships",
+                "page": 20
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "explore the application of biomass fuels and other synthetic fuels in civil aviation.",
+                "page": 20
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Increase the application of renewable energy such as solar energy, wind energy and geothermal energy in transportation infrastructure",
+                "page": 20
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "accelerate the improvement of the LNG",
+                "page": 20
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "hydrogen energy supply (filling) system,",
+                "page": 20
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "focus on solving the problems of difficult approval, construction, and operation of marine LNG refueling stations.",
+                "page": 20
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Build (near) zero-carbon hubs, stations and ports (port areas). Speed up the construction of a green travel system.",
+                "page": 20
+              }
+            ]
+          }
+        ]
       }
     },
 
@@ -466,6 +751,146 @@
           "continue building out multimodal logistics parks and digital logistics tools to close India's efficiency gap.",
           "It also calls out a structural fix: India's rail fare-to-freight pricing currently burdens freight to subsidize passenger rail, which works against the very mode shift the government is targeting."
         ]
+      },
+      "freightActions": {
+        "total": 24,
+        "groups": [
+          {
+            "document": "First-Generation NDC",
+            "items": [
+              {
+                "category": "Transport system improvements",
+                "quote": "Increase the share of railways in total land transport from 36% to 45%",
+                "page": null
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "Promote growth of coastal shipping and inland water transport",
+                "page": null
+              },
+              {
+                "category": "Electrification",
+                "quote": "Accelerate manufacturing and adoption of hybrid and electric vehicles",
+                "page": null
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Develop national policy on biofuels",
+                "page": null
+              },
+              {
+                "category": "Mode shift and demand management",
+                "quote": "Reduction in subsidies on fossil fuels including diesel, kerosene and domestic LPG",
+                "page": null
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Construct solar powered toll plazas",
+                "page": null
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Develop Green Highways Policy",
+                "page": null
+              }
+            ]
+          },
+          {
+            "document": "Third-Generation NDC",
+            "items": [
+              {
+                "category": "Transport system improvements",
+                "quote": "development of sustainable green transport systems",
+                "page": 24
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Aligned with Article 2.1(a) of the Paris Agreement, India’s NDC supports the shift to a low-emissions development pathway by integrating clean technology solutions across the energy, industrial, transport, and building sectors. This is supported by key national initiatives such as the Green Hydrogen Mission, the National Electricity Plan, and the Carbon Capture, Utilization and Storage (CCUS) framework.",
+                "page": 33
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "reduce emissions intensity in the transport and automotive sectors.",
+                "page": 24
+              }
+            ]
+          },
+          {
+            "document": "Long-Term Strategy (LTS)",
+            "items": [
+              {
+                "category": "Energy efficiency",
+                "quote": "Improving fuel efficiency\nFuel efficiency regulation, combined with electrification and expanding the adoption of clean fuels, can prove crucial in slowing down the rise in oil demand in the country. Fuel efficiency is also an important tool for achieving India’s Nationally Determined Contribution (NDC) commitment. It is also pivotal in reducing oil import costs and enhancing energy security. Improving fuel efficiency can reduce overall growth in demand for fuel and consequently help in reducing GHG emissions as compared to scenarios where such actions for efficiency improvement are not embedded in plans and policies for the sector.",
+                "page": 35
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Phased transition to cleaner fuels\n2. Biodiesel and methanol/dimethyl ether (DME) supplemented by pipeline biogas (Bio-PNG) as medium-term fuel alternatives.",
+                "page": 35
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Phased transition to cleaner fuels\n1. Usage of ethanol, compressed natural gas (CBG), biodiesel and liquified natural gas (LNG) as short- term fuel alternatives.",
+                "page": 35
+              },
+              {
+                "category": "Mode shift and demand management",
+                "quote": "Modal shift towards public and less polluting modes of transport\nIndia has introduced several initiatives to encourage a modal shift in both passenger and freight transport. The goal is to avoid higher per-capita emissions by encouraging public transport. Within public transport, the goal is to expand the use of less polluting modes with the order of preference being rail over road over airways.",
+                "page": 35
+              },
+              {
+                "category": "Electrification",
+                "quote": "Electrification across multiple modes\nBy 2050, both the rail and road transport will be encouraged to achieve high rates of electrification through policies designed to encourage electrification in this sector. Electrification of railways is already well on course with over 80% of the broad-gauge network already electrified till March 2022 (CORE, 2022). With the expansion of electricity generation through non-fossil fuel sources, electric transportation will also become less carbon-intensive in the medium and long term.",
+                "page": 4
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Demand side management",
+                "page": 4
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Reducing fuel demand and GHG emissions through improved fuel efficiency: India will achieve this through raised standards, optimized networks, improved technologies, and fleet modernization",
+                "page": 8
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Phased adoption of cleaner fuels: There will be continuation of a gradually increased blending of cleaner fuels while managing socio-economic and development of the skilling aspects required for the same. Hydrogen will be used as an energy carrier and alternate fuel in the transportation sector",
+                "page": 8
+              },
+              {
+                "category": "Electrification",
+                "quote": "Electrification across multiple modes: A comprehensive package of programmes, policies, and measures for the domestic manufacturing of electric vehicles and batteries and the electrification of railways will be taken up.",
+                "page": 8
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Hydrogen as a long-term alternative: green hydrogen is expected to become a significant fuel in India’s transport sector in the medium term, although the scale of its use will be contingent on the availability of low-cost finance to spur innovation in this sector. India is also aiming to emerge as a green hydrogen fuelling hub for maritime transport, with connectivity between ports and hydrogen producing facilities.",
+                "page": 35
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "Radical new aircraft designs (e.g., the ‘blended wing’ concept) that could improve fuel efficiency by 25% compared to the most efficient planes today.",
+                "page": 68
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "Biofuel-powered planes have been proven to be technically feasible and blending of up to 50% is now allowed for commercial use.",
+                "page": 68
+              },
+              {
+                "category": "Aviation and maritime",
+                "quote": "New engine designs that can cope with the low aromatics’ composition of biofuels",
+                "page": 68
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Hydrogen powered aircraft, which however face significant technical challenges for commercial scale use to become a reality.",
+                "page": 68
+              }
+            ]
+          }
+        ]
       }
     },
 
@@ -532,6 +957,91 @@
           "develop a concrete, time-bound implementation road map for shifting freight from road to rail and inland waterway transport, since the Action Programme on Green Energy Transformation and National Railway Master Plan currently set direction without one.",
           "implement comprehensive policy packages that mobilise investment, given how constrained Viet Nam's domestic transport financing is (around 2% of GDP), pointing to a mix of international climate finance (JETP, GCF) and domestic mechanisms.",
           "close the gap between the PDP8 energy plan's targets and transport electrification, so freight fleets have the power infrastructure and renewable supply to match future demand."
+        ]
+      },
+      "freightActions": {
+        "total": 13,
+        "groups": [
+          {
+            "document": "First-Generation NDC",
+            "items": [
+              {
+                "category": "Energy efficiency",
+                "quote": "Implement management solutions for fuel quality, emissions standards, and vehicle maintenance",
+                "page": null
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Restructure freight to reduce share of road transport and increase share of transport via rail and inland waterways",
+                "page": null
+              }
+            ]
+          },
+          {
+            "document": "Second-Generation NDC",
+            "items": [
+              {
+                "category": "Energy efficiency",
+                "quote": "Applying energy efficiency measures in transport",
+                "page": 10
+              },
+              {
+                "category": "Transport system improvements",
+                "quote": "Changing freight transportation models",
+                "page": null
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Shifting from conventional fuels to biofuel, natural gas and electricity",
+                "page": null
+              }
+            ]
+          },
+          {
+            "document": "Updated Second-Generation NDC",
+            "items": [
+              {
+                "category": "Transport system improvements",
+                "quote": "Action Program on Green Energy Transition and Reduction of Carbon and Methane Emissions of the Transportation Sector has been implemented,",
+                "page": 5
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "efficient use of energy in transportation",
+                "page": 7
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "limitation of fuel consumption for motor vehicles",
+                "page": 7
+              },
+              {
+                "category": "Mode shift and demand management",
+                "quote": "conversion of modes of transportation of passengers and goods",
+                "page": 7
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "use of CNG",
+                "page": 7
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "use of […] biofuels",
+                "page": 7
+              },
+              {
+                "category": "Structural and Technical",
+                "quote": "Upgrading transport facilities in areas with high disaster risk and vulnerability to climate change",
+                "page": null
+              },
+              {
+                "category": "Structural and Technical",
+                "quote": "building and upgrading the anchorage area for ships and boats to avoid storms",
+                "page": 24
+              }
+            ]
+          }
         ]
       }
     }
