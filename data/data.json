@@ -70,8 +70,7 @@
       },
       {
         "heading": "Download the data",
-        "text": "A link to download the underlying data will be added here.",
-        "placeholder": true
+        "text": "The underlying data extracted from the NDC Transport Tracker, covering all targets, mitigation actions and adaptation actions identified for China, India and Viet Nam, is available here: [Download the background data (.xlsx)](assets/data/ndc-transport-tracker-background-data.xlsx). This dataset is planned to move to the Transport Data Commons in a future update, at which point this link will be replaced."
       }
     ]
   },

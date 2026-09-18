@@ -32,12 +32,13 @@
   }
 
   // Escapes text, then applies a light markdown-style syntax on top:
-  // **word** -> bold, [label](url) -> link. Plain text with none of that
-  // syntax passes through unchanged, so it's always safe to call.
+  // **word** -> bold, [label](url) -> link (url can be an absolute https:// link
+  // or a relative path within the site, e.g. to a downloadable asset). Plain text
+  // with none of that syntax passes through unchanged, so it's always safe to call.
   function formatText(str) {
     return esc(str)
       .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-      .replace(/\[(.+?)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+      .replace(/\[(.+?)\]\(([^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
   }
 
   // Turns "Heading\n- bullet\n- bullet" style strings (or plain text with newlines) into HTML paragraphs/lists.
