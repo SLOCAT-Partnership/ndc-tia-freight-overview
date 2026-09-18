@@ -316,6 +316,7 @@
         "On targets, China's LTS commits to 40% of new vehicles sold being new-energy or clean-energy by 2030, alongside a 9.5% cut in commercial vehicle carbon intensity and a 10% reduction in rail energy consumption per unit of turnover, both by 2030.",
         "Its third-generation NDC adds region-specific goals: carbon-neutral growth for civil aviation by 2035 and zero-carbon transport in Hong Kong by 2050, with Hong Kong and Macao also committing to end new gasoline and hybrid private vehicle registrations by 2035."
       ],
+      "externalInsight": "Freight accounts for 65% of China's total transport carbon emissions, even though road freight (responsible for roughly 80%) moves only about a third of the country's goods by volume; moving freight is also unusually costly, at 18% of GDP compared to 8\u201312% in the US and EU.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
@@ -403,6 +404,7 @@
         "Freight-specific actions are concentrated in energy efficiency and transport system improvements, reflecting the third-generation NDC's lack of detailed sectoral strategies.",
         "Freight ambition instead sits mainly in the LTS, which targets net-zero for Indian Railways by 2030 (an estimated 60 million tonnes CO2 mitigated annually) via dedicated freight corridors shifting cargo off the road network, alongside 20% ethanol blending in petrol by 2025 and a National Logistics Policy goal to bring logistics costs to global benchmarks by 2030."
       ],
+      "externalInsight": "Road carries around 70% of India's freight in a highly fragmented sector, where roughly three-quarters of operators run fewer than five trucks, leaving truck efficiency 40-50% below the global average and logistics costs at 14% of GDP, nearly double the 8\u201310% typical of developed countries.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
@@ -483,8 +485,9 @@
         "Viet Nam submitted its first NDC in 2016 and an updated second-generation NDC in 2022; its third-generation NDC, LTS and BTR remain pending.",
         "The current NDC sets no freight-specific targets, though it does include several freight-relevant actions, spread across transport system improvements, energy efficiency, and alternative fuels. Viet Nam's NDC does not link any electrification actions to freight.",
         "Viet Nam is the only one of the three countries with transport adaptation actions, including upgrading facilities exposed to disaster risk and building storm-shelter anchorage areas.",
-        "Outside the NDC process, the newly adopted logistics service development strategy 2025-2035 sets sector-wide goals: 12–15% annual growth in the logistics industry alongside a 12–15% cut in logistics costs relative to GDP by 2035."
+        "Outside the NDC process, the newly adopted logistics service development strategy 2025-2035 sets sector-wide goals: 12\u201315% annual growth in the logistics industry alongside a 12\u201315% cut in logistics costs relative to GDP by 2035."
       ],
+      "externalInsight": "Road carries about 80% of Vietnam's freight by tonnage versus just 16% by inland waterway, even as freight traffic has grown 5% annually and rail and water transport account for only 2% of intercity transport overall.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [

@@ -414,6 +414,42 @@
     return box;
   }
 
+  // Cornerstone external-source callout (e.g. WRI report statistics), styled
+  // distinctly from SLOCAT-authored content so readers can tell the two apart.
+  var TRUCK_ICON_SVG =
+    '<svg class="external-box-icon" viewBox="0 0 100 66" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">' +
+      '<rect x="36" y="18" width="48" height="35" rx="2" fill="currentColor"/>' +
+      '<path d="M36 30 H23 L8 43 V53 H36 Z" fill="currentColor"/>' +
+      '<path d="M31.5 33 H24.5 L13.5 43 H31.5 Z" fill="#fff" opacity="0.62"/>' +
+      '<path d="M36 24 H80" stroke="#fff" stroke-width="2" opacity="0.28"/>' +
+      '<rect x="8" y="46" width="4" height="4" rx="1" fill="#fff" opacity="0.7"/>' +
+      '<rect x="12" y="49" width="72" height="5" rx="1" fill="currentColor"/>' +
+      '<rect x="83" y="48" width="8" height="3" rx="1" fill="currentColor"/>' +
+      '<circle cx="92" cy="49" r="3.5" fill="currentColor" opacity="0.78"/>' +
+      '<circle cx="96" cy="45" r="4.5" fill="currentColor" opacity="0.5"/>' +
+      '<circle cx="99" cy="40" r="5.5" fill="currentColor" opacity="0.28"/>' +
+      '<circle cx="23" cy="53" r="8" fill="currentColor"/>' +
+      '<circle cx="23" cy="53" r="3.2" fill="#fff" opacity="0.65"/>' +
+      '<circle cx="69" cy="53" r="8" fill="currentColor"/>' +
+      '<circle cx="69" cy="53" r="3.2" fill="#fff" opacity="0.65"/>' +
+    '</svg>';
+
+  function externalInsightBox(text) {
+    var ref = DATA.wriReport;
+    var box = el("div", { cls: "external-box" });
+    box.appendChild(el("div", { cls: "external-box-icon-wrap", html: TRUCK_ICON_SVG }));
+    var content = el("div", { cls: "external-box-content" });
+    content.appendChild(el("div", { cls: "external-box-label", text: "Situation of freight transport and logistics" }));
+    content.appendChild(el("p", { html: formatText(text) }));
+    var source = el("span", { cls: "external-box-source" });
+    source.appendChild(document.createTextNode("Source: "));
+    source.appendChild(el("a", { text: ref.title, attrs: { href: ref.link, target: "_blank", rel: "noopener" } }));
+    source.appendChild(document.createTextNode(" (WRI, 2023)"));
+    content.appendChild(source);
+    box.appendChild(content);
+    return box;
+  }
+
   /* ================================================================
      TAB 1 — OVERVIEW
      ================================================================ */
@@ -700,6 +736,8 @@
     }
     root.appendChild(descBox);
 
+    if (d.externalInsight) root.appendChild(externalInsightBox(d.externalInsight));
+
     /* Documents */
     var docSection = [];
     if (d.documents.highlight) docSection.push(el("div", { cls: "stat-callout", html: formatText(d.documents.highlight) }));
@@ -759,13 +797,7 @@
     } else {
       actContent.push(el("div", { cls: "empty-state", text: "No individually highlighted NDC action examples for " + country + " in the source data." }));
     }
-    var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
-    var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
-    actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
-      title: "Freight-relevant NDC/LTS actions by category",
-      valueKey: "values",
-      formatter: function (v) { return String(v); }
-    }));
+
     root.appendChild(section("Actions to mitigate freight transport emissions", actContent));
 
     /* Adaptation note (Viet Nam only) */
