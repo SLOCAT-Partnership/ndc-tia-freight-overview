@@ -82,8 +82,8 @@
       "bullets": [
         "30 of 34 NDCs across Asia mention freight transport in targets and actions, mostly in the context of electrification, infrastructure improvements and low-carbon fuels.",
         "7 of the 34 NDCs in Asia feature a transport greenhouse gas (GHG) mitigation target, further supported through indirect targets",
-        "China, India and Vietnam: \u2026\u2026\u2026\u2026. freight ambition",
-        "China, India and Vietnam: \u2026\u2026\u2026\u2026. electrification"
+        "The climate plans by China, India and Viet Nam reflect a more diverse approach to freight transport compared to Asia as a whole, with a stronger focus on modal shift, demand management and transport system improvements.",
+        "The most recent NDC by China and Viet Nam put a strong emphasis on alternative fuels. The LTS of China and India highlight electrification and energy efficiency as key measures to decarbonise freight transport."
       ]
     },
     "freightActions": {
@@ -144,23 +144,23 @@
         "columns": ["2030", "2035", "Net-zero ambitions"],
         "rows": [
           { "country": "China", "values": [
-            "Peak CO2 emissions before 2030 and reduce CO2 emissions per unit of GDP by more than 65% below 2005 levels",
-            "Reduce net GHG emissions by 7–10% from peak levels",
-            "Achieve carbon neutrality before 2060 (second-generation NDC)"
+            "Peak CO2 emissions before 2030 and reduce CO2 emissions per unit of GDP by more than 65% below 2005 levels (unconditional)",
+            "Reduce net GHG emissions by 7–10% from peak levels (unconditional)",
+            "Achieve carbon neutrality before 2060 (unconditional, second-generation NDC)"
           ]},
           { "country": "India", "values": [
-            "Reduce emissions intensity of GDP by 45% below 2005 levels",
-            "Reduce emissions intensity of GDP by 47% from 2005 levels",
-            "Achieve net-zero emissions by 2070 (third-generation NDC)"
+            "Reduce emissions intensity of GDP by 45% below 2005 levels (unconditional)",
+            "Reduce emissions intensity of GDP by 47% from 2005 levels (conditional)",
+            "Achieve net-zero emissions by 2070 (unclear conditionality, third-generation NDC)"
           ]},
           { "country": "Viet Nam", "values": [
-            "Reduce GHG emissions by 15.8% from BAU levels (146.3 Mt CO2eq), or up to 43.5% with international support (403.7 Mt CO2eq)",
+            "Reduce GHG emissions by 15.8% from BAU levels (146.3 Mt CO2eq) (unconditional), or up to 43.5% with international support (403.7 Mt CO2eq) (conditional)",
             "—",
-            "Achieve net-zero emissions by 2050 (second-generation NDC)"
+            "Achieve net-zero emissions by 2050 (unclear conditionality, second-generation NDC)"
           ]}
         ],
         "source": ["Second-Generation NDC", "Third-generation NDC", "Various (see cell)"],
-        "note": "China, India and Viet Nam express their economy-wide targets using different approaches. Viet Nam uses a business-as-usual (BAU) scenario, while China and India are among the few countries to frame their targets in terms of emissions intensity per unit of GDP."
+        "note": "China, India and Viet Nam express their economy-wide targets using different approaches. Viet Nam uses a business-as-usual (BAU) scenario, while China and India are among the few countries to frame their targets in terms of emissions intensity per unit of GDP. The conditionality of the target reflects whether a target is achievable with domestic resources (unconditional) or requires international support (conditional). China intends to achieve all targets with domestic resources, while Viet Nam has set a combination of unconditional and conditional targets. India's 2035 target is conditional."
       },
       "freight": {
         "heading": "Freight targets of China, India and Viet Nam",
@@ -341,7 +341,7 @@
           { "type": "Avoid targets", "content": "By 2050, Hong Kong intends to achieve zero carbon emissions in the transport sector", "source": "Third-Generation NDC" },
           { "type": "Zero emission vehicle targets", "content": "By 2035 or earlier, Hong Kong intends to stop registering new gasoline and hybrid private cars while increasing the number of public and private charging parking spaces to approximately 200,000 by mid-2027. Macao aims for the same 2035 target and also including motorcycles.", "source": "Third-Generation NDC" }
         ],
-        "description": "China has multiple targets in their NDC 3.0 and LTS, including vehicle efficiency, zero-emission vehicle, avoid targets, and non-GHG transport targets. China's latest NDC aims for carbon-neutral growth of the civil aviation transportation by 2035, zero-carbon emissions from the Hong Kong's transport sector by 2050, including targets by Hong Kong and Macao to halt registration of new gasoline and hybrid private vehicles. Additionally, China's LTS aims for 40% new energy and clean energy-powered vehicles of all vehicles sold by 2030, 9.5% less carbon emission intensity of converted turnover of commercial vehicles, 10% comprehensive energy consumption per unit of converted turnover of railways, all by 2030.",
+        "description": "China has multiple targets in their NDC 3.0 and LTS, including vehicle efficiency, zero-emission vehicle, avoid targets, and non-GHG transport targets. China's latest NDC aims for carbon-neutral growth of the civil aviation transport by 2035, zero-carbon emissions from the Hong Kong's transport sector by 2050, including targets by Hong Kong and Macao to halt registration of new gasoline and hybrid private vehicles. Additionally, China's LTS aims for 40% new energy and clean energy-powered vehicles of all vehicles sold by 2030, 9.5% less carbon emission intensity of converted turnover of commercial vehicles, 10% comprehensive energy consumption per unit of converted turnover of railways, all by 2030.",
         "highlight": "China has increased its climate ambitions across all NDC generations. Freight transport targets exist in NDCs but are only focusing on subsectors (aviation) or specific territories (Hong Kong and Macao)."
       },
       "actions": {
@@ -367,7 +367,7 @@
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
         "ndc": { "total": 38, "values": [20, 3, 5, 10, 9] },
         "lts": { "total": 14, "values": [7, 2, 2, 5, 2] },
-        "description": "Where China's NDC and LTS transport actions/targets specify a mode of transport, water, air, and rail transport are the modes most often named. This is in reference to the strategy for a modal-shift from road transportation to rail and water transportation, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transportation, specifically new-energy vehicles for urban logistics/distribution fleets and buses. For air and water transport, electrification efforts are mainly ground/shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels) rather than propulsion electrification. Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
+        "description": "Where China's NDC and LTS transport actions/targets specify a mode of transport, water, air, and rail transport are the modes most often named. This is in reference to the strategy for a modal-shift from road transport to rail and water transport, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transport, specifically zero-emission vehicles (so-called new-energy vehicles) for urban logistics. For air and water transport, electrification efforts are mainly ground and shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels). Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
         "highlight": "China focuses on a diverse range of transport modes in the current NDC and LTS with maritime transport having a significant presence."
       },
       "btr": {

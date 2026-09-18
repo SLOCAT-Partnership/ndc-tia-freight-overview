@@ -520,6 +520,10 @@
     tgContent.push(subheading(tg.freight.heading));
     tgContent.push(para(tg.freight.intro));
     tgContent.push(para(tg.freight.listIntro));
+    tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
+      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); },
+      [{ name: "Viet Nam", message: tg.freight.vietnamNote }]
+    ));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
     var exList = el("div", { cls: "example-list example-list-fit example-list-lg" });
     tg.freight.regionalExamples.forEach(function (e) {
@@ -527,10 +531,6 @@
     });
     tgContent.push(exList);
     tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
-    tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
-      function (r) { return tr([td(r.type), td(r.content), td(r.source)]); },
-      [{ name: "Viet Nam", message: tg.freight.vietnamNote }]
-    ));
     root.appendChild(section(tg.heading, tgContent));
 
     /* -- Freight actions mentioned in NDCs -- */
@@ -833,7 +833,7 @@
     var modeRows = ["Across all NDCs (out of " + d.modes.ndc.total + " actions)"].concat(
       d.modes.lts ? ["LTS (out of " + d.modes.lts.total + " actions)"] : []
     );
-    modeContent.push(heatmapChart(modeRows, modeSeries, { title: "Transport modes named in NDC / LTS actions", equalColumns: true }));
+    modeContent.push(heatmapChart(modeRows, modeSeries, { title: "Transport modes named in NDC and LTS actions (several modes per action possible)", equalColumns: true }));
     root.appendChild(section("Freight transport modes", modeContent));
 
     /* Progress of climate action (BTR) */
