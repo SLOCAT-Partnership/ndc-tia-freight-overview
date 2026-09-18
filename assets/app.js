@@ -828,6 +828,9 @@
     } else {
       actContent.push(el("div", { cls: "empty-state", text: "No individually highlighted NDC action examples for " + country + " in the source data." }));
     }
+    if (d.freightActions) {
+      actContent.push(freightActionsDisclosure(d.freightActions, country));
+    }
 
     root.appendChild(section("Actions to mitigate freight transport emissions", actContent));
 
@@ -896,11 +899,6 @@
     /* Featured report */
     var rh = d.reportHighlight;
     root.appendChild(reportBox([para(rh.intro), bulletList(rh.bullets)]));
-
-    /* Full list of freight actions in NDCs and LTS */
-    if (d.freightActions) {
-      root.appendChild(section("Freight transport actions in NDCs and LTS", [freightActionsDisclosure(d.freightActions, country)]));
-    }
   }
 
   /* ================================================================
