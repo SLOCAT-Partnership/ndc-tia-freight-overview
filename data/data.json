@@ -5,7 +5,7 @@
     "subtitle": "Assessment of China, India and Viet Nam in comparison to Asia",
     "dataAsOf": "10 August 2026",
     "countries": ["China", "India", "Viet Nam"],
-    "countryColors": { "Asia": "#00918F", "China": "#E08D14", "India": "#2E6DA4", "Viet Nam": "#B23A48", "Global": "#5B4B8A" },
+    "countryColors": { "Asia": "#00918F", "China": "#2E6DA4", "India": "#E08D14", "Viet Nam": "#B23A48", "Global": "#5B4B8A" },
     "docTypeColors": { "Across all NDCs": "#00918F", "LTS": "#5B4B8A" },
     "brand": {
       "headerDark": "#3FAEAB",
@@ -58,11 +58,11 @@
       },
       {
         "heading": "Limitations",
-        "text": "One known limitation of this version is that Viet Nam is assessed on a second-generation NDC and is therefore not directly comparable to the other NDCs analysed (China, India, and Asia)."
+        "text": "This assessment is limited to the NDCs and LTS of the three focus countries. Viet Nam is assessed on a second-generation NDC and is therefore not directly comparable to the third-generation NDCs analysed."
       },
       {
-        "heading": "Update policy",
-        "text": "This dashboard will be maintained by SLOCAT, and an update will be triggered by the publication of Viet Nam's third-generation NDC."
+        "heading": "Updates",
+        "text": "The information are based on information available as of 10 August 2026. This dashboard will be maintained by SLOCAT, and an update is planned to include Viet Nam's third-generation NDC upon its publication."
       },
       {
         "heading": "Citation and license",
@@ -77,9 +77,18 @@
   },
 
   "overview": {
+    "keyFindings": {
+      "heading": "Key findings for Asia and the NDC-TIA countries (China, India and Viet Nam)",
+      "bullets": [
+        "30 of 34 NDCs across Asia mention freight transport in targets and actions, mostly in the context of electrification, infrastructure improvements and low-carbon fuels.",
+        "7 of the 34 NDCs in Asia feature a transport greenhouse gas (GHG) mitigation target, further supported through indirect targets",
+        "The climate plans by China, India and Viet Nam reflect a more diverse approach to freight transport compared to Asia as a whole, with a stronger focus on modal shift, demand management and transport system improvements.",
+        "The most recent NDC by China and Viet Nam put a strong emphasis on alternative fuels. The LTS of China and India highlight electrification and energy efficiency as key measures to decarbonise freight transport."
+      ]
+    },
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
-      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green.",
+      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The word cloud below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green. It shows that electrification plays a major role as the terms 'electric', 'charging' and 'energy' are frequently mentioned. The focus of China, India and Viet Nam seems to be on vehicles while the NDCs across the Asia region tend to focus more on infrastructure. Many actions seem to refer to alternative, low-carbon fuels with hydrogen being a frequently mentioned option.",
       "image": "assets/img/wordcloud-freight-terms.png",
       "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by all Asian countries, China, India and Viet Nam highlighted in bold",
       "stat": "Climate action on freight transport in Asia focuses largely on electrification, transport system improvements and low-carbon fuels."
@@ -135,27 +144,27 @@
         "columns": ["2030", "2035", "Net-zero ambitions"],
         "rows": [
           { "country": "China", "values": [
-            "Peak CO2 emissions before 2030 and reduce CO2 emissions per unit of GDP by more than 65% below 2005 levels",
-            "Reduce net GHG emissions by 7–10% from peak levels",
-            "Achieve carbon neutrality before 2060 (second-generation NDC)"
+            "Peak CO2 emissions before 2030 and reduce CO2 emissions per unit of GDP by more than 65% below 2005 levels (unconditional)",
+            "Reduce net GHG emissions by 7–10% from peak levels (unconditional)",
+            "Achieve carbon neutrality before 2060 (unconditional, second-generation NDC)"
           ]},
           { "country": "India", "values": [
-            "Reduce emissions intensity of GDP by 45% below 2005 levels",
-            "Reduce emissions intensity of GDP by 47% from 2005 levels",
-            "Achieve net-zero emissions by 2070 (third-generation NDC)"
+            "Reduce emissions intensity of GDP by 45% below 2005 levels (unconditional)",
+            "Reduce emissions intensity of GDP by 47% from 2005 levels (conditional)",
+            "Achieve net-zero emissions by 2070 (unclear conditionality, third-generation NDC)"
           ]},
           { "country": "Viet Nam", "values": [
-            "Reduce GHG emissions by 15.8% from BAU levels (146.3 Mt CO2eq), or up to 43.5% with international support (403.7 Mt CO2eq)",
+            "Reduce GHG emissions by 15.8% from BAU levels (146.3 Mt CO2eq) (unconditional), or up to 43.5% with international support (403.7 Mt CO2eq) (conditional)",
             "—",
-            "Achieve net-zero emissions by 2050 (second-generation NDC)"
+            "Achieve net-zero emissions by 2050 (unclear conditionality, second-generation NDC)"
           ]}
         ],
         "source": ["Second-Generation NDC", "Third-generation NDC", "Various (see cell)"],
-        "note": "China, India and Viet Nam express their economy-wide targets using different approaches. Viet Nam uses a business-as-usual (BAU) scenario, while China and India are among the few countries to frame their targets in terms of emissions intensity per unit of GDP."
+        "note": "China, India and Viet Nam express their economy-wide targets using different approaches. Viet Nam uses a business-as-usual (BAU) scenario, while China and India are among the few countries to frame their targets in terms of emissions intensity per unit of GDP. The conditionality of the target reflects whether a target is achievable with domestic resources (unconditional) or requires international support (conditional). China intends to achieve all targets with domestic resources, while Viet Nam has set a combination of unconditional and conditional targets. India's 2035 target is conditional."
       },
       "freight": {
         "heading": "Freight targets of China, India and Viet Nam",
-        "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 36 third-generation NDCs (29% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. China and India include **non-GHG targets**, which do not specify emission reductions but support improvements in the transport sector.",
+        "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 34 third-generation NDCs (29% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. China and India include **non-GHG targets**, which do not specify emission reductions but support improvements in the transport sector.",
         "listIntro": "The following list shows non-GHG targets (see Glossary for explanations) relevant to freight transport and logistics in the third-generation NDCs and LTS.",
         "table": {
           "columns": ["Country", "Target type", "Target content relevant for freight", "Source"],
@@ -173,7 +182,7 @@
           ]
         },
         "vietnamNote": "Whereas Viet Nam has set economy wide GHG targets in their second generation NDC (net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030), there are currently no transport sector specific targets in the NDC.",
-        "regionalExamplesIntro": "For comparison, 9 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are:",
+        "regionalExamplesIntro": "9 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are:",
         "regionalExamples": [
           { "country": "Cambodia", "content": "Shift 5% of long distance freight transport to rail by 2035." },
           { "country": "Indonesia", "content": "Increase the biodiesel blend mandate from 20% to 40% (B40) by 2025." },
@@ -186,7 +195,7 @@
 
     "mitigation": {
       "heading": "Actions to mitigate freight transport emissions",
-      "intro": "Freight transport mitigation actions are mapped across six major categories (see glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
+      "intro": "Freight transport mitigation actions are mapped across six major categories (see Glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
       "insight": "The latest NDCs of China, India and Viet Nam show distinct patterns:",
       "bullets": [
         "**China**: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
@@ -307,6 +316,7 @@
         "On targets, China's LTS commits to 40% of new vehicles sold being new-energy or clean-energy by 2030, alongside a 9.5% cut in commercial vehicle carbon intensity and a 10% reduction in rail energy consumption per unit of turnover, both by 2030.",
         "Its third-generation NDC adds region-specific goals: carbon-neutral growth for civil aviation by 2035 and zero-carbon transport in Hong Kong by 2050, with Hong Kong and Macao also committing to end new gasoline and hybrid private vehicle registrations by 2035."
       ],
+      "externalInsight": "Freight accounts for 65% of China's total transport carbon emissions, even though road freight (responsible for roughly 80%) moves only about a third of the country's goods by volume; moving freight is also unusually costly, at 18% of GDP compared to 8\u201312% in the US and EU.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
@@ -331,7 +341,7 @@
           { "type": "Avoid targets", "content": "By 2050, Hong Kong intends to achieve zero carbon emissions in the transport sector", "source": "Third-Generation NDC" },
           { "type": "Zero emission vehicle targets", "content": "By 2035 or earlier, Hong Kong intends to stop registering new gasoline and hybrid private cars while increasing the number of public and private charging parking spaces to approximately 200,000 by mid-2027. Macao aims for the same 2035 target and also including motorcycles.", "source": "Third-Generation NDC" }
         ],
-        "description": "China has multiple targets in their NDC 3.0 and LTS, including vehicle efficiency, zero-emission vehicle, avoid targets, and non-GHG transport targets. China's latest NDC aims for carbon-neutral growth of the civil aviation transportation by 2035, zero-carbon emissions from the Hong Kong's transport sector by 2050, including targets by Hong Kong and Macao to halt registration of new gasoline and hybrid private vehicles. Additionally, China's LTS aims for 40% new energy and clean energy-powered vehicles of all vehicles sold by 2030, 9.5% less carbon emission intensity of converted turnover of commercial vehicles, 10% comprehensive energy consumption per unit of converted turnover of railways, all by 2030.",
+        "description": "China has multiple targets in their NDC 3.0 and LTS, including vehicle efficiency, zero-emission vehicle, avoid targets, and non-GHG transport targets. China's latest NDC aims for carbon-neutral growth of the civil aviation transport by 2035, zero-carbon emissions from the Hong Kong's transport sector by 2050, including targets by Hong Kong and Macao to halt registration of new gasoline and hybrid private vehicles. Additionally, China's LTS aims for 40% new energy and clean energy-powered vehicles of all vehicles sold by 2030, 9.5% less carbon emission intensity of converted turnover of commercial vehicles, 10% comprehensive energy consumption per unit of converted turnover of railways, all by 2030.",
         "highlight": "China has increased its climate ambitions across all NDC generations. Freight transport targets exist in NDCs but are only focusing on subsectors (aviation) or specific territories (Hong Kong and Macao)."
       },
       "actions": {
@@ -357,7 +367,7 @@
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
         "ndc": { "total": 38, "values": [20, 3, 5, 10, 9] },
         "lts": { "total": 14, "values": [7, 2, 2, 5, 2] },
-        "description": "Where China's NDC and LTS transport actions/targets specify a mode of transport, water, air, and rail transport are the modes most often named. This is in reference to the strategy for a modal-shift from road transportation to rail and water transportation, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transportation, specifically new-energy vehicles for urban logistics/distribution fleets and buses. For air and water transport, electrification efforts are mainly ground/shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels) rather than propulsion electrification. Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
+        "description": "Where China's NDC and LTS transport actions/targets specify a mode of transport, water, air, and rail transport are the modes most often named. This is in reference to the strategy for a modal-shift from road transport to rail and water transport, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transport, specifically zero-emission vehicles (so-called new-energy vehicles) for urban logistics. For air and water transport, electrification efforts are mainly ground and shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels). Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
         "highlight": "China focuses on a diverse range of transport modes in the current NDC and LTS with maritime transport having a significant presence."
       },
       "btr": {
@@ -679,6 +689,7 @@
         "Freight-specific actions are concentrated in energy efficiency and transport system improvements, reflecting the third-generation NDC's lack of detailed sectoral strategies.",
         "Freight ambition instead sits mainly in the LTS, which targets net-zero for Indian Railways by 2030 (an estimated 60 million tonnes CO2 mitigated annually) via dedicated freight corridors shifting cargo off the road network, alongside 20% ethanol blending in petrol by 2025 and a National Logistics Policy goal to bring logistics costs to global benchmarks by 2030."
       ],
+      "externalInsight": "Road carries around 70% of India's freight in a highly fragmented sector, where roughly three-quarters of operators run fewer than five trucks, leaving truck efficiency 40-50% below the global average and logistics costs at 14% of GDP, nearly double the 8\u201310% typical of developed countries.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
@@ -899,8 +910,9 @@
         "Viet Nam submitted its first NDC in 2016 and an updated second-generation NDC in 2022; its third-generation NDC, LTS and BTR remain pending.",
         "The current NDC sets no freight-specific targets, though it does include several freight-relevant actions, spread across transport system improvements, energy efficiency, and alternative fuels. Viet Nam's NDC does not link any electrification actions to freight.",
         "Viet Nam is the only one of the three countries with transport adaptation actions, including upgrading facilities exposed to disaster risk and building storm-shelter anchorage areas.",
-        "Outside the NDC process, the newly adopted logistics service development strategy 2025-2035 sets sector-wide goals: 12–15% annual growth in the logistics industry alongside a 12–15% cut in logistics costs relative to GDP by 2035."
+        "Outside the NDC process, the newly adopted logistics service development strategy 2025-2035 sets sector-wide goals: 12\u201315% annual growth in the logistics industry alongside a 12\u201315% cut in logistics costs relative to GDP by 2035."
       ],
+      "externalInsight": "Road carries about 80% of Vietnam's freight by tonnage versus just 16% by inland waterway, even as freight traffic has grown 5% annually and rail and water transport account for only 2% of intercity transport overall.",
       "documents": {
         "columns": ["First-Generation NDC", "Second-Generation NDC", "Third-Generation NDC", "Long-Term Strategy", "Biennial Transparency Report"],
         "values": [
