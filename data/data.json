@@ -58,11 +58,11 @@
       },
       {
         "heading": "Limitations",
-        "text": "One known limitation of this version is that Viet Nam is assessed on a second-generation NDC and is therefore not directly comparable to the other NDCs analysed (China, India, and Asia)."
+        "text": "This assessment is limited to the NDCs and LTS of the three focus countries. Viet Nam is assessed on a second-generation NDC and is therefore not directly comparable to the third-generation NDCs analysed."
       },
       {
-        "heading": "Update policy",
-        "text": "This dashboard will be maintained by SLOCAT, and an update will be triggered by the publication of Viet Nam's third-generation NDC."
+        "heading": "Updates",
+        "text": "The information are based on information available as of 10 August 2026. This dashboard will be maintained by SLOCAT, and an update is planned to include Viet Nam's third-generation NDC upon its publication."
       },
       {
         "heading": "Citation and license",
@@ -88,7 +88,7 @@
     },
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
-      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The image below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green.",
+      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The word cloud below shows the most frequently used terms in freight-related climate actions across Asia (orange), with terms also used by China, India, Viet Nam and all Asian countries highlighted in bold green. It shows that electrification plays a major role as the terms 'electric', 'charging' and 'energy' are frequently mentioned. The focus of China, India and Viet Nam seems to be on vehicles while the NDCs across the Asia region tend to focus more on infrastructure. Many actions seem to refer to alternative, low-carbon fuels with hydrogen being a frequently mentioned option.",
       "image": "assets/img/wordcloud-freight-terms.png",
       "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by all Asian countries, China, India and Viet Nam highlighted in bold",
       "stat": "Climate action on freight transport in Asia focuses largely on electrification, transport system improvements and low-carbon fuels."
@@ -182,7 +182,7 @@
           ]
         },
         "vietnamNote": "Whereas Viet Nam has set economy wide GHG targets in their second generation NDC (net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030), there are currently no transport sector specific targets in the NDC.",
-        "regionalExamplesIntro": "For comparison, 9 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are:",
+        "regionalExamplesIntro": "9 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are:",
         "regionalExamples": [
           { "country": "Cambodia", "content": "Shift 5% of long distance freight transport to rail by 2035." },
           { "country": "Indonesia", "content": "Increase the biodiesel blend mandate from 20% to 40% (B40) by 2025." },
@@ -195,7 +195,7 @@
 
     "mitigation": {
       "heading": "Actions to mitigate freight transport emissions",
-      "intro": "Freight transport mitigation actions are mapped across six major categories (see glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
+      "intro": "Freight transport mitigation actions are mapped across six major categories (see Glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
       "insight": "The latest NDCs of China, India and Viet Nam show distinct patterns:",
       "bullets": [
         "**China**: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
