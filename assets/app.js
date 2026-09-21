@@ -809,6 +809,7 @@
     /* Actions to mitigate */
     var actContent = [];
     if (d.actions.highlight) actContent.push(el("div", { cls: "stat-callout", html: formatText(d.actions.highlight) }));
+    if (d.actions.narrative) actContent.push(para(d.actions.narrative));
     var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
     var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
     actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
