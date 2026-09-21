@@ -813,7 +813,7 @@
     var seriesTotal = { name: "Total transport actions", color: "#B7B7B7", values: d.actions.counts.total };
     var seriesFreight = { name: "Freight-relevant actions", color: color, values: d.actions.counts.freight };
     actContent.push(hbarChart(d.actions.counts.categories, [seriesTotal, seriesFreight], {
-      title: "Freight-relevant NDC/LTS actions by category",
+      title: "Freight-relevant " + (d.lts && d.lts.summary ? "NDC/LTS" : "NDC") + " actions by category",
       valueKey: "values",
       formatter: function (v) { return String(v); }
     }));
