@@ -336,14 +336,14 @@
           { "type": "Avoid targets", "content": "By 2050, Hong Kong intends to achieve zero carbon emissions in the transport sector", "source": "Third-Generation NDC" },
           { "type": "Zero emission vehicle targets", "content": "By 2035 or earlier, Hong Kong intends to stop registering new gasoline and hybrid private cars while increasing the number of public and private charging parking spaces to approximately 200,000 by mid-2027. Macao aims for the same 2035 target and also including motorcycles.", "source": "Third-Generation NDC" }
         ],
-        "description": "China has multiple targets in their NDC 3.0 and LTS, including vehicle efficiency, zero-emission vehicle, avoid targets, and non-GHG transport targets. China's latest NDC aims for carbon-neutral growth of the civil aviation transport by 2035, zero-carbon emissions from the Hong Kong's transport sector by 2050, including targets by Hong Kong and Macao to halt registration of new gasoline and hybrid private vehicles. Additionally, China's LTS aims for 40% new energy and clean energy-powered vehicles of all vehicles sold by 2030, 9.5% less carbon emission intensity of converted turnover of commercial vehicles, 10% comprehensive energy consumption per unit of converted turnover of railways, all by 2030.",
+        "description": "China has multiple targets in their third-generation NDC and LTS, including **vehicle efficiency, zero-emission vehicle and avoid targets** (i.e., reducing demand for motorised transport). China's latest NDC aims for carbon-neutral growth of the civil aviation transport by 2035, zero-carbon emissions from the Hong Kong's transport sector by 2050, including targets by Hong Kong and Macao to halt registration of new gasoline and hybrid private vehicles. Additionally, China's LTS aims for 40% new energy and clean energy-powered vehicles of all vehicles sold by 2030, 9.5% less carbon emission intensity of converted turnover of commercial vehicles, 10% comprehensive energy consumption per unit of converted turnover of railways, all by 2030.",
         "highlight": "China has increased its climate ambitions across all NDC generations. Freight transport targets exist in NDCs but are only focusing on subsectors (aviation) or specific territories (Hong Kong and Macao)."
       },
       "actions": {
         "counts": {
           "categories": ["Mode shift and demand management", "Transport system improvements", "Energy efficiency", "Electrification", "Alternative fuels", "Aviation and maritime"],
-          "total": [3, 9, 0, 5, 4, 7],
-          "freight": [3, 8, 0, 4, 4, 6]
+          "total": [10, 17, 1, 7, 9, 9],
+          "freight": [4, 12, 1, 6, 7, 8]
         },
         "examples": [
           { "text": "Promote the shift of long-distance freight transport from road to water or rail", "category": "Transport system improvements" },
@@ -360,8 +360,8 @@
       },
       "modes": {
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
-        "ndc": { "total": 38, "values": [20, 3, 5, 10, 9] },
-        "lts": { "total": 14, "values": [7, 2, 2, 5, 2] },
+        "ndc": { "total": 37, "values": [20, 3, 5, 10, 9] },
+        "lts": { "total": 16, "values": [7, 2, 2, 5, 2] },
         "description": "Where China's NDC and LTS transport actions/targets specify a mode of transport, water, air, and rail transport are the modes most often named. This is in reference to the strategy for a modal-shift from road transport to rail and water transport, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transport, specifically zero-emission vehicles (so-called new-energy vehicles) for urban logistics. For air and water transport, electrification efforts are mainly ground and shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels). Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
         "highlight": "China focuses on a diverse range of transport modes in the current NDC and LTS with maritime transport having a significant presence."
       },
@@ -392,7 +392,7 @@
         ]
       },
       "freightActions": {
-        "total": 52,
+        "total": 54,
         "groups": [
           {
             "document": "First-Generation NDC",
@@ -538,6 +538,11 @@
                 "page": 14
               },
               {
+                "category": "Mode shift and demand management",
+                "quote": "improve the greening and intelligentization of newly built, renovated (expanded) stations, airports, and port facilities,",
+                "page": 14
+              },
+              {
                 "category": "Electrification",
                 "quote": "and improve the infrastructure network including charging (swapping) stations,",
                 "page": 14
@@ -649,6 +654,11 @@
               },
               {
                 "category": "Alternative fuels",
+                "quote": "explore the application of biomass fuels and other synthetic fuels in civil aviation.",
+                "page": 20
+              },
+              {
+                "category": "Alternative fuels",
                 "quote": "Increase the application of renewable energy such as solar energy, wind energy and geothermal energy in transportation infrastructure",
                 "page": 20
               },
@@ -711,8 +721,8 @@
       "actions": {
         "counts": {
           "categories": ["Mode shift and demand management", "Transport system improvements", "Energy efficiency", "Electrification", "Alternative fuels", "Aviation and maritime"],
-          "total": [0, 1, 2, 0, 0, 0],
-          "freight": [0, 1, 2, 0, 0, 0]
+          "total": [2, 3, 5, 3, 4, 3],
+          "freight": [0, 2, 5, 3, 3, 3]
         },
         "examples": [
           { "text": "Develop sustainable green transport systems", "category": "Transport system improvements" },
@@ -728,8 +738,8 @@
       },
       "modes": {
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
-        "ndc": { "total": 12, "values": [6, 4, 1, 1, 0] },
-        "lts": { "total": 13, "values": [7, 2, 2, 1, 4] },
+        "ndc": { "total": 10, "values": [6, 4, 1, 1, 0] },
+        "lts": { "total": 14, "values": [7, 2, 2, 1, 4] },
         "description": "Road transport is the mode India names most often among its defined NDC actions. India's Long-Term Strategy states that on-road freight is a significant driver of transport emissions, and therefore aims for rail capacity expansion (dedicated freight corridors, Indian Railways' 2030 net-zero target) to absorb freight volume off the road network, and a dedicated EV manufacturing package that explicitly covers electrification of railways alongside electric vehicles and batteries. Because road freight is both the largest emissions source and the segment named most explicitly in the NDC, it's a clear priority for electrification — particularly short- and medium-haul trucking, where commercial EV trucks already exist, complemented by continuing to electrify rail traction so that rail can take on more of the diverted freight volume. Aviation and inland waterways are described in the LTS as \"relatively small but fast-growing\".",
         "highlight": "The majority of India's freight transport actions do not explicitly refer to any transport modes."
       },
@@ -967,7 +977,7 @@
         ]
       },
       "freightActions": {
-        "total": 13,
+        "total": 21,
         "groups": [
           {
             "document": "First-Generation NDC",
@@ -977,6 +987,16 @@
                 "quote": "Implement management solutions for fuel quality, emissions standards, and vehicle maintenance",
                 "page": null
               },
+              {
+                "category": "Energy efficiency",
+                "quote": "Implement management solutions for fuel quality, emissions standards, and vehicle maintenance",
+                "page": null
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Implement management solutions for fuel quality, emissions standards, and vehicle maintenance",
+                "page": null
+              },              
               {
                 "category": "Transport system improvements",
                 "quote": "Restructure freight to reduce share of road transport and increase share of transport via rail and inland waterways",
@@ -1001,12 +1021,32 @@
                 "category": "Alternative fuels",
                 "quote": "Shifting from conventional fuels to biofuel, natural gas and electricity",
                 "page": null
+              },
+              {
+                "category": "Electrification",
+                "quote": "Shifting from conventional fuels to biofuel, natural gas and electricity",
+                "page": null
+              },
+              {
+                "category": "Alternative fuels",
+                "quote": "Shifting from conventional fuels to biofuel, natural gas and electricity",
+                "page": null
+              },
+              {
+                "category": "Electrification",
+                "quote": "Shifting to electricity",
+                "page": null
               }
             ]
           },
           {
             "document": "Updated Second-Generation NDC",
             "items": [
+              {
+                "category": "Transport system improvements",
+                "quote": "In the transportation sector, the goal of reducing GHG emissions has been integrated in the process of updating, adjusting and developing sector strategies and planning",
+                "page": 5
+              },
               {
                 "category": "Transport system improvements",
                 "quote": "Action Program on Green Energy Transition and Reduction of Carbon and Methane Emissions of the Transportation Sector has been implemented,",
@@ -1041,6 +1081,11 @@
                 "category": "Structural and Technical",
                 "quote": "Upgrading transport facilities in areas with high disaster risk and vulnerability to climate change",
                 "page": null
+              },
+              {
+                "category": "Structural and Technical",
+                "quote": "developing and completing the expressway network and the inter-regional transport system",
+                "page": 24
               },
               {
                 "category": "Structural and Technical",
