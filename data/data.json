@@ -57,6 +57,14 @@
         "text": "The assessment is based on data from the NDC Transport Tracker, a joint database on NDCs and LTS maintained by GIZ and SLOCAT. The tracker tracks all transport-related targets, mitigation measures and adaptation measures, as well as benefits, in Nationally Determined Contributions (NDCs) and Long-Term Low Greenhouse Gas Emission Development Strategies (LTS) — the two major reporting mechanisms of the Paris Agreement on Climate Change. Data as of 1 September 2026."
       },
       {
+        "heading": "Thematic scope",
+        "text": "Freight transport covers all modes, including vans, medium- and heavy-duty road vehicles, rail, air and water transport (inland waterways and ocean shipping). Related themes, such as logistics and supply chains, are also included. The review focuses on freight-related commitments and measures in the NDCs and LTS of China, India and Viet Nam."
+      },
+      {
+        "heading": "Regional scope",
+        "text": "Activities may cover cities, regions, national or cross-border transport, depending on the scope specified in the policies. In terms of countries and regions covered, the dashboard applies the [M49 Standard by the United Nations Statistics Division](https://unstats.un.org/unsd/methodology/m49/)."
+      },
+      {
         "heading": "Limitations",
         "text": "This assessment is limited to the NDCs and LTS of the three focus countries. Viet Nam is assessed on a second-generation NDC and is therefore not directly comparable to the third-generation NDCs analysed."
       },
@@ -67,6 +75,18 @@
       {
         "heading": "Citation and license",
         "text": "Please cite the following when using this dashboard: SLOCAT (2026), How does climate action tackle freight transport and logistics?, NDC Transport Initiative for Asia, https://slocat-partnership.github.io/ndc-tia-freight-overview/."
+      },
+      {
+        "heading": "For more information on transport in NDCs",
+        "links": [
+          { "term": "NDC-TIA Website", "link": "https://www.ndctransportinitiativeforasia.org/" },
+          { "term": "Visioning to Implementation: National Transport Decarbonization Policies That Match Climate Targets in China, India, and Vietnam", "link": "https://www.wri.org/research/visioning-implementation-national-transport-decarbonization-policies-match-climate-targets" },
+          { "term": "SLOCAT NDCs Library", "link": "https://slocat.net/ndcs/" },
+          { "term": "Regional Insights on Transport in Third-Generation NDCs", "link": "https://slocat-partnership.github.io/ndc-transport-regions/" },
+          { "term": "GIZ-SLOCAT Report 'Is transport on track for 1.5°C? Insights from the new NDCs'", "link": "https://slocat.net/wp-content/uploads/2026/02/Is-Transport-on-Track-for-1.5-degrees-NDC-insights-2026.pdf" },
+          { "term": "NDC Transport Tracker", "link": "https://changing-transport.org/tracker/" }
+        ],
+        "text": "Transport data (freight activity, electric vehicle fleet size etc.) for China, India, Viet Nam and many more countries can be retrieved in the country fact sheets of the [SLOCAT Transport, Climate and Sustainability Global Status Report – 4th edition](https://gsr4.slocat.net/country-fact-sheets/)."
       },
       {
         "heading": "Download the data",
@@ -1105,14 +1125,6 @@
   "glossary": {
     "intro": "The dashboard data is based on submissions as of 1 September 2026 and is sourced from the NDC Transport Tracker by GIZ and SLOCAT.",
     "trackerLink": "https://changing-transport.org/tracker/",
-    "thematicScope": {
-      "heading": "Thematic scope",
-      "text": "Freight transport covers all modes, including vans, medium- and heavy-duty road vehicles, rail, air and water transport (inland waterways and ocean shipping). Related themes, such as logistics and supply chains, are also included. The review focuses on freight-related commitments and measures in the NDCs and LTS of China, India and Viet Nam."
-    },
-    "regionalScope": {
-      "heading": "Regional scope",
-      "text": "Activities may cover cities, regions, national or cross-border transport, depending on the scope specified in the policies. In terms of countries and regions covered, the dashboard applies the [M49 Standard by the United Nations Statistics Division](https://unstats.un.org/unsd/methodology/m49/)."
-    },
     "submissionProcess": {
       "heading": "Submission process",
       "items": [
@@ -1162,18 +1174,6 @@
         { "term": "Informational and Educational", "definition": "Measures related to monitoring and early warning systems, disaster planning, education and training." },
         { "term": "Other adaptation and resilience measures", "definition": "Measures that do not fit into the other categories." }
       ]
-    },
-    "furtherInfo": {
-      "heading": "For more information on transport in NDCs",
-      "links": [
-        { "term": "NDC-TIA Website", "link": "https://www.ndctransportinitiativeforasia.org/" },
-        { "term": "Visioning to Implementation: National Transport Decarbonization Policies That Match Climate Targets in China, India, and Vietnam", "link": "https://www.wri.org/research/visioning-implementation-national-transport-decarbonization-policies-match-climate-targets" },
-        { "term": "SLOCAT NDCs Library", "link": "https://slocat.net/ndcs/" },
-        { "term": "Regional Insights on Transport in Third-Generation NDCs", "link": "https://slocat-partnership.github.io/ndc-transport-regions/" },
-        { "term": "GIZ-SLOCAT Report 'Is transport on track for 1.5°C? Insights from the new NDCs'", "link": "https://slocat.net/wp-content/uploads/2026/02/Is-Transport-on-Track-for-1.5-degrees-NDC-insights-2026.pdf" },
-        { "term": "NDC Transport Tracker", "link": "https://changing-transport.org/tracker/" }
-      ]
-    },
-    "footer": "Transport data (freight activity, electric vehicle fleet size etc.) for China, India, Viet Nam and many more countries can be retrieved in the country fact sheets of the SLOCAT Transport, Climate and Sustainability Global Status Report – 4th edition: https://gsr4.slocat.net/country-fact-sheets/"
+    }
   }
 }

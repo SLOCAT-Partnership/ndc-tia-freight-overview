@@ -374,12 +374,25 @@
     root.appendChild(bgBlock);
 
     a.sections.forEach(function (s) {
-      if (!s.text || !s.text.trim()) return; // nothing to show yet
+      var hasLinks = s.links && s.links.length;
+      var hasText = s.text && s.text.trim();
+      if (!hasLinks && !hasText) return; // nothing to show yet
       var blk = el("div", { cls: "glossary-section" });
       blk.appendChild(el("h3", { text: s.heading }));
-      // Placeholder sections (e.g. Citation, Download) render muted/italic to
-      // signal the content is a stand-in, not final.
-      blk.appendChild(s.placeholder ? el("div", { cls: "empty-state", text: s.text }) : para(s.text));
+      if (hasLinks) {
+        var ul = el("ul", { cls: "glossary-links" });
+        s.links.forEach(function (l) {
+          var li = el("li");
+          li.appendChild(el("a", { text: l.term, attrs: { href: l.link, target: "_blank", rel: "noopener" } }));
+          ul.appendChild(li);
+        });
+        blk.appendChild(ul);
+      }
+      if (hasText) {
+        // Placeholder sections (e.g. Download the data) render muted/italic to
+        // signal the content is a stand-in, not final.
+        blk.appendChild(s.placeholder ? el("div", { cls: "empty-state", text: s.text }) : para(s.text));
+      }
       root.appendChild(blk);
     });
   }
@@ -907,15 +920,6 @@
      TAB 3 — GLOSSARY
      ================================================================ */
 
-  // Escapes text and turns any bare http(s) URL within it into a clickable link.
-  function linkify(text) {
-    return esc(text)
-      .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-      .replace(/(https?:\/\/[^\s)]+)/g, function (url) {
-        return '<a href="' + url + '" target="_blank" rel="noopener">' + url + "</a>";
-      });
-  }
-
   function glossaryDL(items, withLink) {
     var dl = el("dl", { cls: "glossary-list" });
     items.forEach(function (i) {
@@ -943,16 +947,6 @@
     }
     root.appendChild(el("p", { cls: "lead", html: introHtml }));
 
-    var thematicScope = el("div", { cls: "glossary-section" });
-    thematicScope.appendChild(el("h3", { text: g.thematicScope.heading }));
-    thematicScope.appendChild(para(g.thematicScope.text));
-    root.appendChild(thematicScope);
-
-    var regionalScope = el("div", { cls: "glossary-section" });
-    regionalScope.appendChild(el("h3", { text: g.regionalScope.heading }));
-    regionalScope.appendChild(para(g.regionalScope.text));
-    root.appendChild(regionalScope);
-
     var proc = el("div", { cls: "glossary-section" });
     proc.appendChild(el("h3", { text: g.submissionProcess.heading }));
     proc.appendChild(glossaryDL(g.submissionProcess.items, true));
@@ -977,19 +971,6 @@
     adapt.appendChild(el("h3", { text: g.adaptationMeasures.heading }));
     adapt.appendChild(glossaryDL(g.adaptationMeasures.items, false));
     root.appendChild(adapt);
-
-    var more = el("div", { cls: "glossary-section" });
-    more.appendChild(el("h3", { text: g.furtherInfo.heading }));
-    var ul = el("ul", { cls: "glossary-links" });
-    g.furtherInfo.links.forEach(function (l) {
-      var li = el("li");
-      li.appendChild(el("a", { text: l.term, attrs: { href: l.link, target: "_blank", rel: "noopener" } }));
-      ul.appendChild(li);
-    });
-    more.appendChild(ul);
-    root.appendChild(more);
-
-    root.appendChild(el("p", { html: linkify(g.footer) }));
 
     sheetFooterLogos(root);
   }
