@@ -1138,14 +1138,15 @@
       "items": [
         { "term": "First-generation NDC", "definition": "Submissions of the first NDC between 2015 and 2018." },
         { "term": "Second-generation NDC", "definition": "Submissions between 2018 and until November 2024." },
-        { "term": "Third-generation NDC", "definition": "Submissions since November 2024 are regarded as third-generation NDCs." },
-        { "term": "LTS", "definition": "Long-term low greenhouse gas emission development strategy." },
-        { "term": "BTR", "definition": "Biennial Transparency Report." }
+        { "term": "Third-generation NDC", "definition": "Submissions since November 2024 are regarded as third-generation NDCs." }
       ]
     },
     "targetTypes": {
       "heading": "Targets",
       "items": [
+        { "term": "Economy-wide GHG targets", "definition": "Targets in the NDC that apply to the entire economy and specify GHG reductions by a specific year." },
+        { "term": "Transport GHG mitigation targets", "definition": "A GHG transport focused on transport (the whole transport sector or specific modes) with a target year" },
+        { "term": "Non-GHG targets", "definition": "Non-GHG transport are quantified transport-focused targets that do not specify emission reductions; all of the following targets fall under this category" },
         { "term": "Avoid targets", "definition": "Non-GHG transport targets only: targets related to avoided travel" },
         { "term": "Biofuel targets", "definition": "Non-GHG transport targets only: targets related to biofuel" },
         { "term": "Mode share targets", "definition": "Non-GHG transport targets only: targets related to changes in mode share" },
