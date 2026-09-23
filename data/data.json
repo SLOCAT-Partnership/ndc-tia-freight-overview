@@ -185,7 +185,7 @@
       "freight": {
         "heading": "Freight targets of China, India and Viet Nam",
         "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 33 third-generation NDCs (26% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. None of the three NDC-TIA countries featured such a target in any of their NDC nor LTS submissions.",
-        "listIntro": "China and India include **non-GHG targets** (see Glossary for explanations), which do not specify emission reductions but support improvements in the transport sector. The following list shows non-GHG targets relevant to freight transport and logistics in the third-generation NDCs and LTS.",
+        "listIntro": "China and India include **non-GHG targets** (see 'About this Dashboard' for explanations), which do not specify emission reductions but support improvements in the transport sector. The following list shows non-GHG targets relevant to freight transport and logistics in the third-generation NDCs and LTS.",
         "table": {
           "columns": ["Country", "Target type", "Target content relevant for freight", "Source"],
           "rows": [
@@ -215,7 +215,7 @@
 
     "mitigation": {
       "heading": "Actions to mitigate freight transport emissions",
-      "intro": "Freight transport mitigation actions are mapped across six major categories (see Glossary for definitions). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
+      "intro": "Freight transport mitigation actions are mapped across six major categories (see 'About this Dashboard' for explanations). More than a quarter of freight transport actions in Asia focus on electrification, making it the most common category. Transport system improvements are the second most common category across Asian NDCs.",
       "insight": "The latest NDCs of China, India and Viet Nam show distinct patterns:",
       "bullets": [
         "**China**: Most freight-related actions focus on transport system improvements, followed by aviation and maritime measures. China places a strong emphasis on freight corridors, supported by water and air transport.",
@@ -374,28 +374,28 @@
         ],
         "adaptationNote": null,
         "highlight": "The focus of actions to mitigate freight transport emissions is on transport system improvements as well as aviation and maritime transport.",
-        "narrative": "China's third-generation NDC and LTS identify a broad set of freight-related actions, concentrated in transport system improvements, aviation and maritime measures, alternative fuels and electrification. The chart below breaks these actions down by category, comparing freight-relevant measures against all transport actions identified in China's climate plans."
+        "narrative": "China's third-generation NDC and LTS identify a broad set of freight-related actions, concentrated in **transport system improvements, aviation and maritime measures, alternative fuels and electrification**. The chart below breaks these actions down by category, comparing freight-relevant measures against all transport actions identified in China's climate plans."
       },
       "lts": {
-        "summary": "The LTS of China has several freight-focused activities with a focus on rail and water transport. Optimisation of freight transport is envisioned through a shift of goods from road to railways or waterways. The enabling actions will be multimodality, distribution hubs, efficient operations, freight vehicle standardisation and the introduction of recyclable standardised logistics packages. Electrification of freight vehicles is highlighted in trucks for urban logistics. In the wider transport context, the LTS covers smart transport, new technologies, new business formats, and new vehicle types supporting autonomous driving.",
+        "summary": "The LTS of China has several freight-focused activities with a focus on **rail and water transport**. Optimisation of freight transport is envisioned through a **shift of goods from road to railways or waterways**. The enabling actions will be **multimodality, distribution hubs, efficient operations, freight vehicle standardisation and the introduction of recyclable standardised logistics packages**. **Electrification** of freight vehicles is highlighted in trucks for urban logistics. In the wider transport context, the LTS covers smart transport, new technologies, new business formats, and new vehicle types supporting autonomous driving.",
         "highlight": "China's LTS features several freight transport targets and tailored actions supporting multimodality and structural transformation."
       },
       "modes": {
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
         "ndc": { "total": 37, "values": [20, 3, 5, 10, 9] },
         "lts": { "total": 16, "values": [7, 2, 2, 5, 2] },
-        "description": "Where China's NDC and LTS transport actions/targets specify a mode of transport, water, air, and rail transport are the modes most often named. This is in reference to the strategy for a modal-shift from road transport to rail and water transport, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transport, specifically zero-emission vehicles (so-called new-energy vehicles) for urban logistics. For air and water transport, electrification efforts are mainly ground and shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels). Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
+        "description": "Where China's NDC and LTS transport actions specify a mode of transport, **water, air, and rail transport** are the modes most often named. This is in reference to the strategy for a modal-shift from road transport to rail and water transport, backed by rail freight volume growing ~10%/year since 2016. However, China's electrification targets are directed towards road transport, specifically zero-emission vehicles (so-called new-energy vehicles) for urban logistics. For air and water transport, electrification efforts are mainly ground and shore infrastructure (airport electric ground vehicles, shore power for berthed ships, LNG-fuelled vessels). Alternative fuel use is also included in road (hydrogen and low-sulfur fuel) and air transport modes (SAF).",
         "highlight": "China focuses on a diverse range of transport modes in the current NDC and LTS with maritime transport having a significant presence."
       },
       "btr": {
         "summary": "By 2025, the CO2 emissions per unit of transport turnover for operating vehicles and vessels will decrease by 5% and 3.5% compared to 2020, NOx emissions from operating vessels will decrease by 7% compared to 2020. New energy vehicles will account for 20% in urban logistics distribution. Clean energy container trucks at international container hub ports will reach 60%, while shore power usage at Yangtze River Economic Belt ports and water service areas will increase by 100% compared to 2020.",
         "actions": [
-          "Accelerate the development of rail-water intermodal transport in the Yangtze River Delta region and the Guangdong-Hong Kong-Macau Greater Bay Area. During the 14th FYP period, container rail-water intermodal transport volume will grow by an average of over 15% annually.",
-          "Launch initiatives to promote electric delivery trucks and hydrogen fuel cell vehicles, implement urban green freight distribution demonstrations, advance shore power applications (incl. renewable energy sources), and construct near-zero logistics hubs and stations.",
-          "Promote the shift of bulk cargo and medium-long distance freight transport from highway to railway, and from highway to waterway through the \"Work Plan for Promoting the Development of Multimodal Transport and Optimizing the Transport Structure (2021-2025)\".",
-          "Develop a work plan to optimise the transport structure for multimodal transport development, formulated standards such as \"Intermodal Loading Unit Identification and Classification and Codes of Intermodal Transport Cargo\".",
-          "Phase out the China III diesel trucks and below. Already completed in the Beijing-Tianjin-Hebei region and surrounding areas, resulting in more than 1.1 million less diesel trucks. This activity is further supported with improvements in maintenance capabilities for vehicle emission performance and better energy efficiency and carbon reduction efforts of in-use vehicles.",
-          "Launch pilot projects on green urban freight delivery. 77 green urban freight delivery demonstration projects were implemented, adding 260,000 zero-emissions freight vehicles, accounting for around 50% of the total nationwide increase."
+          "Accelerate the development of **rail-water intermodal transport** in the Yangtze River Delta region and the Guangdong-Hong Kong-Macau Greater Bay Area. During the 14th FYP period, container rail-water intermodal transport volume will grow by an average of over 15% annually.",
+          "Launch initiatives to promote **electric delivery trucks and hydrogen fuel cell vehicles**, implement **urban green freight distribution demonstrations**, advance **shore power applications (incl. renewable energy sources)**, and construct **near-zero logistics hubs and stations**.",
+          "Promote the **shift of bulk cargo and medium-long distance freight transport from highway to railway**, and from highway to waterway through the \"Work Plan for Promoting the Development of Multimodal Transport and Optimizing the Transport Structure (2021-2025)\".",
+          "Develop a work plan to optimise the transport structure for **multimodal transport development**, formulated standards such as \"Intermodal Loading Unit Identification and Classification and Codes of Intermodal Transport Cargo\".",
+          "**Phase out the China III diesel trucks** and below. Already completed in the Beijing-Tianjin-Hebei region and surrounding areas, resulting in more than 1.1 million less diesel trucks. This activity is further supported with improvements in **maintenance capabilities for vehicle emission performance** and better **energy efficiency and carbon reduction efforts of in-use vehicles**.",
+          "Launch pilot projects on **green urban freight delivery**. 77 green urban freight delivery demonstration projects were implemented, adding 260,000 zero-emissions freight vehicles, accounting for around 50% of the total nationwide increase."
         ],
         "highlight": "The BTR by China shows that significant progress is being made in reducing emissions from freight transport through a combination of modal shift, electrification, and low carbon fuel adoption."
       },
@@ -737,7 +737,7 @@
           { "type": "Zero emission vehicle targets", "content": "By 2030, Indian Railways to become net-zero (annual mitigation of 60 million tonnes of CO2)", "source": "LTS" },
           { "type": "Vehicle efficiency targets", "content": "By 2030, National Logistic Policy aspires to reduce cost of logistics in India to be comparable to global benchmarks", "source": "LTS" }
         ],
-        "description": "In addition to India's long-term net-zero economy-wide target for 2070, and the NDC target to reduce emissions intensity of GDP by 47% by 2035, India's LTS targets making Indian Railways net-zero by 2030, 20% ethanol blending in petrol by 2025, and reduction of logistics costs to global benchmarks under the National Logistics Policy.",
+        "description": "India has the vision to achieve a **long-term net-zero economy-wide target for 2070**. India's NDC targets to **reduce emissions intensity of GDP by 47% by 2035**. India's LTS features targets making **Indian Railways net-zero by 2030**, **20% ethanol blending** in petrol by 2025, and **reduction of logistics costs** to global benchmarks under the National Logistics Policy.",
         "highlight": "India has raised its overall climate ambition in every NDC generation. India's LTS feature freight-specific targets."
       },
       "actions": {
@@ -753,26 +753,26 @@
         ],
         "adaptationNote": null,
         "highlight": "The current NDC of India only features general transport actions, yet all relevant for freight transport and logistics.",
-        "narrative": "India's climate plans identify a general set of transport actions, concentrated in energy efficiency, alternative fuels, and transport system improvements. The LTS highlights more targeted freight ambition including a net-zero target for Indian Railways by 2030 and the National Logistics Policy. The chart below shows how these actions are distributed by category, comparing freight-relevant measures against all transport actions in India's climate plans."
+        "narrative": "India's climate plans identify a general set of transport actions, concentrated in **energy efficiency, alternative fuels, and transport system improvements**. The LTS highlights more targeted freight ambition including a net-zero target for Indian Railways by 2030 and the National Logistics Policy. The chart below shows how these actions are distributed by category, comparing freight-relevant measures against all transport actions in India's climate plans."
       },
       "lts": {
-        "summary": "The LTS of India outlines the vision towards an integrated, efficient and inclusive low-carbon transport system. The significant impact of road freight to transport emissions is highlighted and the envisioned actions (not exclusively to freight) are on improving fuel efficiency, a transition to cleaner fuels, modal shifts to less polluting modes, electrification and demand-side management including traffic management and intelligent transport systems.",
+        "summary": "The LTS of India outlines the vision towards an **integrated, efficient and inclusive low-carbon transport system**. The significant impact of road freight to transport emissions is highlighted and the envisioned actions (not exclusively to freight) are on improving fuel efficiency, a transition to cleaner fuels, modal shifts to less polluting modes, electrification and demand-side management including traffic management and intelligent transport systems.",
         "highlight": "India's LTS pursues an integrated low-carbon transport system, yet it misses to tailor specific long-term actions for freight transport."
       },
       "modes": {
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
         "ndc": { "total": 10, "values": [6, 4, 1, 1, 0] },
         "lts": { "total": 14, "values": [7, 2, 2, 1, 4] },
-        "description": "Road transport is the mode India names most often among its defined NDC actions. India's LTS states that on-road freight is a significant driver of transport emissions, and therefore aims for rail capacity expansion (dedicated freight corridors, Indian Railways' 2030 net-zero target) to absorb freight volume off the road network, and a dedicated EV manufacturing package that explicitly covers electrification of railways alongside electric vehicles and batteries. Because road freight is both the largest emissions source and the segment named most explicitly in the NDC, it's a clear priority for electrification — particularly short- and medium-haul trucking, where commercial EV trucks already exist, complemented by continuing to electrify rail traction so that rail can take on more of the diverted freight volume. Aviation and inland waterways are described in the LTS as \"relatively small but fast-growing\".",
-        "highlight": "The majority of India's freight transport actions do not explicitly refer to any transport modes."
+        "description": "**Road transport** is the mode India names most often among its NDC actions. India's LTS states that on-road freight is a significant driver of transport emissions, and therefore aims for **rail capacity expansion** (dedicated freight corridors, Indian Railways' 2030 net-zero target) to absorb freight volume off the road network, and a dedicated **electric vehicle manufacturing package** that explicitly covers electrification of railways alongside electric vehicles and batteries. Road freight is a clear priority for **electrification**, particularly short- and medium-haul trucking, where commercial electric trucks already exist. Aviation and inland waterways are described in the LTS as \"relatively small but fast-growing\".",
+        "highlight": "Among India's freight transport measures, road and rail are prioritised as the primary action areas."
       },
       "btr": {
         "summary": null,
         "actions": [
-          "Ethanol Blended Petrol programme to achieve 10% ethanol blending in petrol by 2021-22 and 20% by 2030.",
-          "Indian Railways works on the development of the Dedicated Freight Corridors along the Eastern and Western routes to enhance freight capacity and shift cargo from road to rail.",
-          "Corporate Average Fuel Economy (CAFE) norms reduce fuel consumption. These norms are coupled with standards for heavy-duty and light commercial vehicles introduced in 2017 and 2019, respectively.",
-          "Transport electrification is supported through the National Electric Mobility Mission Plan (NEMMP) of 2013 and the Faster Adoption and Manufacturing of Hybrid and Electric Vehicles (FAME, FAME-II in 2019)."
+          "Ethanol Blended Petrol programme to achieve **10% ethanol blending in petrol by 2021-22 and 20% by 2030**.",
+          "Indian Railways works on the development of the **Dedicated Freight Corridors** along the Eastern and Western routes to enhance freight capacity and shift cargo from road to rail.",
+          "**Corporate Average Fuel Economy (CAFE) norms** reduce fuel consumption. These norms are coupled with standards for heavy-duty and light commercial vehicles introduced in 2017 and 2019, respectively.",
+          "Transport electrification is supported through the **National Electric Mobility Mission Plan (NEMMP)** of 2013 and the **Faster Adoption and Manufacturing of Hybrid and Electric Vehicles (FAME, FAME-II in 2019)**."
         ],
         "highlight": "The BTR by India indicates significant efforts on railways, fuel efficiency standards, biofuels and electric vehicles."
       },
@@ -957,7 +957,7 @@
         "economyWideLongTerm": "Net-zero emissions by 2050 (Second-gen NDC)",
         "freightIntro": "Current freight transport target(s):",
         "freightTable": [],
-        "description": "Whereas Viet Nam has set economy-wide GHG targets in their second-generation NDC (net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030), there are currently no transport sector specific targets in the NDC.",
+        "description": "Whereas Viet Nam has set economy-wide GHG targets in their second-generation NDC (**net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030**), there are currently no transport sector specific targets in the NDC.",
         "highlight": "No freight transport targets have been identified in Viet Nam's NDC."
       },
       "actions": {
@@ -967,9 +967,9 @@
           "freight": [1, 2, 2, 0, 2, 0]
         },
         "examples": [],
-        "adaptationNote": "Viet Nam is the only country among the three NDC-TIA countries with transport adaptation actions:\n- Upgrade transport facilities that are exposed to high disaster risk and vulnerability to climate change\n- Develop the expressway network and the inter-regional transport system\n- Build and upgrade the anchorage area for ships and boats to avoid storms",
+        "adaptationNote": "Viet Nam is **the only country among the three NDC-TIA countries with transport adaptation actions**:\n- Upgrade transport facilities that are exposed to high disaster risk and vulnerability to climate change\n- Develop the expressway network and the inter-regional transport system\n- Build and upgrade the anchorage area for ships and boats to avoid storms",
         "highlight": "Viet Nam's NDC includes several freight-relevant actions, spread across transport system improvements, energy efficiency, and alternative fuels. However, no electrification actions are linked to freight. Viet Nam's updated second-generation NDCs features several adaptation actions that will raise the resilience of freight transport.",
-        "narrative": "Viet Nam's NDCs include freight-relevant actions spread across transport system improvements, energy efficiency and alternative fuels, though none of them link electrification measures to freight. It is also the only one of the three countries with transport adaptation actions, reflecting its exposure to storms and other climate hazards affecting transport infrastructure. The chart below breaks these actions down by category, comparing freight-relevant measures against all transport actions identified in Viet Nam's NDCs."
+        "narrative": "Viet Nam's NDCs include freight-relevant actions spread across **transport system improvements, energy efficiency and alternative fuels**, though none of them link electrification measures to freight. The chart below breaks the actions to mitigate transport emissions down by category, comparing freight-relevant measures against all transport actions identified in Viet Nam's updated second-generation NDCs."
       },
       "lts": {
         "summary": null,
@@ -979,8 +979,8 @@
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
         "ndc": { "total": 18, "values": [17, 1, 1, 1, 0] },
         "lts": null,
-        "description": "17 of Viet Nam's 18 NDC actions aren't tied to a specific mode of transport. Viet Nam's climate strategy currently treats transport as one undifferentiated sector rather than a mode-by-mode programme. However, the majority of Viet Nam's freight volume is carried by road, and it produces the largest share of transport emissions. Tellingly, the NDC's own listed transport measures — electric motorbikes, cars and buses, CNG/biofuels — are road-vehicle actions even though the table doesn't tag them that way. So road freight is where electrification attention should go first in Viet Nam too, simply because it dominates both freight volume and emissions and is where the NDC's (unlabelled) measures already point.",
-        "highlight": "No transport action was associated with specific freight transport modes."
+        "description": "**17 of Viet Nam's 18 NDC actions don't mention excplicitly a mode of transport**. Viet Nam's climate strategy currently treats transport as an undifferentiated sector rather than tailoring actions to specific modes. However, the majority of Viet Nam's freight volume is carried by road, and it produces the largest share of transport emissions. The NDC misses to point to motorbikes, cars and buses among various road-vehicle actions. So road freight is where electrification attention should go first in Viet Nam, simply because it dominates both freight volume and emissions.",
+        "highlight": "Transport action aren't associated with specific freight transport modes."
       },
       "btr": {
         "summary": null,
@@ -1001,7 +1001,7 @@
         ]
       },
       "freightActions": {
-        "total": 21,
+        "total": 18,
         "groups": [
           {
             "document": "First-Generation NDC",
@@ -1060,6 +1060,11 @@
                 "category": "Electrification",
                 "quote": "Shifting to electricity",
                 "page": null
+              },
+              {
+                "category": "Energy efficiency",
+                "quote": "Improving the energy efficiency of transport vehicles",
+                "page": null
               }
             ]
           },
@@ -1100,21 +1105,6 @@
                 "category": "Alternative fuels",
                 "quote": "use of […] biofuels",
                 "page": 7
-              },
-              {
-                "category": "Structural and Technical",
-                "quote": "Upgrading transport facilities in areas with high disaster risk and vulnerability to climate change",
-                "page": null
-              },
-              {
-                "category": "Structural and Technical",
-                "quote": "developing and completing the expressway network and the inter-regional transport system",
-                "page": 24
-              },
-              {
-                "category": "Structural and Technical",
-                "quote": "building and upgrading the anchorage area for ships and boats to avoid storms",
-                "page": 24
               }
             ]
           }
