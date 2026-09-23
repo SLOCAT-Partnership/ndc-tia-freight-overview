@@ -28,7 +28,7 @@
     "background": {
       "heading": "Background",
       "paragraphs": [
-        "This overview of freight transport in Nationally Determined Contributions (NDCs) and Long-Term Strategies (LTSs) was developed by SLOCAT with technical support from GIZ and WRI, under the NDC Transport Initiative for Asia (NDC-TIA).",
+        "This overview of freight transport in Nationally Determined Contributions (NDCs) and Long-Term Strategies (LTS) was developed by SLOCAT with technical support from GIZ and WRI, under the NDC Transport Initiative for Asia (NDC-TIA).",
         "The **[NDC Transport Initiative for Asia (NDC-TIA)](https://www.ndctransportinitiativeforasia.org/)** aims to support a paradigm shift towards zero-emission transport across Asia. The NDC-TIA is currently in its second phase with a focus on **zero-emission freight transport**.",
         "The programme supports **China**, **India** and **Viet Nam** in developing comprehensive transport decarbonisation strategies and solutions for their implementation. At the regional and global levels, it extends its impact by engaging additional countries in Southeast Asia, sharing lessons learned, advancing dialogue on transport decarbonisation and promoting effective multi-stakeholder approaches involving government ministries, civil society and the private sector.",
         "The NDC Transport Initiative for Asia is supported by the International Climate Initiative (IKI) of the Federal Government of Germany. Within the Federal Government, the IKI is anchored in the Federal Ministry for the Environment, Climate Action, Nature Conservation and Nuclear Safety (BMUKN)."
@@ -99,10 +99,11 @@
     "keyFindings": {
       "heading": "Key findings for Asia and the NDC-TIA countries (China, India and Viet Nam)",
       "bullets": [
-        "31 of 35 NDCs across Asia mention freight transport in targets and actions, mostly in the context of electrification, infrastructure improvements and low-carbon fuels.",
-        "Among the 33 NDCs globally with a transport greenhouse gas (GHG) mitigation target 7 are from Asia (21%), further supported through indirect targets",
-        "The climate plans by China, India and Viet Nam reflect a more diverse approach to freight transport compared to Asia as a whole, with a stronger focus on modal shift, demand management and transport system improvements.",
-        "The most recent NDC by China and Viet Nam put a strong emphasis on alternative fuels. The LTS of China and India highlight electrification and energy efficiency as key measures to decarbonise freight transport."
+        "**31 of 35** Asian NDCs address freight transport, mostly through **electrification, infrastructure improvements and low-carbon fuels**.",
+        "Of the **33 NDCs** worldwide with a transport GHG mitigation target, **7 are from Asia (21%)**",
+        "**None of the three NDC-TIA countries** (China, India and Viet Nam) set a transport GHG mitigation target in their NDC, but, with several more Asian countries, they back freight decarbonisation through indirect targets instead.",
+        "China, India and Viet Nam take a broader approach than Asia, leaning more heavily on **modal shift, demand management and transport system improvements**.",
+        "The latest NDCs of China and Viet Nam prioritise **alternative fuels**; the LTS of China and India point to **electrification and energy efficiency** as the key levers for freight decarbonisation."
       ]
     },
     "freightActions": {
@@ -326,10 +327,10 @@
   "nationalAmbition": {
     "China": {
       "description": [
-        "China has submitted a contribution to every NDC generation (2016, 2021, 2025), a Long-Term Strategy (2021), and a first Biennial Transparency Report on schedule at the end of 2024.",
-        "Freight has an important role in China's actions to mitigate transport emissions. These actions are concentrated in transport system improvements (largely corridor development and shifting freight from road to rail and water) and aviation and maritime measures.",
-        "On targets, China's LTS commits to 40% of new vehicles sold being new-energy or clean-energy by 2030, alongside a 9.5% cut in commercial vehicle carbon intensity and a 10% reduction in rail energy consumption per unit of turnover, both by 2030.",
-        "Its third-generation NDC adds region-specific goals: carbon-neutral growth for civil aviation by 2035 and zero-carbon transport in Hong Kong by 2050, with Hong Kong and Macao also committing to end new gasoline and hybrid private vehicle registrations by 2035."
+        "China has submitted a contribution to **every NDC generation (2016, 2021, 2025)**, a **LTS (2021)**, and its **first BTR** on schedule at the end of **2024**.",
+        "Freight is a core focus of China's transport mitigation strategy, concentrated in **transport system improvements** (largely corridor development and shifting freight from road to rail and water) and **aviation and maritime measures**.",
+        "Its third-generation NDC adds region-specific goals: **carbon-neutral growth for civil aviation by 2035**, **zero-carbon transport in Hong Kong by 2050**, and a 2035 commitment from **Hong Kong and Macao to end new gasoline and hybrid private vehicle registrations**.",
+        "On targets, China's LTS commits to **40% of new vehicles sold being new-energy or clean-energy***, a **9.5% cut in commercial vehicle carbon intensity**, and a **10% reduction in rail energy consumption per unit of turnover** (all by 2030)."
       ],
       "externalInsight": "Freight accounts for 65% of China's total transport carbon emissions, even though road freight (responsible for roughly 80%) moves only about a third of the country's goods by volume; moving freight is also unusually costly, at 18% of GDP compared to 8\u201312% in the US and EU.",
       "documents": {
@@ -373,7 +374,7 @@
         ],
         "adaptationNote": null,
         "highlight": "The focus of actions to mitigate freight transport emissions is on transport system improvements as well as aviation and maritime transport.",
-        "narrative": "China's third-generation NDC and Long-Term Strategy identify a broad set of freight-related actions, concentrated in transport system improvements, aviation and maritime measures, alternative fuels and electrification. The chart below breaks these actions down by category, comparing freight-relevant measures against all transport actions identified in China's climate plans."
+        "narrative": "China's third-generation NDC and LTS identify a broad set of freight-related actions, concentrated in transport system improvements, aviation and maritime measures, alternative fuels and electrification. The chart below breaks these actions down by category, comparing freight-relevant measures against all transport actions identified in China's climate plans."
       },
       "lts": {
         "summary": "The LTS of China has several freight-focused activities with a focus on rail and water transport. Optimisation of freight transport is envisioned through a shift of goods from road to railways or waterways. The enabling actions will be multimodality, distribution hubs, efficient operations, freight vehicle standardisation and the introduction of recyclable standardised logistics packages. Electrification of freight vehicles is highlighted in trucks for urban logistics. In the wider transport context, the LTS covers smart transport, new technologies, new business formats, and new vehicle types supporting autonomous driving.",
@@ -711,9 +712,9 @@
 
     "India": {
       "description": [
-        "India has submitted an NDC in every generation since 2016, most recently in April 2026, alongside a Long-Term Strategy (2022) and its first Biennial Transparency Report (2026).",
-        "Freight-specific actions are concentrated in energy efficiency and transport system improvements, reflecting the third-generation NDC's lack of detailed sectoral strategies.",
-        "Freight ambition instead sits mainly in the LTS, which targets net-zero for Indian Railways by 2030 (an estimated 60 million tonnes CO2 mitigated annually) via dedicated freight corridors shifting cargo off the road network, alongside 20% ethanol blending in petrol by 2025 and a National Logistics Policy goal to bring logistics costs to global benchmarks by 2030."
+        "India has submitted an **NDC in every generation since 2016**, most recently in April 2026, alongside an **LTS (2022)** and its **first BTR (2026)**.",
+        "Freight-specific actions of India's NDCs are concentrated in very few **energy efficiency and transport system improvements**, reflecting the third-generation NDC's lack of detailed sectoral strategies.",
+        "Freight ambition instead sits mainly in the LTS. It targets **net-zero for Indian Railways by 2030** via dedicated freight corridors shifting cargo off the road network. Alongside this: **20% ethanol blending** in petrol by 2025, and a National Logistics Policy goal to bring **logistics costs to global benchmarks by 2030**."
       ],
       "externalInsight": "Road carries around 70% of India's freight in a highly fragmented sector, where roughly three-quarters of operators run fewer than five trucks, leaving truck efficiency 40-50% below the global average and logistics costs at 14% of GDP, nearly double the 8\u201310% typical of developed countries.",
       "documents": {
@@ -725,7 +726,7 @@
           { "label": "2022 submission", "link": "https://unfccc.int/documents/623511" },
           { "label": "2026 submission", "link": "https://unfccc.int/documents/656939" }
         ],
-        "highlight": "India has submitted contributions to every NDC generation and a Long-Term Strategy."
+        "highlight": "India has submitted contributions to every NDC generation and a LTS."
       },
       "targets": {
         "economyWideCurrent": "Reduce emissions intensity of GDP by 47% below 2005 levels by 2035.",
@@ -752,7 +753,7 @@
         ],
         "adaptationNote": null,
         "highlight": "The current NDC of India only features general transport actions, yet all relevant for freight transport and logistics.",
-        "narrative": "India's climate plans identify a general set of transport actions, concentrated in energy efficiency, alternative fuels, and transport system improvements. The Long-Term Strategy highlights more targeted freight ambition including a net-zero target for Indian Railways by 2030 and the National Logistics Policy. The chart below shows how these actions are distributed by category, comparing freight-relevant measures against all transport actions in India's climate plans."
+        "narrative": "India's climate plans identify a general set of transport actions, concentrated in energy efficiency, alternative fuels, and transport system improvements. The LTS highlights more targeted freight ambition including a net-zero target for Indian Railways by 2030 and the National Logistics Policy. The chart below shows how these actions are distributed by category, comparing freight-relevant measures against all transport actions in India's climate plans."
       },
       "lts": {
         "summary": "The LTS of India outlines the vision towards an integrated, efficient and inclusive low-carbon transport system. The significant impact of road freight to transport emissions is highlighted and the envisioned actions (not exclusively to freight) are on improving fuel efficiency, a transition to cleaner fuels, modal shifts to less polluting modes, electrification and demand-side management including traffic management and intelligent transport systems.",
@@ -762,7 +763,7 @@
         "categories": ["Not explicitly defined", "Road transport", "Rail", "Water transport", "Air transport"],
         "ndc": { "total": 10, "values": [6, 4, 1, 1, 0] },
         "lts": { "total": 14, "values": [7, 2, 2, 1, 4] },
-        "description": "Road transport is the mode India names most often among its defined NDC actions. India's Long-Term Strategy states that on-road freight is a significant driver of transport emissions, and therefore aims for rail capacity expansion (dedicated freight corridors, Indian Railways' 2030 net-zero target) to absorb freight volume off the road network, and a dedicated EV manufacturing package that explicitly covers electrification of railways alongside electric vehicles and batteries. Because road freight is both the largest emissions source and the segment named most explicitly in the NDC, it's a clear priority for electrification — particularly short- and medium-haul trucking, where commercial EV trucks already exist, complemented by continuing to electrify rail traction so that rail can take on more of the diverted freight volume. Aviation and inland waterways are described in the LTS as \"relatively small but fast-growing\".",
+        "description": "Road transport is the mode India names most often among its defined NDC actions. India's LTS states that on-road freight is a significant driver of transport emissions, and therefore aims for rail capacity expansion (dedicated freight corridors, Indian Railways' 2030 net-zero target) to absorb freight volume off the road network, and a dedicated EV manufacturing package that explicitly covers electrification of railways alongside electric vehicles and batteries. Because road freight is both the largest emissions source and the segment named most explicitly in the NDC, it's a clear priority for electrification — particularly short- and medium-haul trucking, where commercial EV trucks already exist, complemented by continuing to electrify rail traction so that rail can take on more of the diverted freight volume. Aviation and inland waterways are described in the LTS as \"relatively small but fast-growing\".",
         "highlight": "The majority of India's freight transport actions do not explicitly refer to any transport modes."
       },
       "btr": {
@@ -934,10 +935,10 @@
 
     "Viet Nam": {
       "description": [
-        "Viet Nam submitted its first NDC in 2016 and an updated second-generation NDC in 2022; its third-generation NDC, LTS and BTR remain pending.",
-        "The current NDC sets no freight-specific targets, though it does include several freight-relevant actions, spread across transport system improvements, energy efficiency, and alternative fuels. Viet Nam's NDC does not link any electrification actions to freight.",
-        "Viet Nam is the only one of the three countries with transport adaptation actions, including upgrading facilities exposed to disaster risk and building storm-shelter anchorage areas.",
-        "Outside the NDC process, the newly adopted logistics service development strategy 2025-2035 sets sector-wide goals: 12\u201315% annual growth in the logistics industry alongside a 12\u201315% cut in logistics costs relative to GDP by 2035."
+        "Viet Nam submitted its **first NDC in 2016 and an updated second-generation NDC in 2022**; its third-generation NDC, LTS and BTR remain pending.",
+        "Viet Nam's current NDC sets no freight-specific targets, though it does include freight-relevant actions across **transport system improvements, energy efficiency and alternative fuels**, but none of them linked to electrification.",
+        "Viet Nam is the **only one of the three NDC-TIA countries with transport adaptation actions**, including upgrading facilities exposed to disaster risk and building storm-shelter anchorage areas.",
+        "Outside the NDC process, the newly adopted logistics service development strategy (2025-2035) sets sector-wide goals: **12-15% annual growth in the logistics industry alongside a 12-15% cut in logistics costs relative to GDP, both by 2035**."
       ],
       "externalInsight": "Road carries about 80% of Vietnam's freight by tonnage versus just 16% by inland waterway, even as freight traffic has grown 5% annually and rail and water transport account for only 2% of intercity transport overall.",
       "documents": {
