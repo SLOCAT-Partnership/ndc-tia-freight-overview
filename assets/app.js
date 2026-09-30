@@ -535,7 +535,7 @@
     opts = opts || {};
     var bar = el("div", { cls: "stat-bar" });
     if (opts.id) bar.id = opts.id;
-    bar.appendChild(el("div", { cls: "stat-bar-title", text: data.heading }));
+    if (data.heading) bar.appendChild(el("div", { cls: "stat-bar-title", text: data.heading }));
     var grid = el("div", { cls: "stat-bar-grid" });
     data.stats.forEach(function (s) {
       var tile = el("div", { cls: "stat-bar-tile" });
@@ -545,6 +545,19 @@
     });
     bar.appendChild(grid);
     return bar;
+  }
+
+  // Minimalist horizontal stat row (light, bordered, no dark panel) — used
+  // inline within a section rather than as its own full-width feature block.
+  function statStrip(stats) {
+    var strip = el("div", { cls: "stat-strip" });
+    stats.forEach(function (s) {
+      var item = el("div", { cls: "stat-strip-item" });
+      item.appendChild(el("div", { cls: "stat-strip-value", text: s.value }));
+      item.appendChild(el("div", { cls: "stat-strip-caption", text: s.caption }));
+      strip.appendChild(item);
+    });
+    return strip;
   }
 
   /* ================================================================
@@ -626,18 +639,18 @@
 
     tgContent.push(subheading(tg.freight.heading));
     tgContent.push(para(tg.freight.intro));
-    tgContent.push(para(tg.freight.listIntro));
+    if (tg.freight.ghgStats && tg.freight.ghgStats.length) tgContent.push(statStrip(tg.freight.ghgStats));
     tgContent.push(countryToggleTable(tg.freight.table.rows, ["Target type", "Target content relevant for freight", "Source"],
       function (r) { return tr([td(r.type), td(r.content), td(r.source)]); },
       [{ name: "Viet Nam", message: tg.freight.vietnamNote }]
     ));
+    tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
     tgContent.push(para(tg.freight.regionalExamplesIntro));
     var exList = el("div", { cls: "example-list example-list-fit example-list-lg" });
     tg.freight.regionalExamples.forEach(function (e) {
       exList.appendChild(exampleCard(e.country, e.content));
     });
     tgContent.push(exList);
-    tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
     root.appendChild(section(tg.heading, tgContent, { id: "ov-targets" }));
 
     /* -- Freight actions mentioned in NDCs -- */

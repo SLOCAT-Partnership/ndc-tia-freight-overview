@@ -218,6 +218,33 @@ a:hover { text-decoration: underline; }
 }
 .stat-bar-caption { font-size: 0.92rem; color: #DCEEEC; line-height: 1.5; }
 
+.stat-strip {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin: 4px 0 20px;
+  padding: 18px 0;
+}
+.stat-strip-item {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  padding: 0 18px;
+  border-left: 1px solid var(--border);
+}
+.stat-strip-item:first-child { border-left: none; }
+.stat-strip-value { font-size: 1.6rem; font-weight: 800; color: var(--teal-dark); line-height: 1.15; margin-bottom: 6px; }
+.stat-strip-caption { font-size: 0.82rem; color: var(--text-soft); line-height: 1.4; }
+@media (max-width: 700px) {
+  .stat-strip-item {
+    flex: 1 1 45%;
+    border-left: none;
+    border-top: 1px solid var(--border);
+    padding: 12px 8px 0;
+  }
+}
+
 /* ---------- Jump nav (sidebar rail on desktop, horizontal strip on mobile) ---------- */
 
 html { scroll-behavior: smooth; }

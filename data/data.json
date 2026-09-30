@@ -192,8 +192,13 @@
       },
       "freight": {
         "heading": "Freight targets of China, India and Viet Nam",
-        "intro": "Countries can also set **sectoral targets** to complement their economy-wide targets. **Globally, 33 third-generation NDCs (26% of all submissions) include a transport GHG mitigation target**. In Asia, 7 countries* include such a target, the second-highest share after Africa. None of the three NDC-TIA countries featured such a target in any of their NDC nor LTS submissions.",
-        "listIntro": "China and India include **non-GHG targets** (see 'About this Dashboard' for explanations), which do not specify emission reductions but support improvements in the transport sector. The following list shows non-GHG targets relevant to freight transport and logistics in the third-generation NDCs and LTS.",
+        "intro": "Countries can also set **sectoral targets** (GHG or non-GHG targets) to complement their economy-wide targets (see 'Glossary'). The following list shows non-GHG targets relevant to freight transport and logistics in the third-generation NDCs and LTS.",
+        "ghgStats": [
+          { "value": "33 of 128", "caption": "third-generation NDCs worldwide (26%) include a transport GHG mitigation target" },
+          { "value": "7", "caption": "Asian countries include such a target* — the second-highest regional share, after Africa" },
+          { "value": "0 of 3", "caption": "NDC-TIA countries (China, India, Viet Nam) featured a transport GHG target in any NDC or LTS submission" },
+          { "value": "10", "caption": "Asian third-generation NDCs, including China and India, feature non-GHG targets relevant to freight transport and logistics" }
+        ],
         "table": {
           "columns": ["Country", "Target type", "Target content relevant for freight", "Source"],
           "rows": [
@@ -209,8 +214,8 @@
             { "country": "India", "type": "Vehicle efficiency targets", "content": "By 2030, National Logistic Policy aspires to reduce cost of logistics in India to be comparable to global benchmarks.", "source": "LTS" }
           ]
         },
-        "vietnamNote": "Whereas Viet Nam has set economy wide GHG targets in their second generation NDC (net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030), there are currently no transport sector specific targets in the NDC.",
-        "regionalExamplesIntro": "10 third-generation NDCs from Asia feature non-GHG targets relevant to freight transport and logistics. A few illustrative examples are:",
+        "vietnamNote": "Whereas Viet Nam has set economy-wide GHG targets in its second-generation NDC (net-zero emissions by 2050, and unconditional 15.8% reduction compared to BAU by 2030), there are currently no transport sector-specific targets in the NDC. Viet Nam has, however, set a freight transport sectoral target in a separate national policy document — to be added here in a future update.",
+        "regionalExamplesIntro": "A few illustrative examples of these non-GHG freight-relevant targets are:",
         "regionalExamples": [
           { "country": "Cambodia", "content": "Shift 5% of long distance freight transport to rail by 2035." },
           { "country": "Indonesia", "content": "Increase the biodiesel blend mandate from 20% to 40% (B40) by 2025." },
