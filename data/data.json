@@ -106,9 +106,19 @@
     },
     "freightActions": {
       "heading": "Freight actions mentioned in NDCs",
-      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The word cloud below shows the **most frequently used terms in freight-related climate actions** across Asia (orange), with terms used by China, India, Viet Nam and all Asian countries highlighted in bold green. It shows that **electrification plays a major role** as the terms 'electric', 'charging' and 'energy' are frequently mentioned. The focus of China, India and Viet Nam seems to be on **vehicles** while the NDCs across the Asia region tend to focus more on **infrastructure**. Many actions seem to refer to **alternative, low-carbon fuels** with hydrogen being a frequently mentioned option.",
+      "intro": "Freight transport is increasingly recognised as an area for climate action in the latest NDCs of China, India and Viet Nam. The word cloud below shows the most frequently used terms in freight-related climate actions across Asia.",
       "image": "assets/img/wordcloud-freight-terms.png",
       "imageAlt": "Word cloud of the most frequently used terms in freight-related climate actions across Asia, with terms also used by all Asian countries, China, India and Viet Nam highlighted in bold",
+      "legend": [
+        { "color": "#CA4600", "label": "Actions from Asia" },
+        { "color": "#0D7A7E", "label": "Actions from China, India and Viet Nam" }
+      ],
+      "takeaways": [
+        "Electrification dominates",
+        "Alternative, low-carbon fuels are also prominent, with hydrogen a frequent term",
+        "China, India and Viet Nam focus on vehicles",
+        "Asia overall focuses more on infrastructure"
+      ],
       "stat": "Climate action on freight transport in Asia focuses largely on electrification, transport system improvements and low-carbon fuels."
     },
 

@@ -645,10 +645,31 @@
     var faContent = [];
     if (fa.stat) faContent.push(el("div", { cls: "stat-callout", html: formatText(fa.stat) }));
     faContent.push(para(fa.intro));
-    var fig = el("figure", { cls: "figure figure-narrow" });
+
+    if (fa.legend && fa.legend.length) {
+      var key = el("div", { cls: "wordcloud-key" });
+      fa.legend.forEach(function (l) {
+        var item = el("div", { cls: "wordcloud-key-item" });
+        item.appendChild(el("span", { cls: "wordcloud-key-swatch", attrs: { style: "background:" + l.color + ";" } }));
+        item.appendChild(el("span", { text: l.label, attrs: { style: "color:" + l.color + ";" } }));
+        key.appendChild(item);
+      });
+      faContent.push(key);
+    }
+
+    var fig = el("figure", { cls: "figure wordcloud-figure" });
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
     faContent.push(fig);
+
+    if (fa.takeaways && fa.takeaways.length) {
+      var twRow = el("div", { cls: "wordcloud-takeaways" });
+      fa.takeaways.forEach(function (t) {
+        twRow.appendChild(el("div", { cls: "wordcloud-takeaway-box", text: t }));
+      });
+      faContent.push(twRow);
+    }
+
     root.appendChild(section(fa.heading, faContent, { id: "ov-freight-actions" }));
 
     /* -- Mitigation -- */

@@ -308,6 +308,42 @@ html { scroll-behavior: smooth; }
 .figure figcaption { font-size: 0.8rem; color: var(--text-soft); margin-top: 6px; }
 .figure-narrow img { max-width: 60%; }
 
+.wordcloud-key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 48px;
+  margin: 4px 0 18px;
+}
+.wordcloud-key-item { display: flex; align-items: center; gap: 10px; font-size: 1rem; font-weight: 700; }
+.wordcloud-key-swatch { width: 15px; height: 15px; border-radius: 3px; flex-shrink: 0; }
+
+.wordcloud-figure { margin: 0 0 24px; }
+.wordcloud-figure img { width: 100%; max-width: 640px; margin: 0 auto; }
+
+.wordcloud-takeaways {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+.wordcloud-takeaway-box {
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--teal-dark);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: var(--text);
+  text-align: center;
+}
+@media (max-width: 900px) {
+  .wordcloud-takeaways { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+  .wordcloud-takeaways { grid-template-columns: 1fr; }
+}
+
 .stat-callout {
   background: var(--teal-tint);
   border-left: 4px solid var(--teal-dark);
