@@ -90,9 +90,42 @@
   function section(headingText, contentNodes, opts) {
     opts = opts || {};
     var sec = el("div", { cls: "section" });
+    if (opts.id) sec.id = opts.id;
     sec.appendChild(el("div", { cls: "section-band", text: headingText }));
     (contentNodes || []).forEach(function (n) { if (n) sec.appendChild(n); });
     return sec;
+  }
+
+  // Sticky in-page nav (sidebar rail on desktop, horizontal strip on mobile
+  // via CSS) for tabs with many sections, so a long page is skimmable/jumpable
+  // instead of requiring a full linear scroll. items: [{ id, label }] — id must
+  // match the target section's element id.
+  function jumpNav(items) {
+    var nav = el("nav", { cls: "jump-nav" });
+    items.forEach(function (it) {
+      nav.appendChild(el("a", { text: it.label, attrs: { href: "#" + it.id, "data-jump-id": it.id } }));
+    });
+    return nav;
+  }
+
+  // Highlights the jump-nav link for whichever of its target sections is
+  // currently nearest the top of the viewport, updating as the user scrolls.
+  function initScrollSpy(nav) {
+    if (!window.IntersectionObserver) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll("a"));
+    var sections = links
+      .map(function (l) { return document.getElementById(l.getAttribute("data-jump-id")); })
+      .filter(Boolean);
+    if (!sections.length) return;
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (l) { l.classList.remove("active"); });
+        var match = nav.querySelector('a[data-jump-id="' + entry.target.id + '"]');
+        if (match) match.classList.add("active");
+      });
+    }, { rootMargin: "-80px 0px -70% 0px", threshold: 0 });
+    sections.forEach(function (s) { observer.observe(s); });
   }
 
   function subheading(text) {
@@ -498,8 +531,10 @@
   // Full-bleed dark panel leading with a row of big-number stats (value + short
   // caption each), used to open a tab with the punchiest takeaways up front
   // instead of prose bullets.
-  function statBar(data) {
+  function statBar(data, opts) {
+    opts = opts || {};
     var bar = el("div", { cls: "stat-bar" });
+    if (opts.id) bar.id = opts.id;
     bar.appendChild(el("div", { cls: "stat-bar-title", text: data.heading }));
     var grid = el("div", { cls: "stat-bar-grid" });
     data.stats.forEach(function (s) {
@@ -517,13 +552,27 @@
      ================================================================ */
 
   function renderOverview() {
-    var root = document.getElementById("panel-overview");
-    root.innerHTML = "";
+    var panel = document.getElementById("panel-overview");
+    panel.innerHTML = "";
 
     var ov = DATA.overview;
 
+    var layout = el("div", { cls: "overview-layout" });
+    var nav = jumpNav([
+      { id: "ov-key-findings", label: "Key findings" },
+      { id: "ov-submissions", label: "Submissions" },
+      { id: "ov-targets", label: "Targets" },
+      { id: "ov-freight-actions", label: "Freight actions" },
+      { id: "ov-mitigation", label: "Mitigation" },
+      { id: "ov-adaptation", label: "Adaptation" },
+      { id: "ov-initiatives", label: "Global initiatives" }
+    ]);
+    layout.appendChild(nav);
+    var root = el("div", { cls: "overview-main" });
+    layout.appendChild(root);
+
     /* -- Key findings -- */
-    if (ov.keyFindings) root.appendChild(statBar(ov.keyFindings));
+    if (ov.keyFindings) root.appendChild(statBar(ov.keyFindings, { id: "ov-key-findings" }));
 
     /* -- Overview of UNFCCC submissions -- */
     var sub = ov.submissions;
@@ -556,7 +605,7 @@
       subContent.push(para(n.text));
       if (n.bullets && n.bullets.length) subContent.push(bulletList(n.bullets));
     });
-    root.appendChild(section(sub.heading, subContent));
+    root.appendChild(section(sub.heading, subContent, { id: "ov-submissions" }));
 
     /* -- Targets -- */
     // Text precedes each sub-topic's table: the economy-wide commentary and
@@ -589,7 +638,7 @@
     });
     tgContent.push(exList);
     tgContent.push(el("p", { cls: "footnote", text: tg.freight.footnote }));
-    root.appendChild(section(tg.heading, tgContent));
+    root.appendChild(section(tg.heading, tgContent, { id: "ov-targets" }));
 
     /* -- Freight actions mentioned in NDCs -- */
     var fa = ov.freightActions;
@@ -600,7 +649,7 @@
     fig.appendChild(el("img", { attrs: { src: fa.image, alt: fa.imageAlt } }));
     fig.appendChild(el("figcaption", { text: "Most frequently used terms in freight-related climate actions across Asia." }));
     faContent.push(fig);
-    root.appendChild(section(fa.heading, faContent));
+    root.appendChild(section(fa.heading, faContent, { id: "ov-freight-actions" }));
 
     /* -- Mitigation -- */
     var mi = ov.mitigation;
@@ -611,7 +660,7 @@
     miContent.push(subheading(mi.spotlight.heading));
     var spotCards = mi.spotlight.examples.map(function (e) { return exampleCard(e.country, e.content); });
     miContent.push(carousel([spotCards.slice(0, 4), spotCards.slice(4)]));
-    root.appendChild(section(mi.heading, miContent));
+    root.appendChild(section(mi.heading, miContent, { id: "ov-mitigation" }));
 
     /* -- Adaptation -- */
     var ad = ov.adaptation;
@@ -623,7 +672,7 @@
     var adList = el("div", { cls: "example-list example-list-fit example-list-lg" });
     ad.examples.forEach(function (e) { adList.appendChild(exampleCard(e.country, e.content)); });
     adContent.push(adList);
-    root.appendChild(section(ad.heading, adContent));
+    root.appendChild(section(ad.heading, adContent, { id: "ov-adaptation" }));
 
     /* -- Global initiatives -- */
     var gi = ov.initiatives;
@@ -649,13 +698,16 @@
       return tr(cells);
     });
     giContent.push(dataTable(matrixCols, matrixRows));
-    root.appendChild(section(gi.heading, giContent));
+    root.appendChild(section(gi.heading, giContent, { id: "ov-initiatives" }));
 
     /* -- Featured report -- */
     var rh = ov.reportHighlight;
     root.appendChild(reportBox(rh.paragraphs.map(function (p) { return para(p); })));
 
     sheetFooterLogos(root);
+
+    panel.appendChild(layout);
+    initScrollSpy(nav);
   }
 
     function exampleCard(country, content) {
