@@ -166,7 +166,7 @@
 
     "targets": {
       "heading": "Targets",
-      "intro": "Countries use NDCs to outline their climate ambitions. The latest NDCs (known as NDC 3.0 or third-generation NDCs) were developed as part of the 2025 NDC cycle, with **many setting targets for 2035**. Second-generation NDCs featured targets for 2030. In the NDC, the conditionality of the target reflects whether a target is achievable with domestic resources (unconditional) or requires international support (conditional).",
+      "intro": "Countries use NDCs to outline their climate ambitions. The latest NDCs (known as NDC 3.0 or third-generation NDCs) were developed as part of the 2025 NDC cycle, with **many setting targets for 2035**. Second-generation NDCs featured targets for 2030. Targets can be conditional or unconditional (see 'Glossary').",
       "economyWide": {
         "heading": "Economy-wide targets of China, India and Viet Nam",
         "columns": ["2030", "2035", "Net-zero ambitions"],
@@ -1151,6 +1151,8 @@
         { "term": "Economy-wide GHG targets", "definition": "Targets in the NDC that apply to the entire economy and specify GHG reductions by a specific year." },
         { "term": "Transport GHG mitigation targets", "definition": "A GHG transport focused on transport (the whole transport sector or specific modes) with a target year" },
         { "term": "Non-GHG targets", "definition": "Non-GHG transport are quantified transport-focused targets that do not specify emission reductions; all of the following targets fall under this category" },
+        { "term": "Unconditional targets", "definition": "Targets a country intends to achieve using domestic resources, without external support." },
+        { "term": "Conditional targets", "definition": "Targets a country intends to achieve only with international support, such as finance or technology transfer." },
         { "term": "Avoid targets", "definition": "Non-GHG transport targets only: targets related to avoided travel" },
         { "term": "Biofuel targets", "definition": "Non-GHG transport targets only: targets related to biofuel" },
         { "term": "Mode share targets", "definition": "Non-GHG transport targets only: targets related to changes in mode share" },
