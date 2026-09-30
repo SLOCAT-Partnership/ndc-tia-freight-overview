@@ -97,13 +97,11 @@
 
   "overview": {
     "keyFindings": {
-      "heading": "Key findings for Asia and the NDC-TIA countries (China, India and Viet Nam)",
-      "bullets": [
-        "**31 of 35** Asian NDCs address freight transport, mostly through **electrification, infrastructure improvements and low-carbon fuels**.",
-        "Of the **33 NDCs** worldwide with a transport GHG mitigation target, **7 are from Asia (21%)**",
-        "**None of the three NDC-TIA countries** (China, India and Viet Nam) set a transport GHG mitigation target in their NDC, but, with several more Asian countries, they back freight decarbonisation through indirect targets instead.",
-        "China, India and Viet Nam take a broader approach than Asia, leaning more heavily on **modal shift, demand management and transport system improvements**.",
-        "The latest NDCs of China and Viet Nam prioritise **alternative fuels**; the LTS of China and India point to **electrification and energy efficiency** as the key levers for freight decarbonisation."
+      "heading": "Key findings for Asia and the NDC-TIA countries",
+      "stats": [
+        { "value": "31 of 35", "caption": "Asian NDCs address freight transport, mostly through electrification, infrastructure improvements and low-carbon fuels" },
+        { "value": "7 of 33", "caption": "NDCs worldwide with a transport GHG mitigation target are from Asia (21%)" },
+        { "value": "0 of 3", "caption": "NDC-TIA countries (China, India, Viet Nam) set a transport GHG target in their NDC — all rely on indirect targets instead" }
       ]
     },
     "freightActions": {

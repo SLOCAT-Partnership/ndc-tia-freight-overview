@@ -188,6 +188,36 @@ a:hover { text-decoration: underline; }
 
 /* ---------- Section building blocks ---------- */
 
+/* ---------- Stat bar (dark panel, big-number key findings) ---------- */
+
+.stat-bar {
+  background: #063C41;
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  margin: 0 0 34px;
+}
+.stat-bar-title {
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin: 0 0 24px;
+}
+.stat-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+@media (max-width: 760px) { .stat-bar-grid { grid-template-columns: 1fr; } }
+.stat-bar-tile { border-left: 3px solid var(--teal-light); padding-left: 16px; }
+.stat-bar-value {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--teal-light);
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+.stat-bar-caption { font-size: 0.92rem; color: #DCEEEC; line-height: 1.5; }
+
 .section { margin: 0 0 34px; }
 
 .section-band {

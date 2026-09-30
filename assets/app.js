@@ -495,6 +495,23 @@
     return box;
   }
 
+  // Full-bleed dark panel leading with a row of big-number stats (value + short
+  // caption each), used to open a tab with the punchiest takeaways up front
+  // instead of prose bullets.
+  function statBar(data) {
+    var bar = el("div", { cls: "stat-bar" });
+    bar.appendChild(el("div", { cls: "stat-bar-title", text: data.heading }));
+    var grid = el("div", { cls: "stat-bar-grid" });
+    data.stats.forEach(function (s) {
+      var tile = el("div", { cls: "stat-bar-tile" });
+      tile.appendChild(el("div", { cls: "stat-bar-value", text: s.value }));
+      tile.appendChild(el("div", { cls: "stat-bar-caption", text: s.caption }));
+      grid.appendChild(tile);
+    });
+    bar.appendChild(grid);
+    return bar;
+  }
+
   /* ================================================================
      TAB 1 — OVERVIEW
      ================================================================ */
@@ -506,11 +523,7 @@
     var ov = DATA.overview;
 
     /* -- Key findings -- */
-    if (ov.keyFindings) {
-      var kfBox = el("div", { cls: "country-desc" });
-      kfBox.appendChild(bulletList(ov.keyFindings.bullets));
-      root.appendChild(section(ov.keyFindings.heading, [kfBox]));
-    }
+    if (ov.keyFindings) root.appendChild(statBar(ov.keyFindings));
 
     /* -- Overview of UNFCCC submissions -- */
     var sub = ov.submissions;
