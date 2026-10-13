@@ -607,9 +607,20 @@
     // an intentional exception to the usual text-before-tables rule elsewhere.
     if (sub.submissionShareChart) subContent.push(donutComparisonChart(sub.submissionShareChart));
     subContent.push(subheading(sub.tableHeading));
+    // Document links are reused from each country's National Ambition "documents" data.
     var subRows = sub.table.rows.map(function (r) {
       var cells = [td(r.country, "country-cell")];
-      r.values.forEach(function (v) { cells.push(td(v)); });
+      var docs = (DATA.nationalAmbition[r.country] || {}).documents;
+      r.values.forEach(function (v, i) {
+        var link = docs && docs.values[i] && docs.values[i].link;
+        if (link) {
+          var cell = el("td");
+          cell.appendChild(el("a", { text: v, attrs: { href: link, target: "_blank", rel: "noopener" } }));
+          cells.push(cell);
+        } else {
+          cells.push(td(v));
+        }
+      });
       return tr(cells);
     });
     subContent.push(dataTable(["Country"].concat(sub.table.columns), subRows));

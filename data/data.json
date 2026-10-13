@@ -1,7 +1,7 @@
 {
   "meta": {
     "eyebrow": "NDC-TIA 2.0",
-    "title": "How does climate action tackle freight transport and logistics?",
+    "title": "How does climate ambition tackle freight transport and logistics?",
     "subtitle": "Assessment of China, India and Viet Nam in comparison to Asia",
     "dataAsOf": "1 September 2026",
     "countries": ["China", "India", "Viet Nam"],
@@ -126,13 +126,13 @@
       "heading": "Overview of UNFCCC submissions",
       "intro": "The majority of Parties have submitted NDCs to the UNFCCC. **Asia has a similar proportion of NDC submissions to the global level**, with 73% of Parties in Asia compared with 76% globally. **LTS submissions lag behind**, with 40% of Parties in Asia and 48% globally having submitted an LTS.",
       "stats": [
-        { "group": "Global", "items": [ "128 Third-Generation NDCs (76% of all Parties)", "81 LTS (48% of all Parties)" ] },
-        { "group": "Asia", "items": [ "35 Third-Generation NDCs (73% of all Parties in region)", "19 LTS (40% of all Parties in the region)" ] }
+        { "group": "Global", "items": [ "128 third-generation NDCs (76% of all Parties)", "81 LTS (48% of all Parties)" ] },
+        { "group": "Asia", "items": [ "35 third-generation NDCs (73% of all Parties in region)", "19 LTS (40% of all Parties in the region)" ] }
       ],
       "submissionShareChart": {
         "title": "Share of Parties with a submission, Global vs Asia",
         "metrics": [
-          { "label": "Third-Generation NDC", "global": 0.76, "asia": 0.73 },
+          { "label": "Third-generation NDC", "global": 0.76, "asia": 0.73 },
           { "label": "Long-Term Strategy (LTS)", "global": 0.48, "asia": 0.40 }
         ]
       },
@@ -148,7 +148,7 @@
       "narrative": [
         {
           "heading": "NDC submissions",
-          "text": "Countries use NDCs to outline their climate ambitions. The latest NDCs (known as NDC 3.0 or third-generation NDCs) were developed as part of the 2025 NDC cycle. As of 1 September 2026, China and India have submitted an NDC in each generation. Viet Nam has not yet submitted a third-generation NDC. You can find hyperlinks to the submissions in the 'National Ambition' tab for each country.",
+          "text": "Countries use NDCs to outline their climate ambitions. The latest NDCs (known as NDC 3.0 or third-generation NDCs) were developed as part of the 2025 NDC cycle. As of 1 September 2026, China and India have submitted an NDC in each generation. Viet Nam has not yet submitted a third-generation NDC.",
           "bullets": [
             "**China**: Every NDC includes actions to mitigate freight transport emissions. Each successive NDC builds on the previous generation, expanding its content and increasing ambition.",
             "**India**: India’s first-generation NDC provided a detailed outline of freight transport actions. Subsequent NDCs have contained fewer detailed sectoral actions and instead refer to separate sectoral strategies.",
